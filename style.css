@@ -4,17 +4,21 @@ body, html {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-color: #333;
+    background-color: black;
 }
 
 /*HEADER NAVIAGTION BAR (ALL)*/
 
 .nav-bar {
+    --glow-color: rgb(217, 176, 255);
+    --glow-spread-color: rgba(191, 123, 255, 0.781);
+    --enhanced-glow-color: rgb(231, 206, 255);
+    --btn-color: rgb(100, 61, 136);
+
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 8px 25px;
-    border-bottom: solid #ff6600 1px;
     border-radius: 5px;
     background: rgb(51, 51, 51);
     position: sticky;
@@ -24,9 +28,39 @@ body, html {
     top: 0;
 }
 
+.website-name {
+    --glow-color: rgb(217, 176, 255);
+    --glow-spread-color: rgba(191, 123, 255, 0.781);
+    
+    display: inline-block;
+    padding: 20px;
+    text-shadow: 0 0 10px var(--glow-color),
+                 0 0 20px var(--glow-spread-color);
+    color: var(--glow-color);
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: shimmer 1.5s infinite alternate;
+}
+
+@keyframes shimmer {
+    0% {
+        text-shadow: 0 0 10px var(--glow-color), 0 0 20px var(--glow-spread-color);
+    }
+    100% {
+        text-shadow: 0 0 15px var(--enhanced-glow-color), 0 0 30px var(--glow-spread-color);
+    }
+}
+
 /*HEADER FEATURED IMAGE*/
 
-.featured img, iframe {
+.featured img {
     display: block;
 
     width: calc(100% - 10px);
@@ -43,9 +77,16 @@ body, html {
 .logo-container {
     position: relative;
 }
+
 .logo img {
     height: 40px;
     display: block;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.logo:hover img {
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.7);
+
 }
 
 .dropdown {
@@ -63,41 +104,118 @@ body, html {
 }
 
 .dropdown a {
+    font-size: 10px;
     display: block;
     color: white;
     text-decoration: none;
     padding: 8px;
     cursor: pointer;
+    transition: box-shadow 0.3s ease-in-out;
 }
 
 .dropdown a:hover {
-    background: #666;
-}
-/*HEADER WEBSITE NAME*/
-
-.website-name {
-    color: white;
-    font-size: 25px;
-    text-decoration: none;
-    font-weight: bold;
-}
-.website-name:hover {
-    color: red;
+    background-color: #666;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.7);
 }
 
 /*HEADER DOWNLOAD BUTTON*/
 
-.download-btn {
+.login-btn {
     background: #ff6600;
     color: white;
-    padding: 10px 20px;
+    padding: 8px 20px;
     text-decoration: none;
     border-radius: 5px;
     transition: box-shadow 0.3s ease-in-out;
-}
-.download-btn:hover {
-    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.7);
-}
-.download-btn:active {
 
+
+    --glow-color: rgb(217, 176, 255);
+    --glow-spread-color: rgba(191, 123, 255, 0.781);
+    --enhanced-glow-color: rgb(231, 206, 255);
+    --btn-color: rgb(100, 61, 136);
+    border: 3px solid var(--glow-color);
+    color: var(--glow-color);
+    background-color: var(--btn-color);
+    border-radius: 5em;
+    outline: none;
+    box-shadow: 0 0 1em 0.25em var(--glow-color),
+        inset 0 0 0.75em 0.25em var(--glow-color);
+    text-shadow: 0 0 0.5em var(--glow-color);
+    position: relative;
+    transition: all 0.75s;
+}
+.login-btn:hover {
+    color: var(--btn-color);
+    background-color: var(--glow-color);
+    box-shadow: 0 0 1em 0.25em var(--glow-color),
+        inset 0 0 0.75em 0.25em var(--glow-color);
+}
+.login-btn::after {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    top: 120%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--glow-spread-color);
+    filter: blur(2em);
+    opacity: 0.7;
+    transform: perspective(1.5em) rotateX(35deg) scale(1, 0.6);
+}
+
+/*DOWNLOAD BALLISTIC ENGINE BUTTON*/
+
+
+.download-btn {
+    display: block;
+    padding-top: 90px;
+    margin: auto;
+
+    --glow-color: rgb(217, 176, 255);
+    --glow-spread-color: rgba(191, 123, 255, 0.781);
+    --enhanced-glow-color: rgb(231, 206, 255);
+    --btn-color: rgb(100, 61, 136);
+    border: 0.25em solid var(--glow-color);
+    padding: 1em 3em;
+    color: var(--glow-color);
+    font-size: 15px;
+    font-weight: bold;
+    background-color: var(--btn-color);
+    border-radius: 1em;
+    outline: none;
+    box-shadow: 0 0 1em 0.25em var(--glow-color),
+        0 0 4em 1em var(--glow-spread-color),
+        inset 0 0 0.75em 0.25em var(--glow-color);
+    text-shadow: 0 0 0.5em var(--glow-color);
+    position: relative;
+    transition: all 0.75s;
+}
+
+.download-btn::after {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    top: 120%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--glow-spread-color);
+    filter: blur(2em);
+    opacity: 0.7;
+    transform: perspective(1.5em) rotateX(35deg) scale(1, 0.6);
+}
+
+.download-btn:hover {
+    color: var(--btn-color);
+    background-color: var(--glow-color);
+    box-shadow: 0 0 1em 0.25em var(--glow-color),
+        0 0 4em 2em var(--glow-spread-color),
+        inset 0 0 0.75em 0.25em var(--glow-color);
+}
+
+.download-btn:active {
+    box-shadow: 0 0 0.6em 0.25em var(--glow-color),
+        0 0 2.5em 2em var(--glow-spread-color),
+        inset 0 0 0.5em 0.25em var(--glow-color);
 }
