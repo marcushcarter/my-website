@@ -4,9 +4,9 @@ body, html {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-color: black;
+    background-color: rgb(15, 15, 15);
+    color: white;
 }
-
 
 .neon {
     --glow-color: rgb(217, 176, 255);
@@ -16,9 +16,6 @@ body, html {
                  0 0 20px var(--glow-spread-color);
     color: var(--glow-color);
     animation: text-shimmer 1.5s infinite alternate;
-}
-
-.center {
     text-align: center;
 }
 
@@ -125,7 +122,6 @@ body, html {
     display: block;
 }
 
-
 .dropdown {
     display: none;
     position: absolute;
@@ -199,6 +195,7 @@ body, html {
     display: block;
     padding-top: 90px;
     margin: auto;
+    z-index: 1;
 
     --glow-color: rgb(217, 176, 255);
     --glow-spread-color: rgba(191, 123, 255, 0.781);
@@ -247,4 +244,23 @@ body, html {
     box-shadow: 0 0 0.6em 0.25em var(--glow-color),
         0 0 2.5em 2em var(--glow-spread-color),
         inset 0 0 0.5em 0.25em var(--glow-color);
+}
+
+/*ENGINE FEATURE VIDEO*/
+
+.engine-feature  {
+    display: block;
+    align-content: center;
+    width: calc(100% - 40px);
+    max-width: 1000px;
+    height: calc(100%);
+    max-height: 525px;
+
+    margin: 20px auto;
+    border-radius: 1em;
+    cursor: pointer;
+    z-index: 999;
+
+    object-fit: cover;
+    
 }
