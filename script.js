@@ -20,7 +20,7 @@ class Navbar extends HTMLElement {
                     </div>
                 </div>
                 <a href="index.html" class="website-name">Ballistic Studios</a>
-                <a href="" class="login-btn">Login</a>
+                <a href="login.html" class="login-btn">Login</a>
             </nav>
         `;
     }
@@ -44,7 +44,7 @@ class Footer extends HTMLElement {
                     <a>Contribute</a>
                     <a>Privacy Policy</a>
                 </div>
-                <a class="extra-links">Ballistic Studios © 2024</a>
+                <a class="copyright">Ballistic Studios © 2024</a>
             </footer>
         `;
     }
