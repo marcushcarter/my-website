@@ -29,6 +29,7 @@ class Navbar extends HTMLElement {
 class Footer extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
+            <div style="height: 50px;"></div>
             <footer>
                 <div class="social-links">
                     <a href="https://instagram.com/ballisticstudiosofficial" target="_blank"><i class="fa-brands fa-instagram"></i></a>
