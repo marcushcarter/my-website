@@ -6,12 +6,16 @@ body, html {
     font-family: Arial, sans-serif;
     background-color: rgb(15, 15, 15);
     color: white;
+
+    
+
+    --glow-color: rgb(217, 176, 255);
+    --glow-spread-color: rgba(191, 123, 255, 0.781);
+    --enhanced-glow-color: rgb(231, 206, 255);
+    --btn-color: rgb(100, 61, 136);
 }
 
 .neon {
-    --glow-color: rgb(217, 176, 255);
-    --glow-spread-color: rgba(191, 123, 255, 0.781);
-    
     text-shadow: 0 0 10px var(--glow-color),
                  0 0 20px var(--glow-spread-color);
     color: var(--glow-color);
@@ -60,9 +64,6 @@ body, html {
 }
 
 .website-name {
-    --glow-color: rgb(217, 176, 255);
-    --glow-spread-color: rgba(191, 123, 255, 0.781);
-    
     display: inline-block;
     padding: 20px;
     text-shadow: 0 0 10px var(--glow-color),
@@ -89,38 +90,34 @@ body, html {
 
 .featured img {
     display: block;
-
     width: calc(100% - 10px);
     max-height: 525px;
-
     margin: 5px auto;
     margin-top: 0;
-
     object-fit: cover;
 }
 
-/*HEADER DROPDOWN MENU*/
+/*HEADER MENU ICON*/
 
-.logo-container {
+.menu-container {
     position: relative;
     transition: all 1s ease-in-out;
-    color: #666;
+    color: #444;
     font-size: 20px;
-
-    --glow-color: rgb(217, 176, 255);
-    --glow-spread-color: rgba(191, 123, 255, 0.781);
-    --enhanced-glow-color: rgb(231, 206, 255);
-    --btn-color: rgb(100, 61, 136);
 }
-.logo-container:hover i {
+
+.menu-container:hover i {
     animation: text-shimmer 1.5s infinite alternate;
     transition: all 0.2s ease-in-out;
     color: var(--glow-color);
     font-size: 21px;
 }
-.logo-container:hover .dropdown, .dropdown:hover {
+
+.menu-container:hover .dropdown, .dropdown:hover {
     display: block;
 }
+
+/*HEADER DROPDOWN MENU*/
 
 .dropdown {
     display: none;
@@ -135,7 +132,7 @@ body, html {
 .dropdown a {
     font-size: 10px;
     display: block;
-    color: #666;
+    color: white;
     text-decoration: none;
     padding: 8px;
     cursor: pointer;
@@ -143,14 +140,11 @@ body, html {
 }
 
 .dropdown a:hover {
-    --glow-color: rgb(217, 176, 255);
-    --glow-spread-color: rgba(191, 123, 255, 0.781);
     box-shadow: 0 0 10px var(--glow-color),
                  0 0 20px var(--glow-spread-color);
     color: var(--glow-color);
     animation: box-shimmer 1.5s infinite alternate;
     transition: all 0.2s ease-in-out;
-
 }
 
 /*NAVBAR LOGIN BUTTON*/
@@ -168,25 +162,19 @@ body, html {
 }
 
 .login-btn:hover {
-    --glow-color: rgb(217, 176, 255);
-    --glow-spread-color: rgba(191, 123, 255, 0.781);
     box-shadow: 0 0 10px var(--glow-color),
                  0 0 20px var(--glow-spread-color);
     color: var(--glow-color);
     animation: box-shimmer 1.5s infinite alternate;
-    padding: 9px 21px;
+    padding: 8px 21px;
 }
 
 .login-btn:active {
-    --glow-color: rgb(217, 176, 255);
-    --glow-spread-color: rgba(191, 123, 255, 0.781);
-    
     box-shadow: 0 0 10px var(--glow-color),
                  0 0 20px var(--glow-spread-color);
     background-color: var(--glow-color);
     color: #333;
     animation: box-shimmer 1.5s infinite alternate;
-
 }
 
 /*DOWNLOAD BALLISTIC ENGINE BUTTON*/
@@ -196,11 +184,6 @@ body, html {
     padding-top: 90px;
     margin: auto;
     z-index: 1;
-
-    --glow-color: rgb(217, 176, 255);
-    --glow-spread-color: rgba(191, 123, 255, 0.781);
-    --enhanced-glow-color: rgb(231, 206, 255);
-    --btn-color: rgb(100, 61, 136);
     border: 0.25em solid var(--glow-color);
     padding: 1em 3em;
     color: var(--glow-color);
@@ -255,12 +238,27 @@ body, html {
     max-width: 1000px;
     height: calc(100%);
     max-height: 525px;
-
     margin: 20px auto;
     border-radius: 1em;
     cursor: pointer;
     z-index: 999;
-
     object-fit: cover;
     
+}
+
+/*FOOTER*/
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    padding: 8px 25px;
+    border-radius: 5px;
+    background: rgb(51, 51, 51);
+    position: sticky;
+    opacity: 0.95;
+    background: rgba(51, 51, 51, 0.5); /* Light transparency */
+    backdrop-filter: blur(20px);
+    top: 0;
 }
