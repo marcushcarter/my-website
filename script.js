@@ -9,7 +9,14 @@ class Navbar extends HTMLElement {
                     <div class="dropdown">
                         <a href="index.html">Home</a>
                         <a href="engine-download.html">Download Ballistic Engine</a>
-                        <a href="">Store</a>
+                        <a href="">Link</a>
+                        <a href="">Link</a>
+                        <a href="">Link</a>
+                        <a href="">Link</a>
+                        <a href="">Link</a>
+                        <a href="">Link</a>
+                        <a href="">Link</a>
+                        <a href="">Link</a>
                     </div>
                 </div>
                 <a href="index.html" class="website-name">Ballistic Studios</a>
@@ -22,20 +29,22 @@ class Navbar extends HTMLElement {
 class Footer extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
-            <footer class="footer">
-                <div class="footer-container">
-                    <div class="footer-links">
-                        <a href="about.html">About Us</a>
-                        <a href="contact.html">Contact</a>
-                        <a href="privacy-policy.html">Privacy Policy</a>
-                    </div>
-                    <div class="footer-socials">
-                        <a href="https://facebook.com/ballisticstudios"><i class="fa-brands fa-facebook"></i></a>
-                        <a href="https://twitter.com/ballisticstudios"><i class="fa-brands fa-twitter"></i></a>
-                        <a href="https://instagram.com/ballisticstudios"><i class="fa-brands fa-instagram"></i></a>
-                    </div>
+            <footer>
+                <div class="social-links">
+                    <a href="https://instagram.com/marcus.carter04" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@marcuscarter.exe" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+                    <a target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://github.com/marcushcarter" target="_blank"><i class="fa-brands fa-github"></i></a>    
                 </div>
-                <p class="footer-note">© 2025 Ballistic Studios. All rights reserved.</p>
+                <div class="extra-links">
+                    <a href="index.html">Home</a>
+                    <a>Store</a>
+                    <a>About</a>
+                    <a href="mailto:marcoose408@gmail.com" target=_self>Contact us</a>
+                    <a>Contribute</a>
+                    <a>Privacy Policy</a>
+                </div>
+                <a class="extra-links">Ballistic Studios © 2024</a>
             </footer>
         `;
     }
