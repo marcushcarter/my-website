@@ -9,7 +9,7 @@ class Navbar extends HTMLElement {
                     <div class="dropdown">
                         <a href="index.html">Home</a>
                         <a href="engine-download.html">Download Ballistic Engine</a>
-                        <a href="">Link</a>
+                        <a href="games.html">Games</a>
                         <a href="">Link</a>
                         <a href="">Link</a>
                         <a href="">Link</a>
@@ -31,10 +31,9 @@ class Footer extends HTMLElement {
         this.innerHTML = `
             <footer>
                 <div class="social-links">
-                    <a href="https://instagram.com/marcus.carter04" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://www.tiktok.com/@marcuscarter.exe" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
-                    <a target="_blank"><i class="fa-brands fa-youtube"></i></a>
-                    <a href="https://github.com/marcushcarter" target="_blank"><i class="fa-brands fa-github"></i></a>    
+                    <a href="https://instagram.com/ballisticstudiosofficial" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@ballisticstudiosofficial" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://github.com/marcushcarter" target="_blank"><i class="fa-brands fa-github"></i></a> 
                 </div>
                 <div class="extra-links">
                     <a href="index.html">Home</a>
@@ -50,5 +49,33 @@ class Footer extends HTMLElement {
     }
 }
 
+class SearchBar extends HTMLElement {
+    connectedCallback() {
+        this.innerHTML = `
+            <a class="search-bar">
+                <input type="text" id="search-bar" placeholder="Search..." oninput="filterItems()">
+            </a>
+        `;
+    }
+}
+
 customElements.define('custom-navbar', Navbar);
 customElements.define('custom-footer', Footer);
+customElements.define('custom-searchbar', SearchBar);
+
+// SEARCH BAR FUNCTIONS
+
+function filterItems() {
+    let input = document.getElementById("search-bar").value.toLowerCase();
+    let items = document.querySelectorAll("#search-objects li");
+
+    items.forEach(item => {
+        let itemName = item.getAttribute("data-name").toLowerCase();
+        
+        if (itemName.includes(input)) {
+            item.style.display = ""; 
+        } else {
+            item.style.display = "none";
+        }
+    });
+}
