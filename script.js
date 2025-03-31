@@ -9,14 +9,9 @@ class Navbar extends HTMLElement {
                     <div class="dropdown">
                         <a href="index.html">Home</a>
                         <a href="engine-download.html">Download Ballistic Engine</a>
-                        <a href="games.html">Games</a>
-                        <a href="">Link</a>
-                        <a href="">Link</a>
-                        <a href="">Link</a>
-                        <a href="">Link</a>
-                        <a href="">Link</a>
-                        <a href="">Link</a>
-                        <a href="">Link</a>
+                        <a href="store.html">Store</a>
+                        <a href="websites.html">Websites</a>
+                        <a href=""></a>
                     </div>
                 </div>
                 <a href="index.html" class="website-name">Ballistic Studios</a>
@@ -38,7 +33,7 @@ class Footer extends HTMLElement {
                 </div>
                 <div class="extra-links">
                     <a href="index.html">Home</a>
-                    <a>Store</a>
+                    <a href="store.html">Store</a>
                     <a>About</a>
                     <a href="mailto:marcoose408@gmail.com" target=_self>Contact us</a>
                     <a>Contribute</a>
@@ -67,14 +62,18 @@ customElements.define('custom-searchbar', SearchBar);
 // SEARCH BAR FUNCTIONS
 
 function filterItems() {
-    let input = document.getElementById("search-bar").value.toLowerCase();
+    let input = document.getElementById("search-bar").value.toLowerCase().trim();
     let items = document.querySelectorAll("#search-objects li");
 
     items.forEach(item => {
         let itemName = item.getAttribute("data-name").toLowerCase();
-        
-        if (itemName.includes(input)) {
-            item.style.display = ""; 
+        let searchTerms = input.split(/\s+/); // Split input into words (spaces)
+
+        // Check if all search terms exist somewhere in the data-name
+        let matchesAll = searchTerms.every(term => itemName.includes(term));
+
+        if (matchesAll) {
+            item.style.display = "";
         } else {
             item.style.display = "none";
         }
