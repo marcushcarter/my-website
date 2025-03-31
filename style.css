@@ -352,7 +352,7 @@ footer .copyright {
 .games-search-list {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centers list items */
+    align-items: center;
     padding: 20px;
 }
 
@@ -363,12 +363,28 @@ footer .copyright {
     background-color: #333;
     color: white;
     border-radius: 5px;
-    padding: 10px;
     text-align: center;
     transition: all 0.3s ease-in-out;
     margin: 10px auto; 
     padding: 10px;
+    cursor: pointer;
+}
 
+.games-search-list li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 5px; /* Keeps the rounded corners */
+}
+
+.games-search-list li .list-content {
+    display: flex;
+    flex-direction: column;
+    text-align: left; /* Aligns text to the left */
 }
 
 .games-search-list li:hover {
