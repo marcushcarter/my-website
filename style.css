@@ -453,10 +453,7 @@ footer .copyright {
     background: linear-gradient(90deg, var(--glow-color), wheat);
     color: black;
     font-weight: bold;
-}
-
-
-.login-continue {
+    
     color: white;
 }
 
