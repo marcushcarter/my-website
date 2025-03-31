@@ -9,15 +9,20 @@
 </head>
 <body>
     <custom-navbar></custom-navbar>
-    <custom-searchbar></custom-searchbar>
 
-    
-    <h1 class="neon">Login</h1>
-    <input type="text">
-    <input type="password">
-    <button>Continue</button>
-    <a>Forgot Password</a>
-    <a>Signup</a>
+    <div class="login-screen">
+        <h1 class="neon">Login</h1>
+        <div class="login-input">
+            <input type="text" placeholder="Username" oninput="filterItems()">
+        </div>
+        <div class="login-input">
+            <input type="password" placeholder="Password" oninput="filterItems()">
+        </div>
+
+        <div><a href="#" class="login-continue">Login</a></div>
+        <a class="login-link" href="">Forgot Password</a>
+        <a class="login-link" href="">Signup</a>
+    </div>
 
     <script src="script.js"></script>
 </body>
