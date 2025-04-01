@@ -79,3 +79,27 @@ function filterItems() {
         }
     });
 }
+
+// IMAGE CAROUSEL CONTROLLS
+
+    let images = document.querySelectorAll('.carousel img');
+    let index = 2;
+    function updateImages() {
+        images.forEach((img, i) => {
+            img.className = 'hidden';
+            if (i === (index - 2 + images.length) % images.length) img.className = 'hidden';
+            if (i === (index - 1 + images.length) % images.length) img.className = 'small-left';
+            if (i === index) img.className = 'main';
+            if (i === (index + 1) % images.length) img.className = 'small-right';
+            if (i === (index + 2) % images.length) img.className = 'hidden';
+        });
+    }
+    function nextImage() {
+        index = (index + 1) % images.length;
+        updateImages();
+    }
+    function prevImage() {
+        index = (index - 1 + images.length) % images.length;
+        updateImages();
+    }
+    updateImages();
