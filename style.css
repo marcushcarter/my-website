@@ -395,76 +395,129 @@ footer .copyright {
 
 /*LOGIN PAGE*/
 
-.carousel-container {
+.login-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 100px);
+    width: 100vw;
+}
+
+.login-screen div {
+    display: block;
+    padding: 10px;
+    text-align: center;
+}
+
+.login-input input {
+    border: 2px white solid;
+    border-radius: 5em;
+    width: 250px;
+    height: 25px;
+    padding: 8px;
+    align-items: center;
+    align-self: center;
+    align-content: center;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+    font-size: 15px;
+    
+    background: #333;
+    color: white;
+}
+
+.login-input input:focus {
+    box-shadow: 0 0 10px var(--glow-color),
+        0 0 20px var(--glow-spread-color);
+    color: var(--glow-color);
+    animation: box-shimmer-select 1.5s infinite alternate;
+}
+
+.login-continue {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+    border-radius: 5em;
+    width: 250px;
+    height: 30px;
+    padding: 8px;
+    
+    outline: none;
+    transition: all 0.3s ease-in-out;
+    font-size: 15px;
+    text-decoration: none;
+    
+    background: linear-gradient(90deg, var(--glow-color), wheat);
+    color: black;
+    font-weight: bold;
+    
+    color: white;
+}
+
+.login-link {
+    color: white;
+    padding: 5px;
+}
+
+/*WEBSITES* IMAGE CAROUSEL*/
+
+body {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    /* background-color: #222; */
+    background-color: #222;
     overflow: hidden;
 }
 .carousel {
     position: relative;
-    width: 80vw;
-    height: 0vh;
+    width: 60vw;
+    height: 50vh;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .carousel img {
     position: absolute;
-    transition: transform 0.75s ease, opacity 0.75s ease;
-    opacity: 0;
+    width: 50%;
+    transition: transform 0.5s ease, opacity 0.5s ease;
 }
-
 .carousel img.hidden {
-    display: none;
+    opacity: 0;
+    transform: scale(0.5) translateX(100%);
+}
+.carousel img.small-left, .carousel img.small-right {
+    width: 30%;
+    opacity: 0.6;
+    transform: scale(0.8);
 }
 .carousel img.small-left {
-    width: 40%;
-    opacity: 0.7;
-    transform: translateX(-80%) scale(0.8);
+    transform: translateX(-50%) scale(0.8);
 }
 .carousel img.small-right {
-    width: 40%;
-    opacity: 0.7;
-    transform: translateX(80%) scale(0.8);
+    transform: translateX(50%) scale(0.8);
 }
 .carousel img.main {
-    width: 60%;
     z-index: 2;
-    opacity: 1;
     transform: scale(1);
 }
-
-.arrow-left {
+.arrow {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     font-size: 2rem;
-    background: transparent;
+    background: rgba(255, 255, 255, 0.5);
     border: none;
     cursor: pointer;
-    /* padding: 10px; */
+    padding: 10px;
     z-index: 3;
-    border-radius: 5em;
-    color: white;
-    text-shadow: 0 0 10px white;
+}
+.left {
     left: -50px;
 }
-
-.arrow-right {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 2rem;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    border-radius: 5em;
-    color: white;
-    /* padding: 10px; */
-    z-index: 3;
-    text-shadow: 0 0 10px white;
+.right {
     right: -50px;
 }
