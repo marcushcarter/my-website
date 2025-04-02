@@ -463,3 +463,26 @@ footer .copyright {
 }
 
 /*WEBSITES* IMAGE CAROUSEL*/
+
+
+/*SURVEY IFRAME*/
+
+.survey {
+    display: block;
+    margin: 20px;
+    width: calc(100% - 40px);
+    text-shadow: 0 0 10px var(--glow-color),
+                 0 0 20px var(--glow-spread-color);
+    color: var(--glow-color);
+    animation: text-shimmer 1.5s infinite alternate;
+    transition: all 0.2s ease-in-out;
+    
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.survey[src] {
+    min-height: 600px;
+    border: none;
+    min-height: 500px;
+}

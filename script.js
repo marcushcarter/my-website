@@ -8,14 +8,14 @@ class Navbar extends HTMLElement {
                     <div class="menu"><i class="fa-solid fa-bars"></i></div>
                     <div class="dropdown">
                         <a href="index.html">Home</a>
-                        <a href="engine-download.html">Download Ballistic Engine</a>
-                        <a href="store.html">Store</a>
+                        <a href="search.html">Search</a>
                         <a href="websites.html">Websites</a>
-                        <a href=""></a>
+                        <a href="about.html">About</a>
+                        <a href="contribute.html">Contribute</a>
                     </div>
                 </div>
                 <a href="index.html" class="website-name">Ballistic Studios</a>
-                <a href="login.html" class="login-btn">Login</a>
+                <a href="websites.html" class="login-btn">Websites</a>
             </nav>
         `;
     }
@@ -33,10 +33,10 @@ class Footer extends HTMLElement {
                 </div>
                 <div class="extra-links">
                     <a href="index.html">Home</a>
-                    <a href="store.html">Store</a>
-                    <a>About</a>
+                    <a >Store</a>
+                    <a href="about.html">About</a>
                     <a href="mailto:marcoose408@gmail.com" target=_self>Contact us</a>
-                    <a>Contribute</a>
+                    <a href="contribute.html">Contribute</a>
                     <a>Privacy Policy</a>
                 </div>
                 <a class="copyright">Ballistic Studios © 2024</a>
