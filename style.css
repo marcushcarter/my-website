@@ -7,15 +7,13 @@ body, html {
     background-color: rgb(15, 15, 15);
     color: white;
 
-    
-
     --glow-color: rgb(217, 176, 255);
     --glow-spread-color: rgba(191, 123, 255, 0.781);
     --enhanced-glow-color: rgb(231, 206, 255);
     --btn-color: rgb(100, 61, 136);
 }
 
-.neon {
+.neon-title {
     text-shadow: 0 0 10px var(--glow-color),
                  0 0 20px var(--glow-spread-color);
     color: var(--glow-color);
@@ -465,7 +463,7 @@ footer .copyright {
 /*WEBSITES* IMAGE CAROUSEL*/
 
 
-/*SURVEY IFRAME*/
+/*SURVEY IFRAME AND TEXT*/
 
 .survey {
     display: block;
@@ -485,4 +483,20 @@ footer .copyright {
     min-height: 600px;
     border: none;
     min-height: 500px;
+}
+
+/*ABOUT US TEXT*/
+
+.about-us {
+    display: block;
+    margin: 20px;
+    width: calc(100% - 40px);
+    text-shadow: 0 0 10px var(--glow-color),
+                 0 0 20px var(--glow-spread-color);
+    color: var(--glow-color);
+    animation: text-shimmer 1.5s infinite alternate;
+    transition: all 0.2s ease-in-out;
+    
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
