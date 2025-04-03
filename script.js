@@ -7,7 +7,7 @@ class Navbar extends HTMLElement {
                 <div class="menu-container">
                     <div class="menu"><i class="fa-solid fa-bars"></i></div>
                     <div class="dropdown">
-                        <a href="search.html">Search</a>
+                        <a href="search.html"><i class="fa-solid fa-magnifying-glass" style="font-size: 18px;"></i></a>
                         <a href="index.html">Home</a>
                         <a href="websites.html">Websites</a>
                         <a href="about.html">About</a>

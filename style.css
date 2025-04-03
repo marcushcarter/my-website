@@ -13,11 +13,7 @@ body, html {
     --btn-color: rgb(100, 61, 136);
 }
 
-.neon-title {
-    text-shadow: 0 0 10px var(--glow-color),
-                 0 0 20px var(--glow-spread-color);
-    color: var(--glow-color);
-    animation: text-shimmer 1.5s infinite alternate;
+.title {
     text-align: center;
 }
 
@@ -31,8 +27,6 @@ body, html {
 .margined {
     display: block;
     margin: 20px;
-    animation: text-shimmer 1.5s infinite alternate;
-    transition: all 0.2s ease-in-out;
     word-wrap: break-word;
     overflow-wrap: break-word;
 }
@@ -500,4 +494,33 @@ footer .copyright {
     min-height: 500px;
 }
 
-/*ABOUT US TEXT*/
+/*ABOUT US IMAGE CONTAINERS*/
+
+.image-container {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+}
+
+.image-container figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+}
+
+.image-container img {
+    width: 250px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.image-container figcaption {
+    margin-top: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}
