@@ -79,6 +79,3 @@ function filterItems() {
         }
     });
 }
-
-// IMAGE CAROUSEL CONTROLLS
-

@@ -51,6 +51,11 @@ body, html {
     100% {box-shadow: 0 0 15px var(--enhanced-glow-color), 0 0 30px var(--glow-spread-color);}
 }
 
+@keyframes scroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-600%); }
+}
+
 /*HEADER NAVIAGTION BAR (ALL)*/
 
 .nav-bar {
@@ -523,4 +528,22 @@ footer .copyright {
     font-size: 16px;
     font-weight: bold;
     text-align: center;
+}
+
+/*WESITES IMAGE SCROLLER*/
+
+.carousel-container {
+    width: 80%;
+    max-width: 800px;
+    margin: auto;
+    overflow: hidden;
+}
+.carousel-images {
+    display: flex;
+    animation: scroll 60s linear infinite;
+}
+.carousel-images img {
+    height: 250px;
+    object-fit: cover;
+    margin-right: 10px;
 }
