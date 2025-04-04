@@ -12,7 +12,6 @@ class Navbar extends HTMLElement {
                         <a href="websites.html">Websites</a>
                         <a href="about.html">About</a>
                         <a href="contribute.html">Contribute</a>
-                        <a href="engine-download.html">Download Ballistic Engine</a>
                     </div>
                 </div>
                 <a href="index.html" class="website-name">Ballistic Studios</a>

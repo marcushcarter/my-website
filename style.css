@@ -31,6 +31,21 @@ body, html {
     overflow-wrap: break-word;
 }
 
+.margined img {
+    width: calc(100% - 20px);
+    margin: 20px;
+    overflow: hidden;
+    object-fit: cover;
+    
+}
+
+.page-break {
+    height: 1px;
+    width: calc(100% - 10px);
+    margin: 5px auto;
+    background: white;
+}
+
 @keyframes text-shimmer {
     0%   {text-shadow: 0 0 10px var(--glow-color), 0 0 20px var(--glow-spread-color);}
     100% {text-shadow: 0 0 20px var(--enhanced-glow-color), 0 0 40px var(--glow-spread-color);}
@@ -55,6 +70,8 @@ body, html {
     0%   { transform: translateX(0); }
     100% { transform: translateX(-600%); }
 }
+
+
 
 /*HEADER NAVIAGTION BAR (ALL)*/
 
@@ -127,7 +144,7 @@ body, html {
     font-size: 21px;
 }
 
-.menu-container:hover .dropdown, .dropdown:hover {
+.menu-container:active .dropdown, .dropdown:active, .menu-container:hover .dropdown, .dropdown:hover {
     display: block;
 }
 
