@@ -95,3 +95,9 @@ document.addEventListener('click', function(event) {
         dropdown.style.display = 'none';
     }
 });
+
+// EAMIL FORM
+
+function submitForm() {
+    document.getElementById("emailForm").submit();
+}

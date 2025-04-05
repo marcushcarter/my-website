@@ -723,3 +723,111 @@ footer .copyright {
     color: #666;
     text-decoration: none;
 }
+
+/*HOME PAGE EMAIL SIGNUP*/
+
+.email-signup {
+    position: relative;
+    background-color: #333;
+    width: 400px;
+    display: flex;
+    left: calc(50% - 200px);
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    padding-bottom: 50px;
+    border-radius: 5px;
+    background: #222;
+}
+
+.email-signup input, select {
+    width: 320px;
+    padding: 10px;
+    background: #333;
+    color: #666;
+}
+
+.email-signup input:focus {
+    box-shadow: 0 0 10px var(--glow-color),
+        0 0 20px var(--glow-spread-color);
+    color: var(--glow-color);
+    animation: box-shimmer-select 1.5s infinite alternate;
+}
+
+.email-signup select:focus {
+    box-shadow: 0 0 10px var(--glow-color),
+        0 0 20px var(--glow-spread-color);
+    color: var(--glow-color);
+    animation: box-shimmer-select 1.5s infinite alternate;
+    
+    background: #333;
+    color: #666;
+}
+
+.email-signup select {
+    width: 345px;
+    padding: 10px;
+    /* background: #333;
+    color: #666; */
+}
+
+.email-signup button {
+    width: 345px;
+    padding: 10px;
+}
+
+.email-signup label {
+    margin: 10px 0; /* Space above and below label */
+    text-align: left;
+    display: block;
+    font-weight: bold; /* Optional: to make the label bold */
+}
+
+.email-signup button {
+    background: #333;
+    color: #666;
+    transition: all 0.3s ease-in-out;
+
+    box-shadow: 0 0 10px var(--glow-color),
+        0 0 20px var(--glow-spread-color);
+    color: var(--glow-color);
+    animation: box-shimmer-select 1.5s infinite alternate;
+}
+
+.email-signup button:hover {
+    box-shadow: 0 0 10px var(--glow-color),
+                 0 0 20px var(--glow-spread-color);
+    background-color: var(--glow-color);
+    color: #333;
+    animation: box-shimmer 1.5s infinite alternate;
+
+}
+
+.email-signup-btn {
+    background: #333;
+    color: #666;
+    text-align: center;
+    text-decoration: none;
+    width: 100px;
+    padding: 10px;
+    border-radius: 5em;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+
+    box-shadow: 0 0 10px var(--glow-color),
+        0 0 20px var(--glow-spread-color);
+    color: var(--glow-color);
+    animation: box-shimmer-select 1.5s infinite alternate;
+}
+
+.email-signup-btn:hover {
+    box-shadow: 0 0 10px var(--glow-color),
+                 0 0 20px var(--glow-spread-color);
+    background-color: var(--glow-color);
+    color: #333;
+    animation: box-shimmer 1.5s infinite alternate;
+}
