@@ -71,8 +71,6 @@ body, html {
     100% { transform: translateX(-600%); }
 }
 
-
-
 /*HEADER NAVIAGTION BAR (ALL)*/
 
 .nav-bar {
@@ -135,6 +133,7 @@ body, html {
     transition: all 1s ease-in-out;
     color: #444;
     font-size: 20px;
+    cursor: pointer;
 }
 
 .menu-container:hover i {
@@ -563,4 +562,17 @@ footer .copyright {
     height: 250px;
     object-fit: cover;
     margin-right: 10px;
+}
+
+/*HOME SCREEN*/
+
+a.featured {
+    position: absolute;
+    top: 20px;
+    left: calc(100%/2);
+    z-index: 100;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
 }

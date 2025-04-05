@@ -5,7 +5,7 @@ class Navbar extends HTMLElement {
         this.innerHTML = `
             <nav class="nav-bar">
                 <div class="menu-container">
-                    <div class="menu"><i class="fa-solid fa-bars"></i></div>
+                    <div class="menu"><i class="fa-solid fa-bars icon"></i></div>
                     <div class="dropdown">
                         <a href="search.html"><i class="fa-solid fa-magnifying-glass" style="font-size: 18px;"></i></a>
                         <a href="index.html">Home</a>
@@ -79,3 +79,32 @@ function filterItems() {
         }
     });
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Get the menu icon and dropdown
+const menuIcon = document.querySelector('.menu');
+const dropdown = document.querySelector('.dropdown');
+
+// Toggle dropdown visibility when the icon is clicked
+menuIcon.addEventListener('click', function(event) {
+    event.stopPropagation(); // Prevent click event from propagating
+    dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+});
+
+// Close the dropdown if clicked anywhere else on the page
+document.addEventListener('click', function(event) {
+    if (!menuIcon.contains(event.target)) {
+        dropdown.style.display = 'none';
+    }
+});
