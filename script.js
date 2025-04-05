@@ -37,7 +37,7 @@ class Footer extends HTMLElement {
                     <a href="about.html">About</a>
                     <a href="mailto:marcoose408@gmail.com" target=_self>Contact us</a>
                     <a href="contribute.html">Contribute</a>
-                    <a>Privacy Policy</a>
+                    <a href="privacy-policy.html">Privacy Policy</a>
                 </div>
                 <a class="copyright">Ballistic Studios © 2024</a>
             </footer>
