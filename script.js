@@ -80,29 +80,16 @@ function filterItems() {
     });
 }
 
+// MENU BUTTON BEING CLICKABLE ON MOBILE PHONES
 
-
-
-
-
-
-
-
-
-
-
-
-// Get the menu icon and dropdown
 const menuIcon = document.querySelector('.menu');
 const dropdown = document.querySelector('.dropdown');
 
-// Toggle dropdown visibility when the icon is clicked
 menuIcon.addEventListener('click', function(event) {
     event.stopPropagation(); // Prevent click event from propagating
     dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
 });
 
-// Close the dropdown if clicked anywhere else on the page
 document.addEventListener('click', function(event) {
     if (!menuIcon.contains(event.target)) {
         dropdown.style.display = 'none';
