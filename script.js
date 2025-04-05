@@ -98,6 +98,8 @@ document.addEventListener('click', function(event) {
 
 // EAMIL FORM
 
-function submitForm() {
-    document.getElementById("emailForm").submit();
+function showThanks() {
+    document.querySelector("form").style.display = "none";
+    document.getElementById("thank-you").style.display = "block";
+    return true;
 }

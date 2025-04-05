@@ -92,27 +92,31 @@
 
     <br><div class="page-break"></div><br>
 
-
-    <div class="email-signup">
+    <form action="https://formspree.io/f/xzzekpgl" method="POST" class="email-signup">
         <h2 class="title neon">Get The Latest News From Ballistic Studios</h2>
-        <a class="title">Enter your email address, select your country or region, and submit. You can opt out at any time. We promise not to spam you.</a><br>
-        
+        <p class="title">Enter your email address, select your country or region, and submit. You can opt out at any time. We promise not to spam you.</p>
+      
         <label for="email">Email Address</label>
-        <input type="email" id="email" placeholder="Enter your email"><br>
-
+        <input type="email" name="email" id="email" placeholder="Enter your email" required><br>
+      
         <label for="country">Country/Region</label>
-        <select id="country">
-            <option value="us">United States</option>
-            <option value="ca">Canada</option>
-            <option value="uk">United Kingdom</option>
-        </select>
-        
-        <br><div class="page-break neon"></div><br>
-        
-        <a>By opting in, you agree to receive communications from Ballistic Studios. You can also unsubscribe.</a>
-        <p>I will receive information, tips, and offers from Ballistic Studios. <a href="privacy-policy.html" class="neon">Privacy Statement</a>.</p><br>
-        <a href="#" class="email-signup-btn" onclick="submitForm()">Submit</a>
-    </div>
+        <select name="country" id="country" required>
+          <option value="">Select</option>
+          <option value="us">United States</option>
+          <option value="ca">Canada</option>
+          <option value="uk">United Kingdom</option>
+        </select><br>
+      
+        <p>By opting in, you agree to receive communications from Ballistic Studios. You can also unsubscribe.</p>
+        <p>I will receive information, tips, and offers from Ballistic Studios. <a href="privacy-policy.html" class="neon">Privacy Statement</a>.</p>
+      
+        <button type="submit" class="submit-btn">Submit</button>
+      </form>
+
+      <p id="thank-you" style="display:none; color:limegreen;">Thanks for subscribing!</p>
+
+      
+      
     
     
     
