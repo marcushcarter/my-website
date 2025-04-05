@@ -667,12 +667,12 @@ footer .copyright {
     flex-direction: column;
     align-items: flex-start;
     margin: 10px;
-    width: 210px;
+    width: 200px;
 }
 
 .game-feature img {
     width: 100%;
-    height: 210px;
+    height: 200px;
     object-fit: cover;
     border-radius: 2px;
 }
