@@ -99,7 +99,7 @@ body, html {
                  0 0 20px var(--glow-spread-color);
     color: var(--glow-color);
     text-decoration: none;
-    font-size: 25px;
+    font-size: 23px;
     font-weight: bold;
     text-align: center;
 
@@ -112,7 +112,7 @@ body, html {
 }
 
 .website-name:hover {
-    font-size: 26px;
+    font-size: 24px;
 }
 
 /*HEADER FEATURED IMAGE*/
@@ -665,7 +665,7 @@ footer .copyright {
 .game-feature figure {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     margin: 10px;
     width: 210px;
 }
