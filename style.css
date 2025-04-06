@@ -409,7 +409,7 @@ footer .copyright {
     display: inline-block;
     border-radius: 5em;
     width: calc(100% - 4px);
-    max-width: 450px;
+    max-width: 400px;
     padding: 8px;
     align-items: center ;
     align-self: center;
