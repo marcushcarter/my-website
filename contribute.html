@@ -14,11 +14,85 @@
     <custom-navbar></custom-navbar>
 
     <h1 class="neon title">Contribute</h1>
-    <a class="margined">We appreciate your contribution to the growth of Ballistic Studios! Your feedback helps us understand our audience and improve our services. Please take a moment to fill out the survey and share your thoughts.</a>
-    <iframe class="survey-iframe" src="https://docs.google.com/forms/d/e/1FAIpQLSfjtR1wTSHuTQUYguHBg4fU9bWde-fAbw1B5J0nd7ExHdmL2g/viewform?usp=header"></iframe>
-    <a class="margined neon" href="https://docs.google.com/forms/d/e/1FAIpQLSfjtR1wTSHuTQUYguHBg4fU9bWde-fAbw1B5J0nd7ExHdmL2g/viewform?usp=header">...or navigate to the survey here</a>
+    <a class="margined">We appreciate your contribution to the growth of Ballistic Studios! Your feedback helps us understand our audience and improve our services. Please take a moment to fill out the survey and share your thoughts.
+                        This data is used to help us target specific areas of the market and help us to grow a following and our entire buisness.
+    </a>
 
+    <br><form action="https://formspree.io/f/mpwpoqnv" method="POST" class="form">
+        <h2 class="title neon">Demographic Survey</h2>
 
+        <label for="email">Email Address</label>
+        <input type="email" name="email" id="email" placeholder="Enter your email" required><br>
+
+        <label for="age">What is your age group?</label>
+        <select name="age" id="age" required>
+            <option value="">Select</option>
+            <option>Under 18</option>
+            <option>18-24</option>
+            <option>25-34</option>
+            <option>35-44</option>
+            <option>45-54</option>
+            <option>55+</option>
+        </select><br>
+
+        <label for="gender">What is your gender?</label>
+        <select name="gender" id="gender" required>
+            <option value="">Select</option>
+            <option>Male</option>
+            <option>Female</option>
+            <option>Prefer not to say</option>
+            <option>Other</option>
+        </select><br>
+
+        <label for="social">Which social platform do you use the most often?</label>
+        <select name="social" id="social" required>
+            <option value="">Select</option>
+            <option>YouTube</option>
+            <option>Instagram</option>
+            <option>TikTok</option>
+            <option>Twitter/X</option>
+            <option>Discord</option>
+            <option>Reddit</option>
+            <option>Facebook</option>
+        </select><br>
+
+        <label for="referral">How did you learn about us?</label>
+        <select name="referral" id="referral" required>
+            <option value="">Select</option>
+            <option>TikTok</option>
+            <option>Instagram</option>
+            <option>YouTube</option>
+            <option>Word of mouth</option>
+            <option>Search engine (Google, Bing etc.)</option>
+        </select><br>
+
+        <label for="languages">Which programming language interests you the most?</label>
+        <select name="languages" id="languages" required>
+            <option value="">Select</option>
+            <option>C/C++</option>
+            <option>Python</option>
+            <option>HTML/CSS</option>
+            <option>Godot</option>
+            <option>Unity/C#</option>
+            <option>JavaScript</option>
+        </select><br>
+
+        <label for="projects">What type of project interest you the most?</label>
+        <select name="projects" id="projects" required>
+            <option value="">Select</option>
+            <option>Game development</option>
+            <option>Web development</option>
+            <option>Mobile app development</option>
+            <option>AI/Machine Learning</option>
+            <option>Cybersecurity</option>
+        </select><br>
+
+        <label for="comments">Do you have any other questions / comments / concerns?</label>
+        <textarea name="comments" id="comments" class="long-answer" placeholder="Write your thoughts here..."></textarea><br>
+
+        <button type="submit">Submit</button>
+    </form><br>
+    
     <custom-footer></custom-footer>
     <script src="script.js"></script>
 </body>

@@ -105,7 +105,7 @@ body, html {
 
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 165px;
     transform: translate(-50%, -50%);
     animation: text-shimmer 1.5s infinite alternate;
     transition: all 0.2s ease-in-out;
@@ -240,14 +240,21 @@ body, html {
     position: relative;
     outline: none;
     transition: all 0.3s ease-in-out;
+    font-size: 15px;
+
+    box-shadow: 0 0 10px var(--glow-color),
+    0 0 20px var(--glow-spread-color);
+color: var(--glow-color);
+animation: box-shimmer-select 1.5s infinite alternate;
+padding: 8px 21px;
 }
 
 .login-btn:hover {
     box-shadow: 0 0 10px var(--glow-color),
                  0 0 20px var(--glow-spread-color);
-    color: var(--glow-color);
-    animation: box-shimmer-select 1.5s infinite alternate;
-    padding: 8px 21px;
+    background-color: var(--glow-color);
+    color: #333;
+    animation: box-shimmer 1.5s infinite alternate;
 }
 
 .login-btn:active {
@@ -853,56 +860,4 @@ footer .copyright {
     background-color: var(--glow-color);
     color: #333;
     animation: box-shimmer 1.5s infinite alternate;
-}
-
-/*WEBSITE REQUEST FORM*/
-
-.website-request {
-    position: relative;
-    background-color: #333;
-    width: 400px;
-    display: flex;
-    left: calc(50% - 200px);
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 20px;
-    box-sizing: border-box;
-    overflow-y: auto;
-    padding-bottom: 50px;
-    border-radius: 5px;
-    background: #222;
-}
-
-.website-request .description {
-    width: 320px;
-    height: 300px;
-    text-align: center;
-    padding: 10px;
-    background: #333;
-    color: #666;
-}
-
-.website-request .description:focus {
-    box-shadow: 0 0 10px var(--glow-color),
-        0 0 20px var(--glow-spread-color);
-    color: var(--glow-color);
-    animation: box-shimmer-select 1.5s infinite alternate;
-}
-
-.website-request input:focus {
-    box-shadow: 0 0 10px var(--glow-color),
-        0 0 20px var(--glow-spread-color);
-    color: var(--glow-color);
-    animation: box-shimmer-select 1.5s infinite alternate;
-}
-
-.website-request select:focus {
-    box-shadow: 0 0 10px var(--glow-color),
-        0 0 20px var(--glow-spread-color);
-    color: var(--glow-color);
-    animation: box-shimmer-select 1.5s infinite alternate;
-    
-    background: #333;
-    color: #666;
 }

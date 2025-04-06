@@ -33,11 +33,11 @@ class Footer extends HTMLElement {
                 </div>
                 <div class="extra-links">
                     <a href="index.html">Home</a>
-                    <a >Store</a>
+                    <a>Store</a>
                     <a href="about.html">About</a>
-                    <a href="mailto:marcoose408@gmail.com" target=_self>Contact us</a>
+                    <a href="contact-us.html" target=_self>Contact us</a>
                     <a href="contribute.html">Contribute</a>
-                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a>Privacy Policy</a>
                 </div>
                 <a class="copyright">Ballistic Studios © 2024</a>
             </footer>
@@ -102,4 +102,14 @@ function showThanks() {
     document.querySelector("form").style.display = "none";
     document.getElementById("thank-you").style.display = "block";
     return true;
+}
+
+// SCROLL TO FUNCTION
+
+function scrollToXY(xCoord, yCoord) {
+    window.scrollTo({
+      left: xCoord,
+      top: yCoord,
+      behavior: 'smooth'
+    });
 }
