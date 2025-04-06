@@ -10,7 +10,7 @@ class Navbar extends HTMLElement {
                         <a href="search.html"><i class="fa-solid fa-magnifying-glass" style="font-size: 18px;"></i></a>
                         <a href="index.html">Home</a>
                         <a href="websites.html">Websites</a>
-                        <a href="about.html">About</a>
+                        <a href="about.html">About Us</a>
                         <a href="contribute.html">Contribute</a>
                     </div>
                 </div>
@@ -34,7 +34,7 @@ class Footer extends HTMLElement {
                 <div class="extra-links">
                     <a href="index.html">Home</a>
                     <a>Store</a>
-                    <a href="about.html">About</a>
+                    <a href="about.html">About Us</a>
                     <a href="contact-us.html" target=_self>Contact us</a>
                     <a href="contribute.html">Contribute</a>
                     <a>Privacy Policy</a>
