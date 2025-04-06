@@ -10,8 +10,9 @@ class Navbar extends HTMLElement {
                         <a href="search.html"><i class="fa-solid fa-magnifying-glass" style="font-size: 18px;"></i></a>
                         <a href="index.html">Home</a>
                         <a href="websites.html">Websites</a>
-                        <a href="about.html">About Us</a>
                         <a href="contribute.html">Contribute</a>
+                        <a href="about.html">About Us</a>
+                        <a href="contact-us.html">Contact Us</a>
                     </div>
                 </div>
                 <a href="index.html" class="website-name">Ballistic Studios</a>
