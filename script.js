@@ -32,9 +32,7 @@ class Footer extends HTMLElement {
                     <a href="https://github.com/marcushcarter" target="_blank"><i class="fa-brands fa-github"></i></a> 
                 </div>
                 <div class="extra-links">
-                    <a href="index.html">Home</a>
-                    <a>Store</a>
-                    <a href="about.html">About Us</a>
+                    <a href="about.html">About</a>
                     <a href="contact-us.html" target=_self>Contact us</a>
                     <a href="contribute.html">Contribute</a>
                     <a>Privacy Policy</a>
