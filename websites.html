@@ -37,11 +37,11 @@
     <h1 class="neon title">Pricing</h1>
 
     <table class="margined" border="1" style="border-color: white; width: calc(100% - 40px); margin: 20px; border-collapse: collapse;">
-        <tr>
-            <th class="neon" style="padding: 10px;">PLAN</th>
-            <th class="neon" style="padding: 10px;">DESCRIPTION</th>
-            <th class="neon" style="padding: 10px;">PRICE</th>
-            <th class="neon" style="padding: 10px;">TIME</th>
+        <tr class="neon">
+            <th style="padding: 10px;">PLAN</th>
+            <th style="padding: 10px;">DESCRIPTION</th>
+            <th style="padding: 10px;">PRICE</th>
+            <th style="padding: 10px;">TIME</th>
         </tr>
         <tr>
             <td style="padding: 10px;">Basic</td>
@@ -75,7 +75,28 @@
         </tr>
     </table>
     <p class="neon margined">*Price and Time can fluctuate based on website complexity.</p>
-    
+
+    <br>
+    <form action="https://formspree.io/f/manelyqb" method="POST" class="form">
+        <h2 class="title neon">Get A Quote</h2>
+        <a class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis minus eos sunt ratione officia iste quas unde reiciendis possimus, blanditiis in ad magni obcaecati. Voluptates velit deleniti blanditiis obcaecati atque.</a>
+      
+        <label for="email">Email Address</label>
+        <input type="email" name="email" id="email" placeholder="Enter your email" required><br>
+
+        <label for="pages">Estimated Number of Pages</label>
+        <input type="number" name="pages" id="pages" placeholder="Estimated number of pages" required><br>
+
+        <label for="files">Photos</label>
+        <input type="file" multiple><br>
+
+        <label for="description">Description</label>
+        <a class="title">Try to describe as much as you can about your dream website, then we will email you back with a quote and an estimated time period.</a><br>
+        <textarea class="long-answer" name="description" id="description" placeholder="Describe your website here" required></textarea><br>
+
+      
+        <button type="submit">Submit</button>
+    </form><br>
 
     <div class="page-break"></div>
 

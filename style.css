@@ -726,7 +726,7 @@ footer .copyright {
 
 /*HOME PAGE EMAIL SIGNUP*/
 
-.email-signup {
+.form {
     position: relative;
     background-color: #333;
     width: 400px;
@@ -743,21 +743,37 @@ footer .copyright {
     background: #222;
 }
 
-.email-signup input, select {
+.form input, select {
     width: 320px;
     padding: 10px;
     background: #333;
     color: #666;
 }
 
-.email-signup input:focus {
+.form textarea {
+    width: 320px;
+    padding: 10px;
+    background: #333;
+    color: #666;
+}
+
+.form .long-answer {
+    width: 320px;
+    height: 300px;
+    padding: 10px;
+    background: #333;
+    color: #666;
+    vertical-align: top;
+}
+
+.form input:focus {
     box-shadow: 0 0 10px var(--glow-color),
         0 0 20px var(--glow-spread-color);
     color: var(--glow-color);
     animation: box-shimmer-select 1.5s infinite alternate;
 }
 
-.email-signup select:focus {
+.form select:focus {
     box-shadow: 0 0 10px var(--glow-color),
         0 0 20px var(--glow-spread-color);
     color: var(--glow-color);
@@ -767,26 +783,33 @@ footer .copyright {
     color: #666;
 }
 
-.email-signup select {
+.form textarea:focus {
+    box-shadow: 0 0 10px var(--glow-color),
+        0 0 20px var(--glow-spread-color);
+    color: var(--glow-color);
+    animation: box-shimmer-select 1.5s infinite alternate;
+}
+
+.form select {
     width: 345px;
     padding: 10px;
     /* background: #333;
     color: #666; */
 }
 
-.email-signup button {
+.form button {
     width: 345px;
     padding: 10px;
 }
 
-.email-signup label {
+.form label {
     margin: 10px 0; /* Space above and below label */
     text-align: left;
     display: block;
     font-weight: bold; /* Optional: to make the label bold */
 }
 
-.email-signup button {
+.form button {
     background: #333;
     color: #666;
     transition: all 0.3s ease-in-out;
@@ -797,7 +820,7 @@ footer .copyright {
     animation: box-shimmer-select 1.5s infinite alternate;
 }
 
-.email-signup button:hover {
+.form button:hover {
     box-shadow: 0 0 10px var(--glow-color),
                  0 0 20px var(--glow-spread-color);
     background-color: var(--glow-color);
@@ -806,7 +829,7 @@ footer .copyright {
 
 }
 
-.email-signup-btn {
+.form-signup-btn {
     background: #333;
     color: #666;
     text-align: center;
@@ -824,10 +847,62 @@ footer .copyright {
     animation: box-shimmer-select 1.5s infinite alternate;
 }
 
-.email-signup-btn:hover {
+.form-signup-btn:hover {
     box-shadow: 0 0 10px var(--glow-color),
                  0 0 20px var(--glow-spread-color);
     background-color: var(--glow-color);
     color: #333;
     animation: box-shimmer 1.5s infinite alternate;
+}
+
+/*WEBSITE REQUEST FORM*/
+
+.website-request {
+    position: relative;
+    background-color: #333;
+    width: 400px;
+    display: flex;
+    left: calc(50% - 200px);
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    padding-bottom: 50px;
+    border-radius: 5px;
+    background: #222;
+}
+
+.website-request .description {
+    width: 320px;
+    height: 300px;
+    text-align: center;
+    padding: 10px;
+    background: #333;
+    color: #666;
+}
+
+.website-request .description:focus {
+    box-shadow: 0 0 10px var(--glow-color),
+        0 0 20px var(--glow-spread-color);
+    color: var(--glow-color);
+    animation: box-shimmer-select 1.5s infinite alternate;
+}
+
+.website-request input:focus {
+    box-shadow: 0 0 10px var(--glow-color),
+        0 0 20px var(--glow-spread-color);
+    color: var(--glow-color);
+    animation: box-shimmer-select 1.5s infinite alternate;
+}
+
+.website-request select:focus {
+    box-shadow: 0 0 10px var(--glow-color),
+        0 0 20px var(--glow-spread-color);
+    color: var(--glow-color);
+    animation: box-shimmer-select 1.5s infinite alternate;
+    
+    background: #333;
+    color: #666;
 }
