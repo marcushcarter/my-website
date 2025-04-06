@@ -402,14 +402,14 @@ footer .copyright {
     backdrop-filter: blur(20px);
 
     position: sticky;
-    top: 50px;
+    top: 49px;
 }
 
 #search-bar {
     display: inline-block;
     border-radius: 5em;
     width: calc(100% - 4px);
-    max-width: 500px;
+    max-width: 450px;
     padding: 8px;
     align-items: center ;
     align-self: center;
@@ -731,7 +731,7 @@ footer .copyright {
     text-decoration: none;
 }
 
-/*HOME PAGE EMAIL SIGNUP*/
+/*FORMS ON ALL PAGES*/
 
 .form {
     position: relative;
@@ -754,7 +754,7 @@ footer .copyright {
     width: 320px;
     padding: 10px;
     background: #333;
-    color: #666;
+    color: #fff;
 }
 
 .form textarea {
@@ -769,7 +769,7 @@ footer .copyright {
     height: 300px;
     padding: 10px;
     background: #333;
-    color: #666;
+    color: #fff;
     vertical-align: top;
 }
 
@@ -785,9 +785,7 @@ footer .copyright {
         0 0 20px var(--glow-spread-color);
     color: var(--glow-color);
     animation: box-shimmer-select 1.5s infinite alternate;
-    
     background: #333;
-    color: #666;
 }
 
 .form textarea:focus {
@@ -800,8 +798,6 @@ footer .copyright {
 .form select {
     width: 345px;
     padding: 10px;
-    /* background: #333;
-    color: #666; */
 }
 
 .form button {
@@ -810,10 +806,10 @@ footer .copyright {
 }
 
 .form label {
-    margin: 10px 0; /* Space above and below label */
+    margin: 10px 0;
     text-align: left;
     display: block;
-    font-weight: bold; /* Optional: to make the label bold */
+    font-weight: bold;
 }
 
 .form button {
