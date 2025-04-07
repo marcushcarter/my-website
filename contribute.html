@@ -3,99 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Contribute to Ballistic Studios by sharing your feedback in our demographic survey. Your input helps us grow and improve.">
+    <meta name="keywords" content="Contribute, feedback, survey, Ballistic Studios, game development, programming education">
+    <meta name="author" content="Ballistic Studios">
+    
+    <meta property="og:title" content="Contribute - Ballistic Studios">
+    <meta property="og:description" content="We value your contribution. Take our survey and help us improve our services and grow our community.">
+    <meta property="og:image" content="resources/logo-full.png">
+    <meta property="og:image:alt" content="Ballistic Studios logo">
+    <meta property="og:url" content="https://ballisticstudios.ca/contribute">
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:title" content="Contribute - Ballistic Studios">
+    <meta name="twitter:description" content="Contribute to Ballistic Studios by providing valuable feedback in our survey.">
+    <meta name="twitter:image" content="resources/logo-full.png">
+    <meta name="twitter:card" content="summary_large_image">
+
+
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style2.css">
     <link rel="stylesheet" href="style3.css">
+
     <script src="https://kit.fontawesome.com/1d0f0d81d5.js" crossorigin="anonymous"></script>
     <link rel="icon" href="resources/favicon.png" type="image/x-icon">
-    <title>Contribute</title>
+    <title>Contribute - Ballistic Studios</title>
 </head>
 <body>
     <custom-navbar></custom-navbar>
 
-    <img src="resources/logo-full.png" class="title" style="width: 150px; padding: 20px;">
+    <header>
+        <img src="resources/logo-full.png" class="title" alt="Ballistic Studios Logo" style="width: 150px; padding: 20px;">    
+        <h1 class="neon title">Contribute</h1>
+        <a class="margined">We appreciate your contribution to the growth of Ballistic Studios! Your feedback helps us 
+            understand our audience and improve our services. Please take a moment to fill out the survey and share your 
+            thoughts. This data is used to help us target specific areas of the market and help us to grow a following and our buisness.</a>
+        <br>
+    </header>
 
-    <h1 class="neon title">Contribute</h1>
-    <a class="margined">We appreciate your contribution to the growth of Ballistic Studios! Your feedback helps us understand our audience and improve our services. Please take a moment to fill out the survey and share your thoughts.
-                        This data is used to help us target specific areas of the market and help us to grow a following and our buisness.
-    </a>
+    <main>
 
-    <br><form action="https://formspree.io/f/mpwpoqnv" method="POST" class="form">
-        <h2 class="title neon">Demographic Survey</h2>
+        <br>
+        
+        <form action="https://formspree.io/f/mpwpoqnv" method="POST" class="form">
+            <h2 class="title neon">Demographic Survey</h2>
 
-        <label for="email">Email Address</label>
-        <input type="email" name="email" id="email" placeholder="Enter your email" required><br>
+            <label for="email">Email Address</label>
+            <input type="email" name="email" id="email" placeholder="Enter your email" required><br>
 
-        <label for="age">What is your age group?</label>
-        <select name="age" id="age" required>
-            <option value="">Select</option>
-            <option>Under 18</option>
-            <option>18-24</option>
-            <option>25-34</option>
-            <option>35-44</option>
-            <option>45-54</option>
-            <option>55+</option>
-        </select><br>
+            <label for="age">What is your age group?</label>
+            <select name="age" id="age" required>
+                <option value="">Select</option>
+                <option>Under 18</option>
+                <option>18-24</option>
+                <option>25-34</option>
+                <option>35-44</option>
+                <option>45-54</option>
+                <option>55+</option>
+            </select><br>
 
-        <label for="gender">What is your gender?</label>
-        <select name="gender" id="gender" required>
-            <option value="">Select</option>
-            <option>Male</option>
-            <option>Female</option>
-            <option>Prefer not to say</option>
-            <option>Other</option>
-        </select><br>
+            <label for="gender">What is your gender?</label>
+            <select name="gender" id="gender" required>
+                <option value="">Select</option>
+                <option>Male</option>
+                <option>Female</option>
+                <option>Prefer not to say</option>
+                <option>Other</option>
+            </select><br>
 
-        <label for="social">Which platform do you use the most?</label>
-        <select name="social" id="social" required>
-            <option value="">Select</option>
-            <option>YouTube</option>
-            <option>Instagram</option>
-            <option>TikTok</option>
-            <option>Twitter/X</option>
-            <option>Discord</option>
-            <option>Reddit</option>
-            <option>Facebook</option>
-            <option>Other</option>
-        </select><br>
+            <label for="social">Which platform do you use the most?</label>
+            <select name="social" id="social" required>
+                <option value="">Select</option>
+                <option>YouTube</option>
+                <option>Instagram</option>
+                <option>TikTok</option>
+                <option>Twitter/X</option>
+                <option>Discord</option>
+                <option>Reddit</option>
+                <option>Facebook</option>
+                <option>Other</option>
+            </select><br>
 
-        <label for="referral">How did you learn about us?</label>
-        <select name="referral" id="referral" required>
-            <option value="">Select</option>
-            <option>TikTok</option>
-            <option>Instagram</option>
-            <option>YouTube</option>
-            <option>Word of mouth</option>
-            <option>Search engine (Google, Bing etc.)</option>
-        </select><br>
+            <label for="referral">How did you learn about us?</label>
+            <select name="referral" id="referral" required>
+                <option value="">Select</option>
+                <option>TikTok</option>
+                <option>Instagram</option>
+                <option>YouTube</option>
+                <option>Word of mouth</option>
+                <option>Search engine (Google, Bing etc.)</option>
+            </select><br>
 
-        <label for="languages">Which language interests you the most?</label>
-        <select name="languages" id="languages" required>
-            <option value="">Select</option>
-            <option>C/C++</option>
-            <option>Python</option>
-            <option>HTML/CSS</option>
-            <option>Godot</option>
-            <option>Unity/C#</option>
-            <option>JavaScript</option>
-            <option>Other</option>
-        </select><br>
+            <label for="languages">Which language interests you the most?</label>
+            <select name="languages" id="languages" required>
+                <option value="">Select</option>
+                <option>C/C++</option>
+                <option>Python</option>
+                <option>HTML/CSS</option>
+                <option>Godot</option>
+                <option>Unity/C#</option>
+                <option>JavaScript</option>
+                <option>Other</option>
+            </select><br>
 
-        <label for="projects">What type of project interest you the most?</label>
-        <select name="projects" id="projects" required>
-            <option value="">Select</option>
-            <option>Game development</option>
-            <option>Web development</option>
-            <option>Mobile app development</option>
-            <option>AI/Machine Learning</option>
-            <option>Cybersecurity</option>
-        </select><br>
+            <label for="projects">What type of project interest you the most?</label>
+            <select name="projects" id="projects" required>
+                <option value="">Select</option>
+                <option>Game development</option>
+                <option>Web development</option>
+                <option>Mobile app development</option>
+                <option>AI/Machine Learning</option>
+                <option>Cybersecurity</option>
+            </select><br>
 
-        <label for="comments">Do you have any other questions / comments?</label>
-        <textarea name="comments" id="comments" class="long-answer" placeholder="Write your thoughts here..."></textarea><br>
+            <label for="comments">Do you have any other questions / comments?</label>
+            <textarea name="comments" id="comments" class="long-answer" placeholder="Write your thoughts here..."></textarea><br>
 
-        <button type="submit">Submit</button>
-    </form><br>
+            <button type="submit">Submit</button>
+        </form><br>         
+    </main>
     
     <custom-footer></custom-footer>
     <script src="script.js"></script>

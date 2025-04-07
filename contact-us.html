@@ -3,9 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Get in touch with Ballistic Studios. Reach out for inquiries, support, or suggestions. We are here to help!">
+    <meta name="keywords" content="Contact, Ballistic Studios, support, inquiries, contact us, game development, programming education">
+    <meta name="author" content="Ballistic Studios">
+    
+    <meta property="og:title" content="Contact Us - Ballistic Studios">
+    <meta property="og:description" content="Reach out to Ballistic Studios for support, inquiries, or to learn more about our services.">
+    <meta property="og:image" content="resources/logo-full.png">
+    <meta property="og:image:alt" content="Ballistic Studios logo">
+    <meta property="og:url" content="https://ballisticstudios.ca/contact-us">
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:title" content="Contact Us - Ballistic Studios">
+    <meta name="twitter:description" content="Contact Ballistic Studios for support or inquiries. We're here to help you!">
+    <meta name="twitter:image" content="resources/logo-full.png">
+    <meta name="twitter:card" content="summary_large_image">
+
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style2.css">
     <link rel="stylesheet" href="style3.css">
+
     <script src="https://kit.fontawesome.com/1d0f0d81d5.js" crossorigin="anonymous"></script>
     <link rel="icon" href="resources/favicon.png" type="image/x-icon">
     <title>Contact Us</title>
@@ -14,18 +32,23 @@
     <custom-navbar></custom-navbar>
 
     <br>
-    <form action="https://formspree.io/f/mjkypgje" method="POST" class="form">
-        <h2 class="title neon">Contact Us</h2>
-      
-        <label for="email">Email Address</label>
-        <input type="email" name="email" id="email" placeholder="Enter your email" required><br>
 
-        <label for="description">Describe your issue</label>
-        <textarea class="long-answer" name="" id="description" placeholder="Describe your issue" required></textarea><br>
+    <section class="contact-form-section">
 
-      
-        <button type="submit">Submit</button>
-    </form><br>
+        <form action="https://formspree.io/f/mjkypgje" method="POST" class="form">
+            <h2 class="title neon">Contact Us</h2>
+          
+            <label for="email">Email Address</label>
+            <input type="email" name="email" id="email" placeholder="Enter your email" required><br>
+    
+            <label for="description">Describe your issue</label>
+            <textarea class="long-answer" name="description" id="description" placeholder="Describe your issue" required></textarea><br>
+          
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <br>
 
     <custom-footer></custom-footer>
     <script src="script.js"></script>
