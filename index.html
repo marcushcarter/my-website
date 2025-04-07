@@ -3,121 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Ballistic Studios helps you bring your website ideas to life from just a picture. Start building custom websites and stay updated with our latest games and offers.">
+    <meta name="keywords" content="Ballistic Studios, custom websites, game development, web design, indie games">
+    <meta name="author" content="Ballistic Studios">
+
+    <meta property="og:title" content="Ballistic Studios - Custom Websites & Indie Games">
+    <meta property="og:description" content="Get a custom website built from a simple picture and discover our latest indie games.">
+    <meta property="og:image" content="resources/logo-full.png">
+    <meta property="og:url" content="https://ballisticstudios.ca">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="preload" as="image" href="resources/logo-full.png">
+
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style2.css">
     <link rel="stylesheet" href="style3.css">
+
     <script src="https://kit.fontawesome.com/1d0f0d81d5.js" crossorigin="anonymous"></script>
+
     <link rel="icon" href="resources/favicon.png" type="image/x-icon">
-    <title>Home</title>
+
+    <title>Ballistic Studios | Custom Websites & Indie Games</title>
 </head>
 <body>
     <custom-navbar></custom-navbar>
 
-    <div class="featured">
-        <img src="resources/ImportedPhoto.765657684.907648.jpeg" style="max-height: 500px;" alt="Get your custom built website today">
-        <p>Bring Your Website Vision to Life - From Just a Simple Picture!</p>
-        <a href="websites.html" class="featured-btn">Start Building</a>
-    </div>
+    <main>
+        <section class="featured">
+            <img src="resources/ImportedPhoto.765657684.907648.jpeg" style="max-height: 500px;" alt="Custom built website promo banner">
+            <p>Bring Your Website Vision to Life - From Just a Simple Picture!</p>
+            <a href="websites.html" class="featured-btn">Start Building</a>
+        </section>
 
-    <!-- <div class="two-panel">
-        <div class="panel-item">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id numquam eius quod. Et, explicabo exercitationem veritatis error alias corporis eaque. Officia laborum ullam doloribus, dolorem explicabo consequatur libero repudiandae vel.</p>
-        </div>
-        <div class="panel-item">
-            <img src="resources/favicon.png" alt="Image">
-        </div>
-    </div>
+        <br><div class="page-break"></div><br>
 
-    <div class="two-panel" style="background-color: #222;">
-        <div class="panel-item">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id numquam eius quod. Et, explicabo exercitationem veritatis error alias corporis eaque. Officia laborum ullam doloribus, dolorem explicabo consequatur libero repudiandae vel.</p>
-        </div>
-        <div class="panel-item">
-            <img src="resources/favicon.png" alt="Image">
-        </div>
-    </div>
+        <img src="resources/logo-full.png" class="title" style="width: 150px; padding: 20px;" alt="Ballistic Studios Full Logo">
 
-    <div class="title" style="padding: 20px;">
-        <a style="font-size: 20px;">DISCOVER OUR GAMES</a><br>
-        <a class="neon" href="websites.html">Visit our Steam Page and checkout our Bundles ></a>
-    </div>
+        <section>
+            <form action="https://formspree.io/f/xzzekpgl" method="POST" class="form">
+                <h2 class="title neon">Get The Latest News From Ballistic Studios</h2>
+                <p class="title">Enter your email address, select your country or region, and submit. You can opt out at any time. We promise not to spam you.</p>
+            
+                <label for="email">Email Address</label>
+                <input type="email" name="email" id="email" placeholder="Enter your email" required><br>
+            
+                <label for="country">Country/Region</label>
+                <select name="country" id="country" required>
+                <option value="">Select</option>
+                <option value="us">United States</option>
+                <option value="ca">Canada</option>
+                <option value="uk">United Kingdom</option>
+                </select><br>
+            
+                <p>By opting in, you agree to receive communications from Ballistic Studios. You can also unsubscribe.</p>
+                <p>I will receive information, tips, and offers from Ballistic Studios. <a href="privacy-policy.html" class="neon">Privacy Statement</a>.</p>
+            
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
 
-    <div class="game-feature">
-
-        <figure>
-            <a href="game-link.html"><img src="resources/favicon.png" alt="Image description"></a>
-            <a class="game-title">Game Title</a>
-            <div class="game-blurb">This is a brief description of the game. It provides context. WHat happens if it goes past the three line limit?</div>
-            <div class="separator-line"></div>
-            <div class="game-tags">
-                <i class="fa-brands fa-instagram"></i>
-                <i class="fa-brands fa-instagram"></i>
-            </div>
-        </figure>
-
-        <figure>
-            <a href="game-link.html"><img src="resources/favicon.png" alt="Image description"></a>
-            <a class="game-title">Game Title</a>
-            <div class="game-blurb">This is a brief description of the game. It provides context. WHat happens if it goes past the three line limit?</div>
-            <div class="separator-line"></div>
-            <div class="game-tags">
-                <i class="fa-brands fa-instagram"></i>
-                <i class="fa-brands fa-instagram"></i>
-            </div>
-        </figure>
-
-        <figure>
-            <a href="game-link.html"><img src="resources/favicon.png" alt="Image description"></a>
-            <a class="game-title">Game Title</a>
-            <div class="game-blurb">This is a brief description of the game. It provides context. WHat happens if it goes past the three line limit?</div>
-            <div class="separator-line"></div>
-            <div class="game-tags">
-                <i class="fa-brands fa-instagram"></i>
-                <i class="fa-brands fa-instagram"></i>
-            </div>
-        </figure>
-
-        <figure>
-            <a href="game-link.html"><img src="resources/favicon.png" alt="Image description"></a>
-            <a class="game-title">Game Title</a>
-            <div class="game-blurb">This is a brief description of the game. It provides context. WHat happens if it goes past the three line limit?</div>
-            <div class="separator-line"></div>
-            <div class="game-tags">
-                <i class="fa-brands fa-instagram"></i>
-                <i class="fa-brands fa-instagram"></i>
-            </div>
-        </figure>
-
-    </div> -->
-
-    <br><div class="page-break"></div><br>
-
-    <img src="resources/logo-full.png" class="title" style="width: 150px; padding: 20px;">
-
-    <!-- <br><div class="page-break"></div><br> -->
-
-    <form action="https://formspree.io/f/xzzekpgl" method="POST" class="form">
-        <h2 class="title neon">Get The Latest News From Ballistic Studios</h2>
-        <p class="title">Enter your email address, select your country or region, and submit. You can opt out at any time. We promise not to spam you.</p>
-      
-        <label for="email">Email Address</label>
-        <input type="email" name="email" id="email" placeholder="Enter your email" required><br>
-      
-        <label for="country">Country/Region</label>
-        <select name="country" id="country" required>
-          <option value="">Select</option>
-          <option value="us">United States</option>
-          <option value="ca">Canada</option>
-          <option value="uk">United Kingdom</option>
-        </select><br>
-      
-        <p>By opting in, you agree to receive communications from Ballistic Studios. You can also unsubscribe.</p>
-        <p>I will receive information, tips, and offers from Ballistic Studios. <a href="privacy-policy.html" class="neon">Privacy Statement</a>.</p>
-      
-        <button type="submit">Submit</button>
-    </form>
-
-      
     <custom-footer></custom-footer>
     <script src="script.js"></script>
 </body>
