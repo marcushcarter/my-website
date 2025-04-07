@@ -111,6 +111,23 @@ body, html {
     transition: all 0.2s ease-in-out;
 }
 
+.navbar-logo {
+    display: inline-block;
+    padding: 20px;
+    height: 41px;
+
+    position: absolute;
+    top: 50%;
+    left: 120px;
+    transform: translate(-50%, -50%);
+}
+
+.navbar-logo:hover {
+    height: 43px;
+    left: 123px;
+    transition: all 0.2s ease-in-out;
+}
+
 .website-name:hover {
     font-size: 24px;
 }
