@@ -15,7 +15,7 @@ class Navbar extends HTMLElement {
                         <a href="contact-us.html">Contact Us</a>
                     </div>
                 </div>
-                <a href="index.html"><img class="navbar-logo" src="resources/logo4.png"></a>
+                <a href="index.html"><img class="navbar-logo" src="resources/logo-full.png"></a>
                 <a href="websites.html" class="login-btn">Websites</a>
             </nav>
         `;
