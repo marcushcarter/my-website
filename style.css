@@ -72,7 +72,7 @@ body, html {
 
 @keyframes scroll {
     0%   { transform: translateX(0); }
-    100% { transform: translateX(-600%); }
+    100% { transform: translateX(-600px); }
 }
 
 /* NAVBAR */
@@ -604,6 +604,7 @@ footer .copyright {
     max-width: 800px;
     margin: auto;
     overflow: hidden;
+    border: 2px solid var(--glow-color);
 }
 .carousel-images {
     display: flex;
