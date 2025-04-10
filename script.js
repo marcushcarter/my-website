@@ -13,7 +13,6 @@ class Navbar extends HTMLElement {
                         <a href="contribute.html">Contribute</a>
                         <a href="about.html">About Us</a>
                         <a href="contact-us.html">Contact Us</a>
-                        <a href="advertisement1.html">Super Secret Advertisement Page</a>
                     </div>
                 </div>
                 <a href="index.html"><img class="navbar-logo" src="resources/logo-full.png"></a>
