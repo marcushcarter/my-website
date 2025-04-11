@@ -75,6 +75,13 @@ body, html {
     100% { transform: translateX(-600px); }
 }
 
+@media (max-width: 768px) {
+	th, td {
+		padding: 8px;
+		font-size: 0.9rem;
+	}
+}
+
 /* NAVBAR */
 
 .nav-bar {
