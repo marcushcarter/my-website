@@ -435,16 +435,16 @@ footer .copyright {
     animation: box-shimmer-select 1.5s infinite alternate;
 }
 
-/*GAMES HTML LIST ELEMETS*/
+/* GENERAL HTML LIST ELEMETS */
 
-.games-search-list {
+.general-search-list {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20px;
 }
 
-.games-search-list li {
+.general-search-list li {
     list-style: none;
     width: calc(100% - 50px);
     max-width: 800px;
@@ -458,7 +458,7 @@ footer .copyright {
     cursor: pointer;
 }
 
-.games-search-list li a {
+.general-search-list li a {
     display: block;
     width: 100%;
     height: 100%;
@@ -469,19 +469,19 @@ footer .copyright {
     border-radius: 5px; /* Keeps the rounded corners */
 }
 
-.games-search-list li .list-content {
+.general-search-list li .list-content {
     display: flex;
     flex-direction: column;
     text-align: left; /* Aligns text to the left */
 }
 
-.games-search-list li:hover {
+.general-search-list li:hover {
     box-shadow: 0 0 10px var(--glow-color),
         0 0 20px var(--glow-spread-color);
     animation: box-shimmer-select 1.5s infinite alternate;
 }
 
-.games-search-list li .list-content span {
+.general-search-list li .list-content span {
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -550,10 +550,24 @@ footer .copyright {
     text-decoration: none;
     
     background: linear-gradient(90deg, var(--glow-color), wheat);
-    color: black;
+    color: #666;
     font-weight: bold;
+
+    background: #333;
+
     
-    color: white;
+
+    box-shadow: 0 0 10px var(--glow-color), 0 0 20px var(--glow-spread-color);
+    color: var(--glow-color);
+    animation: box-shimmer-select 1.5s infinite alternate;
+
+}
+
+.login-continue:hover {
+    box-shadow: 0 0 10px var(--glow-color), 0 0 20px var(--glow-spread-color);
+    background-color: var(--glow-color);
+    color: #333;
+    animation: box-shimmer 1.5s infinite alternate;
 }
 
 .login-link {
@@ -858,4 +872,137 @@ footer .copyright {
     background-color: var(--glow-color);
     color: #333;
     animation: box-shimmer 1.5s infinite alternate;
+}
+
+/* Games Search List */
+
+.projects-search-list {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.projects-search-list li {
+    list-style-type: none;
+    width: calc(100% - 20px - 20px);
+    max-width: 800px;
+}
+
+.projects-search-list div {
+    border-radius: 5px;
+    border: solid 2px white;
+    box-sizing: border-box;
+    background: #222;
+}
+
+.projects-search-list div img {
+    width: calc(100% - 40px);
+    max-height: 500px;
+}
+
+.projects-search-list div body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #111;
+}
+
+.projects-search-list div a {
+    display: block;
+    margin: 20px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.projects-search-list div a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+    border-radius: 5em;
+    width: 250px;
+    height: 30px;
+    padding: 8px;
+    
+    outline: none;
+    transition: all 0.3s ease-in-out;
+    font-size: 15px;
+    text-decoration: none;
+    
+    background: linear-gradient(90deg, var(--glow-color), wheat);
+    color: #666;
+    font-weight: bold;
+
+    background: #333;
+
+    
+
+    box-shadow: 0 0 10px var(--glow-color), 0 0 20px var(--glow-spread-color);
+    color: var(--glow-color);
+    animation: box-shimmer-select 1.5s infinite alternate;
+
+}
+
+.projects-search-list div a:hover {
+    box-shadow: 0 0 10px var(--glow-color), 0 0 20px var(--glow-spread-color);
+    background-color: var(--glow-color);
+    color: #333;
+    animation: box-shimmer 1.5s infinite alternate;
+}
+
+/* "ARTICLES" */
+
+.articles {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 30px;
+	padding: 30px;
+}
+
+.articles li {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	background-color: #333;
+	padding: 20px;
+    max-width: 800px;
+	box-sizing: border-box;
+	border-radius: 10px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: solid 2px white;
+	margin: 0;
+}
+
+.articles li img {
+	max-height: 100%;
+	max-width: 35%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+	border-radius: 8px;
+	margin-right: 20px;
+}
+
+.articles li .text {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	max-width: 60%;
+}
+
+.articles li h4 {
+	font-size: 1.5rem;
+	margin: 0 0 10px 0;
+}
+
+.articles li p, a {
+	font-size: 1rem;
+	line-height: 1.6;
+	margin: 0;
+    color: white;
 }

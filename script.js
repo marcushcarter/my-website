@@ -10,13 +10,12 @@ class Navbar extends HTMLElement {
                         <a href="search.html"><i class="fa-solid fa-magnifying-glass" style="font-size: 18px;"></i></a>
                         <a href="index.html">Home</a>
                         <a href="websites.html">Websites</a>
-                        <a href="contribute.html">Contribute</a>
+                        <a>Lessons and Projects</a>
                         <a href="about.html">About Us</a>
-                        <a href="contact-us.html">Contact Us</a>
                     </div>
                 </div>
                 <a href="index.html"><img class="navbar-logo" src="resources/logo-full.png"></a>
-                <a href="websites.html" class="login-btn">Websites</a>
+                <a href="login.html" class="login-btn">Log In</a>
             </nav>
         `;
     }
@@ -103,12 +102,41 @@ function showThanks() {
     return true;
 }
 
-// SCROLL TO FUNCTION
+// GO TO PAGE AND SCROLL TO ID
 
-function scrollToXY(xCoord, yCoord) {
-    window.scrollTo({
-      left: xCoord,
-      top: yCoord,
-      behavior: 'smooth'
-    });
+function goToPageAndScroll(pageUrl, elementId) {
+    // Use a query parameter instead of a hash
+    const url = `${pageUrl}?scrollTo=${elementId}`;
+    window.location.href = url;
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+    const params = new URLSearchParams(window.location.search);
+    const elementId = params.get('scrollTo');
+
+    if (elementId) {
+        const target = document.getElementById(elementId);
+        if (target) {
+            const offset = 135; // pixels to go up
+            const elementTop = target.getBoundingClientRect().top + window.pageYOffset;
+            const scrollPosition = elementTop - offset;
+
+            window.scrollTo({
+                top: scrollPosition,
+                behavior: 'smooth'
+            });
+        }
+    }
+});
+
+// LOGIN PAGE (ADMIN)
+
+function checkLogin() {
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("passsword").value;
+    var correctUsername = "admin";
+    var correctPassword = "1234";
+    if (username === correctUsername && password === correctPassword) {
+        document.getElementById("result").innerText = "Login Su";
+    }
 }
