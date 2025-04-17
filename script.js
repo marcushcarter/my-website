@@ -177,15 +177,3 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     }
 });
-
-// LOGIN PAGE (ADMIN)
-
-function checkLogin() {
-    var username = document.getElementById("username").value;
-    var password = document.getElementById("passsword").value;
-    var correctUsername = "admin";
-    var correctPassword = "1234";
-    if (username === correctUsername && password === correctPassword) {
-        document.getElementById("result").innerText = "Login Su";
-    }
-}
