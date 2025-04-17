@@ -632,8 +632,8 @@ footer .copyright {
 /*WESITES IMAGE SCROLLER*/
 
 .carousel-container {
-    width: 80%;
-    max-width: 800px;
+    width: calc(100% - 40px);
+    max-width: 750px;
     margin: auto;
     overflow: hidden;
     border: 2px solid var(--glow-color);
@@ -760,7 +760,7 @@ footer .copyright {
     text-decoration: none;
 }
 
-/*FORMS ON ALL PAGES*/
+/* FORMS/SURVEY ON ALL PAGES */
 
 .form {
     position: relative;
