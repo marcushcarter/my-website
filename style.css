@@ -58,8 +58,9 @@ body, html {
 
 .page-break {
     height: 1px;
-    width: calc(100% - 10px);
-    margin: 5px auto;
+    width: calc(100% - 40px);
+    margin: 20px auto;
+    max-width: 750px;
     background: white;
 }
 
@@ -137,7 +138,7 @@ body, html {
 
 .featured img {
     display: block;
-    width: calc(100% - 10px);
+    width: calc(100% - 40px);
     max-height: 525px;
     margin: 5px auto;
     margin-top: 0;
@@ -1043,4 +1044,38 @@ footer .copyright {
 .code-box code {
     white-space: pre;
     display: block;
+}
+
+
+/* PLAYER PROFILE STATS */
+
+.table {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+	box-sizing: border-box;
+	overflow: auto;
+}
+
+.table table {
+	border-collapse: collapse;
+	width: 100%;
+	max-width: 1000px;
+	text-align: center;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.table th, td {
+	border: 1px solid #ccc;
+	padding: 10px;
+	font-size: 1rem;
+	word-wrap: break-word;
+}
+
+@media (max-width: 768px) {
+	th, td {
+		padding: 8px;
+		font-size: 0.9rem;
+	}
 }
