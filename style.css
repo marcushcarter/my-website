@@ -43,6 +43,19 @@ body, html {
     
 }
 
+.margined-750 {
+    max-width: 750px;
+    width: calc(100% - 40px);
+    margin: 20px auto;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.margined-750 img {
+    object-fit: cover;
+    width: 100%;
+}
+
 .page-break {
     height: 1px;
     width: calc(100% - 10px);
@@ -940,8 +953,6 @@ footer .copyright {
 
     background: #333;
 
-    
-
     box-shadow: 0 0 10px var(--glow-color), 0 0 20px var(--glow-spread-color);
     color: var(--glow-color);
     animation: box-shimmer-select 1.5s infinite alternate;
@@ -1005,4 +1016,31 @@ footer .copyright {
 	line-height: 1.6;
 	margin: 0;
     color: white;
+}
+
+/* CODE BLOCKS */
+
+.code-box-wrapper {
+    padding: 0 20px; /* 🔥 ensures 20px space on left/right always */
+  }
+
+.code-box {
+
+    background-color: #1e1e1e;
+    color: #dcdcdc;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-family: 'Fira Code', monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    width: calc(100% - 0px);
+    margin: 20px auto;
+    max-width: 750px;
+    border: solid 2px white;
+}
+
+.code-box code {
+    white-space: pre;
+    display: block;
 }
