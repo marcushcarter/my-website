@@ -8,20 +8,41 @@ class Navbar extends HTMLElement {
                 <div class="menu-container">
                     <div class="menu"><i class="fa-solid fa-bars icon"></i></div>
                     <div class="dropdown">
-                        <a href="search.html"><i class="fa-solid fa-magnifying-glass" style="font-size: 18px;"></i></a>
-                        <a href="index.html">Home</a>
-                        <a href="websites.html">Websites</a>
-                        <a href="projects.html">Lessons and Projects</a>
-                        <a href="about.html">About Us</a>
+                        <a href="/search.html"><i class="fa-solid fa-magnifying-glass" style="font-size: 18px;"></i></a>
+                        <a href="/index.html">Home</a>
+                        <a href="/websites.html">Websites</a>
+                        <a href="/projects.html">Lessons and Projects</a>
+                        <a href="/about.html">About Us</a>
                     </div>
                 </div>
-                <a href="index.html"><img class="navbar-logo" src="resources/logo-full.png"></a>
-                <a href="login.html" class="login-btn">Log In</a>
+                <a href="/index.html"><img class="navbar-logo" src="/resources/logo-full.png"></a>
+                <a href="/login.html" class="login-btn">Log In</a>
             </nav>
         `;
     }
 }
-customElements.define('custom-navbar', Navbar);
+
+// class Navbar extends HTMLElement {
+//     connectedCallback() {
+//         this.innerHTML = `
+//             <nav class="nav-bar">
+//                 <div class="menu-container">
+//                     <div class="menu"><i class="fa-solid fa-bars icon"></i></div>
+//                     <div class="dropdown">
+//                         <a href="search.html"><i class="fa-solid fa-magnifying-glass" style="font-size: 18px;"></i></a>
+//                         <a href="index.html">Home</a>
+//                         <a href="websites.html">Websites</a>
+//                         <a href="projects.html">Lessons and Projects</a>
+//                         <a href="about.html">About Us</a>
+//                     </div>
+//                 </div>
+//                 <a href="index.html"><img class="navbar-logo" src="resources/logo-full.png"></a>
+//                 <a href="login.html" class="login-btn">Log In</a>
+//             </nav>
+//         `;
+//     }
+// }
+// customElements.define('custom-navbar', Navbar);
 
 class SubfolderNavbar extends HTMLElement {
     connectedCallback() {

@@ -1052,8 +1052,11 @@ footer .copyright {
 .table {
 	display: flex;
 	justify-content: center;
+    max-width: 790px;
 	align-items: center;
-	padding: 20px;
+	padding-left: 20px;
+    padding-right: 20px;
+    margin: 0 auto;
 	box-sizing: border-box;
 	overflow: auto;
 }
@@ -1061,7 +1064,6 @@ footer .copyright {
 .table table {
 	border-collapse: collapse;
 	width: 100%;
-	max-width: 1000px;
 	text-align: center;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -1071,11 +1073,4 @@ footer .copyright {
 	padding: 10px;
 	font-size: 1rem;
 	word-wrap: break-word;
-}
-
-@media (max-width: 768px) {
-	th, td {
-		padding: 8px;
-		font-size: 0.9rem;
-	}
 }
