@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Code Viewer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
+  <style>
+    body { padding: 2rem; font-family: sans-serif; background: #1e1e1e; color: #fff; }
+    pre { padding: 1rem; background: #2d2d2d; border-radius: 8px; overflow-x: auto; font-size: 1rem; }
+  </style>
+</head>
+<body>
+
+<h2>Code Viewer</h2>
+<pre><code id="code-block" class=""></code></pre>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+<script>
+  async function loadCode() {
+    const params = new URLSearchParams(window.location.search);
+    const file = params.get("file");
+    const lang = params.get("lang") || ""; // e.g., 'c', 'cpp', 'html'
+
+    if (!file) {
+      document.getElementById("code-block").textContent = "No file specified.";
+      return;
+    }
+
+    try {
+      const res = await fetch(file);
+      const text = await res.text();
+
+      const escaped = text.replace(/[&<>"']/g, (char) => ({
+        '&': '&amp;', '<': '&lt;', '>': '&gt;',
+        '"': '&quot;', "'": '&#39;'
+      }[char]));
+
+      const codeBlock = document.getElementById("code-block");
+      codeBlock.className = lang;
+      codeBlock.innerHTML = escaped;
+      hljs.highlightElement(codeBlock);
+    } catch (e) {
+      document.getElementById("code-block").textContent = "Error loading file.";
+    }
+  }
+
+  loadCode();
+</script>
+
+</body>
+</html>

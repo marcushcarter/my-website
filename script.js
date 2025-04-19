@@ -1,27 +1,6 @@
 
 // LOAD CUSTOM NAVIGATION BAR FOR ROOT AND SUBFOLDER
 
-class Navbar extends HTMLElement {
-    connectedCallback() {
-        this.innerHTML = `
-            <nav class="nav-bar">
-                <div class="menu-container">
-                    <div class="menu"><i class="fa-solid fa-bars icon"></i></div>
-                    <div class="dropdown">
-                        <a href="/search.html"><i class="fa-solid fa-magnifying-glass" style="font-size: 18px;"></i></a>
-                        <a href="/index.html">Home</a>
-                        <a href="/websites.html">Websites</a>
-                        <a href="/projects.html">Lessons and Projects</a>
-                        <a href="/about.html">About Us</a>
-                    </div>
-                </div>
-                <a href="/index.html"><img class="navbar-logo" src="/resources/logo-full.png"></a>
-                <a href="/login.html" class="login-btn">Log In</a>
-            </nav>
-        `;
-    }
-}
-
 // class Navbar extends HTMLElement {
 //     connectedCallback() {
 //         this.innerHTML = `
@@ -29,20 +8,41 @@ class Navbar extends HTMLElement {
 //                 <div class="menu-container">
 //                     <div class="menu"><i class="fa-solid fa-bars icon"></i></div>
 //                     <div class="dropdown">
-//                         <a href="search.html"><i class="fa-solid fa-magnifying-glass" style="font-size: 18px;"></i></a>
-//                         <a href="index.html">Home</a>
-//                         <a href="websites.html">Websites</a>
-//                         <a href="projects.html">Lessons and Projects</a>
-//                         <a href="about.html">About Us</a>
+//                         <a href="/search.html"><i class="fa-solid fa-magnifying-glass" style="font-size: 18px;"></i></a>
+//                         <a href="/index.html">Home</a>
+//                         <a href="/websites.html">Websites</a>
+//                         <a href="/projects.html">Lessons and Projects</a>
+//                         <a href="/about.html">About Us</a>
 //                     </div>
 //                 </div>
-//                 <a href="index.html"><img class="navbar-logo" src="resources/logo-full.png"></a>
-//                 <a href="login.html" class="login-btn">Log In</a>
+//                 <a href="/index.html"><img class="navbar-logo" src="/resources/logo-full.png"></a>
+//                 <a href="/login.html" class="login-btn">Log In</a>
 //             </nav>
 //         `;
 //     }
 // }
-// customElements.define('custom-navbar', Navbar);
+
+class Navbar extends HTMLElement {
+    connectedCallback() {
+        this.innerHTML = `
+            <nav class="nav-bar">
+                <div class="menu-container">
+                    <div class="menu"><i class="fa-solid fa-bars icon"></i></div>
+                    <div class="dropdown">
+                        <a href="search.html"><i class="fa-solid fa-magnifying-glass" style="font-size: 18px;"></i></a>
+                        <a href="index.html">Home</a>
+                        <a href="websites.html">Websites</a>
+                        <a href="projects.html">Lessons and Projects</a>
+                        <a href="about.html">About Us</a>
+                    </div>
+                </div>
+                <a href="index.html"><img class="navbar-logo" src="resources/logo-full.png"></a>
+                <a href="login.html" class="login-btn">Log In</a>
+            </nav>
+        `;
+    }
+}
+customElements.define('custom-navbar', Navbar);
 
 class SubfolderNavbar extends HTMLElement {
     connectedCallback() {
@@ -172,9 +172,9 @@ function showThanks() {
     return true;
 }
 
-// GO TO PAGE AND SCROLL TO ID
+// GO TO PAGE AND SCROLL TO ELEMENT ID
 
-function goToPageAndScroll(pageUrl, elementId) {
+function scrolltopage(pageUrl, elementId) {
     // Use a query parameter instead of a hash
     const url = `${pageUrl}?scrollTo=${elementId}`;
     window.location.href = url;
@@ -198,3 +198,29 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     }
 });
+
+// SCROLL TO ELEMENT ID
+
+function scrollto(elementId) {
+    const OFFSET = 135;
+  
+    if (!elementId) {
+      console.warn("scrollToElementById: No element ID provided.");
+      return;
+    }
+  
+    const targetElement = document.getElementById(elementId);
+    if (!targetElement) {
+      console.warn(`scrollToElementById: No element found with ID "${elementId}"`);
+      return;
+    }
+  
+    const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+    const offsetPosition = elementPosition - OFFSET;
+  
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth'
+    });
+  }
+  
