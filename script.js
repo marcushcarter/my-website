@@ -1,27 +1,6 @@
 
 // LOAD CUSTOM NAVIGATION BAR FOR ROOT AND SUBFOLDER
 
-// class Navbar extends HTMLElement {
-//     connectedCallback() {
-//         this.innerHTML = `
-//             <nav class="nav-bar">
-//                 <div class="menu-container">
-//                     <div class="menu"><i class="fa-solid fa-bars icon"></i></div>
-//                     <div class="dropdown">
-//                         <a href="/search.html"><i class="fa-solid fa-magnifying-glass" style="font-size: 18px;"></i></a>
-//                         <a href="/index.html">Home</a>
-//                         <a href="/websites.html">Websites</a>
-//                         <a href="/projects.html">Lessons and Projects</a>
-//                         <a href="/about.html">About Us</a>
-//                     </div>
-//                 </div>
-//                 <a href="/index.html"><img class="navbar-logo" src="/resources/logo-full.png"></a>
-//                 <a href="/login.html" class="login-btn">Log In</a>
-//             </nav>
-//         `;
-//     }
-// }
-
 class Navbar extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
@@ -29,42 +8,20 @@ class Navbar extends HTMLElement {
                 <div class="menu-container">
                     <div class="menu"><i class="fa-solid fa-bars icon"></i></div>
                     <div class="dropdown">
-                        <a href="search.html"><i class="fa-solid fa-magnifying-glass" style="font-size: 18px;"></i></a>
-                        <a href="index.html">Home</a>
-                        <a href="websites.html">Websites</a>
-                        <a href="projects.html">Lessons and Projects</a>
-                        <a href="about.html">About Us</a>
+                        <a href="/search.html"><i class="fa-solid fa-magnifying-glass" style="font-size: 18px;"></i></a>
+                        <a href="/index.html">Home</a>
+                        <a href="/websites.html">Websites</a>
+                        <a href="/projects.html">Lessons and Projects</a>
+                        <a href="/about.html">About Us</a>
                     </div>
                 </div>
-                <a href="index.html"><img class="navbar-logo" src="resources/logo-full.png"></a>
-                <a href="login.html" class="login-btn">Log In</a>
+                <a href="/index.html"><img class="navbar-logo" src="/resources/logo-full.png"></a>
+                <a href="/login.html" class="login-btn">Log In</a>
             </nav>
         `;
     }
 }
 customElements.define('custom-navbar', Navbar);
-
-class SubfolderNavbar extends HTMLElement {
-    connectedCallback() {
-        this.innerHTML = `
-            <nav class="nav-bar">
-                <div class="menu-container">
-                    <div class="menu"><i class="fa-solid fa-bars icon"></i></div>
-                    <div class="dropdown">
-                        <a href="../search.html"><i class="fa-solid fa-magnifying-glass" style="font-size: 18px;"></i></a>
-                        <a href="../index.html">Home</a>
-                        <a href="../websites.html">Websites</a>
-                        <a href="../projects.html">Lessons and Projects</a>
-                        <a href="../about.html">About Us</a>
-                    </div>
-                </div>
-                <a href="../index.html"><img class="navbar-logo" src="../resources/logo-full.png"></a>
-                <a href="../login.html" class="login-btn">Log In</a>
-            </nav>
-        `;
-    }
-}
-customElements.define('subfolder-custom-navbar', SubfolderNavbar);
 
 // LOAD CUSTOM FOOTER FOR ROOT AND SUBFOLDER
 
@@ -79,40 +36,17 @@ class Footer extends HTMLElement {
                     <a href="https://github.com/marcushcarter" target="_blank"><i class="fa-brands fa-github"></i></a> 
                 </div>
                 <div class="extra-links">
-                    <a href="about.html">About</a>
-                    <a href="contact-us.html" target=_self>Contact us</a>
-                    <a href="contribute.html">Contribute</a>
+                    <a href="/about.html">About</a>
+                    <a href="/contact-us.html" target=_self>Contact us</a>
+                    <a href="/contribute.html">Contribute</a>
                     <a>Privacy Policy</a>
                 </div>
-                <a class="copyright">Ballistic Studios © 2024</a>
+                <a class="copyright">© Ballistic Studios 2024</a>
             </footer>
         `;
     }
 }
 customElements.define('custom-footer', Footer);
-
-class SubfolderFooter extends HTMLElement {
-    connectedCallback() {
-        this.innerHTML = `
-            <div style="height: 50px;"></div>
-            <footer>
-                <div class="social-links">
-                    <a href="https://instagram.com/ballisticstudiosofficial" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://www.tiktok.com/@ballisticstudiosofficial" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
-                    <a href="https://github.com/marcushcarter" target="_blank"><i class="fa-brands fa-github"></i></a> 
-                </div>
-                <div class="extra-links">
-                    <a href="about.html">About</a>
-                    <a href="contact-us.html" target=_self>Contact us</a>
-                    <a href="contribute.html">Contribute</a>
-                    <a>Privacy Policy</a>
-                </div>
-                <a class="copyright">Ballistic Studios © 2024</a>
-            </footer>
-        `;
-    }
-}
-customElements.define('subfolder-custom-footer', SubfolderFooter);
 
 // LOAD CUSTOM SEARCH BAR
 
