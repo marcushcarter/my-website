@@ -37,7 +37,7 @@ class Footer extends HTMLElement {
                 </div>
                 <div class="extra-links">
                     <a href="/about.html">About</a>
-                    <a href="/contact-us.html" target=_self>Contact us</a>
+                    <a href="#" onclick="scrolltopage('/about.html', 'contact-us'); return false;">Contact us</a>
                     <a href="/contribute.html">Contribute</a>
                     <a>Privacy Policy</a>
                 </div>
