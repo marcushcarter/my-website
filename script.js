@@ -157,4 +157,3 @@ function scrollto(elementId) {
       behavior: 'smooth'
     });
   }
-  

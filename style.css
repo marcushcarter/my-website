@@ -56,6 +56,11 @@ body, html {
     width: 100%;
 }
 
+.margined-750 video {
+    object-fit: cover;
+    width: 100%;
+}
+
 .page-break {
     height: 1px;
     width: calc(100% - 40px);
@@ -1022,29 +1027,8 @@ footer .copyright {
 
 /* CODE BLOCKS */
 
-.code-box-wrapper {
-    padding: 0 20px; /* 🔥 ensures 20px space on left/right always */
-  }
-
-.code-box {
-
-    background-color: #1e1e1e;
-    color: #dcdcdc;
-    border-radius: 5px;
-    overflow-x: auto;
-    font-family: 'Fira Code', monospace;
-    font-size: 14px;
-    line-height: 1.5;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    width: calc(100% - 0px);
-    margin: 20px auto;
-    max-width: 750px;
-    border: solid 2px white;
-}
-
 .code-box code {
-    white-space: pre;
-    display: block;
+    border-radius: 5px;
 }
 
 /* PLAYER PROFILE STATS */
@@ -1073,4 +1057,25 @@ footer .copyright {
 	padding: 10px;
 	font-size: 1rem;
 	word-wrap: break-word;
+}
+
+/* INLINE CODE BOX */
+
+.inline-code-box {
+    background-color: #333;
+    padding: 3px;
+    border-radius: 5px;
+    margin: 3px;
+}
+
+/* CUATION */
+
+.caution {
+    border-radius: 5px;
+    border: solid 2px #ff9696;
+    background-color: #ffc8c8;
+    color: #171717;
+    padding: 20px;
+    margin: 20px;
+    font-size: 13px;
 }
