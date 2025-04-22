@@ -1080,21 +1080,4 @@ footer .copyright {
     font-size: 13px;
 }
 
-.copy-btn {
-    background-color: #333;
-    border: 2px var(--glow-color) solid;
-    /* border: none; */
-    color: var(--glow-color);
-    padding: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-radius: 5em;
-
-    transition: all 0.3s ease-in-out;
-}
-
-.copy-btn:hover {
-    box-shadow: 0 0 10px var(--glow-color), 0 0 20px var(--glow-spread-color);
-    background-color: var(--glow-color);
-    color: #333;
-}
+/* */

@@ -139,30 +139,21 @@ function scrollto(elementId) {
     const OFFSET = 135;
   
     if (!elementId) {
-      console.warn("scrollToElementById: No element ID provided.");
-      return;
+        console.warn("scrollToElementById: No element ID provided.");
+        return;
     }
   
     const targetElement = document.getElementById(elementId);
     if (!targetElement) {
-      console.warn(`scrollToElementById: No element found with ID "${elementId}"`);
-      return;
+        console.warn(`scrollToElementById: No element found with ID "${elementId}"`);
+        return;
     }
   
     const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
     const offsetPosition = elementPosition - OFFSET;
   
     window.scrollTo({
-      top: offsetPosition,
-      behavior: 'smooth'
+        top: offsetPosition,
+        behavior: 'smooth'
     });
-  }
-
-
-// COPY CODE BUTTON
-
-function copyCode(btn) {
-    const code = btn.previousElementSibling.innerText;
-    navigator.clipboard.writeText(code);
-    btn.innerText = "Copied!";
 }

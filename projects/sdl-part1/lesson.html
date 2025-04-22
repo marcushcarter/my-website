@@ -44,7 +44,7 @@
 			<p>The first and most important step to getting started with game developement is setting up your repository. A repository is basically just the main folder where all of your assets, files and code goes into. To do this, open your file explorer on your computer, and where you want your project to be located, create a new folder called 'sdl-template.' But we cant start coding just yet. Inside your repository folder, create 4 new folders called 'resources', 'include', 'lib', and 'src'. These will be where we will put our game assets (pictures, videos, textures etc.), source code, header files, and libraries. Now, it's time to add SDL to our project.</p>
 			<p>In this tutorial, we will be using SDL v3.2.10, but any version of SDL will work as long as it is newer than v3.0.0. Visit <a href="https://github.com/libsdl-org/SDL/releases" target="_blank">this link</a> to go to SDL's download page. Click on and download the file called <code class="inline-code-box">SDL3-devel-3.2.10-mingw.tar.gz</code> (or whatever version you are using), save it to your repository and extract that file.</p>
 			<p>Now before we continue, we must check what type of system our device is using because if you add the wrong files, your project will not work. To do this, open settings and go to <code class="inline-code-box">System > About > Device Specifications > System Type</code> and check yours.</p>
-			<img src="bit-test.webp" loading="lazy" alt="Windows system type example">
+			<img src="bit-test.webp" loading="lazy" alt="Check system type in Windows for SDL setup">
 			<p>Depending on what system type you have, you will have to use the corresponding bit of SDL. Open the folder corresponding to your system type: <code class="inline-code-box">i686-w64-mingw32</code> for 32-bit, <code class="inline-code-box">x84_64-w64-mingw32</code> for 64-bit.</p>
 			<p>Here we are only interested in three folders. The first and second, called <code class="inline-code-box">include</code> and <code class="inline-code-box">lib</code>, we will just copy directly to the main directory of the project. And the third, inside the <code class="inline-code-box">bin</code> folder, we will take the file called <code class="inline-code-box">SDL3.dll</code> and place it into the main directory. Once you have this done, you can delete the tar.gz file and the folder extracted from it.</p>
 			<p>Now it's time to get programing! Open your project folder with VSCode. The first thing we will do is make our main.c file, or the primary file of the project. In your <code class="inline-code-box">src</code> folder, make a new file called <code class="inline-code-box">main.c</code>. Here we will write simple hello world script.</p>
@@ -123,7 +123,6 @@ while (running) {
 	// run loop code here
 }
 			</code></pre></div>
-			<button class="copy-btn" onclick="copyCode(this)">Copy</button>
 
 			<p>Now try running the code!</p>
 			<video src="movie2.webm" autoplay loop muted loading="lazy"></video>
@@ -145,7 +144,7 @@ SDL_RenderClear(renderer);
 
 SDL_RenderPresent(renderer); // pushes renderer content to the window
 				</code></pre></div>
-				<img src="draw1.webp" loading="lazy">
+				<img src="draw1.webp" loading="lazy" alt="Changing the color of the window backround with SDL_RenderClear">
 
 				<h3><code class="inline-code-box">SDL_RenderFillRect()</code></h3>
 				<p>Now let's try drawing a rectangle in the center off the screen. To do this we use the <code class="inline-code-box">SDL_RenderFillRect()</code> function. This function takes in argument for a renderer object and a FRect object. Let's make this a red square. The most important thing here is the FRect object. To initialize it, we need to give it an x, y, width and height value. SDL is weird, the top left corner of the screen is the coordinate (0, 0) but, as you go downwards, the y gets larger, so when you render something, it will seem flipped vertically. So let's make a 50x50 pixel square at (250, 250). We'll use the color  <code class="inline-code-box">rgba(255, 0, 0, 255)</code>.</p>
@@ -154,7 +153,7 @@ SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
 SDL_FRect rect = {250.0f, 250.0f, 50.0f, 50.0f};
 SDL_RenderFillRect(renderer, &rect);
 				</code></pre></div>
-				<img src="draw2.webp" loading="lazy">
+				<img src="draw2.webp" loading="lazy" alt="Adding a red rectangle with SDL_RenderFillRect">
 
 				<h3><code class="inline-code-box">SDL_RenderLine();</code></h3>
 				<p>Now let's say we wnated to draw a line to view the wireframe of an object, we would use <code class="inline-code-box">SDL_RenderLine()</code>. This function takes five arguments, one for the renderer object, two for the x and y position of the first point, and two for the x and y position of the second point. Let's try drawing a white cross with two lines inside of the box we just made.</p>
@@ -163,7 +162,7 @@ SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
 SDL_RenderLine(renderer, 250.0f+50.0f, 250.0f, 250.0f, 250.0f+50.0f);
 SDL_RenderLine(renderer, 250.0f+50.0f, 250.0f+50.0f, 250.0f, 250.0f);
 				</code></pre></div>
-				<img src="draw3.webp" loading="lazy">
+				<img src="draw3.webp" loading="lazy" alt="Adding a cross in the rectangle with SDL_RenderLine">
 
 				<h3><code class="inline-code-box">SDL_RenderPoint();</code></h3>
 				<p>This function is not very comonly used except for in raycasting projects and ones that have very small particles. Usually we use this to draw circles and other inorganic shapes using sin and cos. This function just takes a renderer object, an x, and a y position, and draws a singular pixel in that position on the screen. Using your knowledge of for loops, try drawing a straight and curved line with this function.</p>
@@ -175,7 +174,7 @@ for (float i = 0; i &gt; 600; i+=0.1) {
 	SDL_RenderPoint(renderer, i*30, (i*i));
 }
 				</code></pre></div>
-				<img src="draw4.webp" loading="lazy">
+				<img src="draw4.webp" loading="lazy" alt="Drawing a curved line with SDL_RenderPoint">
 			</div>
 
 			<p>If you need help or are stuck, you can <a href="/code-viewer.html?file=/projects/sdl-part2/code1.c&lang=c" target="_blank">View Source Code</a>.</p>
