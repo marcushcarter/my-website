@@ -157,3 +157,12 @@ function scrollto(elementId) {
       behavior: 'smooth'
     });
   }
+
+
+// COPY CODE BUTTON
+
+function copyCode(btn) {
+    const code = btn.previousElementSibling.innerText;
+    navigator.clipboard.writeText(code);
+    btn.innerText = "Copied!";
+}

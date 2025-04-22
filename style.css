@@ -51,6 +51,14 @@ body, html {
     overflow-wrap: break-word;
 }
 
+.margined-750 .page-break {
+    max-width: none;
+    width: 100%;
+    margin: none;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
 .margined-750 img {
     object-fit: cover;
     width: 100%;
@@ -177,25 +185,21 @@ body, html {
     text-align: center;
     padding: 10px;
     background: #333;
-    color: #666;
+    border: 2px var(--glow-color) solid;
+    color: var(--glow-color);
     text-decoration: none;
     border-radius: 5em;
     cursor: pointer;
     outline: none;
     transition: all 0.3s ease-in-out;
-
-    box-shadow: 0 0 10px var(--glow-color),
-        0 0 20px var(--glow-spread-color);
-    color: var(--glow-color);
-    animation: box-shimmer-select 1.5s infinite alternate;
 }
 
 .featured-btn:hover {
-    box-shadow: 0 0 20px var(--glow-color),
-                 0 0 40px var(--glow-spread-color);
+    box-shadow: 0 0 10px var(--glow-color), 0 0 20px var(--glow-spread-color);
     background-color: var(--glow-color);
     color: #333;
     left: calc(50% - 77px);
+    top: 264px;
     padding: 12px;
     animation: box-shimmer 1.5s infinite alternate;
 }
@@ -256,20 +260,16 @@ body, html {
 
 .login-btn {
     background: #333;
-    color: #666;
+    color: var(--glow-color);
     padding: 8px 20px;
     text-decoration: none;
+    border: 2px var(--glow-color) solid;
     border-radius: 5em;
     cursor: pointer;
     position: relative;
     outline: none;
     transition: all 0.3s ease-in-out;
     font-size: 15px;
-
-    box-shadow: 0 0 10px var(--glow-color), 0 0 20px var(--glow-spread-color);
-    color: var(--glow-color);
-    animation: box-shimmer-select 1.5s infinite alternate;
-    padding: 8px 21px;
 }
 
 .login-btn:hover {
@@ -569,16 +569,11 @@ footer .copyright {
     text-decoration: none;
     
     background: linear-gradient(90deg, var(--glow-color), wheat);
-    color: #666;
+    border: 2px var(--glow-color) solid;
+    color: var(--glow-color);
     font-weight: bold;
 
     background: #333;
-
-    
-
-    box-shadow: 0 0 10px var(--glow-color), 0 0 20px var(--glow-spread-color);
-    color: var(--glow-color);
-    animation: box-shimmer-select 1.5s infinite alternate;
 
 }
 
@@ -586,7 +581,6 @@ footer .copyright {
     box-shadow: 0 0 10px var(--glow-color), 0 0 20px var(--glow-spread-color);
     background-color: var(--glow-color);
     color: #333;
-    animation: box-shimmer 1.5s infinite alternate;
 }
 
 .login-link {
@@ -850,22 +844,16 @@ footer .copyright {
 
 .form button {
     background: #333;
-    color: #666;
-    transition: all 0.3s ease-in-out;
-
-    box-shadow: 0 0 10px var(--glow-color),
-        0 0 20px var(--glow-spread-color);
     color: var(--glow-color);
-    animation: box-shimmer-select 1.5s infinite alternate;
+    border: 2px var(--glow-color) solid;
+    transition: all 0.3s ease-in-out;
+    border-radius: 5em;
 }
 
 .form button:hover {
-    box-shadow: 0 0 10px var(--glow-color),
-                 0 0 20px var(--glow-spread-color);
+    box-shadow: 0 0 10px var(--glow-color), 0 0 20px var(--glow-spread-color);
     background-color: var(--glow-color);
     color: #333;
-    animation: box-shimmer 1.5s infinite alternate;
-
 }
 
 .form-signup-btn {
@@ -1090,4 +1078,23 @@ footer .copyright {
     padding: 20px;
     margin: 20px;
     font-size: 13px;
+}
+
+.copy-btn {
+    background-color: #333;
+    border: 2px var(--glow-color) solid;
+    /* border: none; */
+    color: var(--glow-color);
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5em;
+
+    transition: all 0.3s ease-in-out;
+}
+
+.copy-btn:hover {
+    box-shadow: 0 0 10px var(--glow-color), 0 0 20px var(--glow-spread-color);
+    background-color: var(--glow-color);
+    color: #333;
 }
