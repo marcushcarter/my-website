@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/style2.css">
+    <link rel="stylesheet" href="/style3.css">
+    <script src="https://kit.fontawesome.com/1d0f0d81d5.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="/resources/favicon.png" type="image/x-icon">
+    <title>Setting Up Your First SDL Repository</title>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+	
+</head>
+<body>
+    <custom-navbar></custom-navbar>
+
+    <img src="/resources/logo-full.png" class="title" style="width: 150px; padding: 20px;">
+
+	<!-- title -->
+    <header class="margined-750">
+		<h1 class="neon">Title h1</h1>
+		<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Mollitia minima voluptatum, distinctio minus ducimus dicta nemo dolores id, aperiam non veritatis nisi? Sunt, quasi. Nihil eaque repellat deleniti obcaecati officiis.</p>
+	</header>
+
+	<!-- What is SDL -->
+	<section class="margined-750">
+		<h2 class="neon">Title h2</h2>
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut <code class="inline-code-box">possimus velit quo</code>, animi non magni voluptas voluptatum sapiente suscipit explicabo facere nisi, optio natus necessitatibus et facilis consequuntur totam dolores?</p>
+		<img src="/resources/null.jpeg" loading="lazy">
+		<p>If you need help or are stuck, you can <a href="/code-viewer.html?file=/projects/sdl-part1/code1.c&lang=c" target="_blank">View Source Code</a>.</p>
+		<div class="code-box"><pre><code class="language-cpp">
+#include &lt;stdio.h&gt;
+int main() {
+	printf("Hello, World!\n");
+	return 0;
+}
+		</code></pre></div>
+
+		<p class="caution">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat saepe eius, quam fugiat necessitatibus quisquam, fuga quis reprehenderit fugit, tenetur optio earum eveniet impedit quibusdam distinctio in omnis voluptas doloribus?</p>
+		<p class="note">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure veritatis, sunt quaerat ad vero fuga expedita aliquam, beatae odio sapiente provident. Id velit asperiores sit fugit est dignissimos repudiandae numquam?</p>
+
+		<h3 class="neon">Excercies:</h3>
+		<ol>
+			<li>EASY: Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui, ratione. Exercitationem eius similique, est tenetur pariatur vitae ducimus corporis, nisi asperiores praesentium nihil mollitia, blanditiis possimus laboriosam eos deserunt illo. <a href="/code-viewer.html?file=/projects/sdl-part1/question1-1.c&lang=c" target="_blank">View Solution</a>.</li>
+			<li>ADVANCED: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque dicta, distinctio, dolor, eligendi veniam recusandae consequuntur vitae impedit asperiores alias saepe nesciunt non earum iusto temporibus? Quis numquam soluta deserunt? <a href="/code-viewer.html?file=/projects/sdl-part1/question1-2.c&lang=c" target="_blank">View Solution</a>.</li>
+		</ol>
+
+		<p>You have completed this lesson. If you would like the full repository we made in this lesson, click <a class="neon" href="https://github.com/marcushcarter/sdl-template.git" target="_blank">click here</a>.</p>
+
+	</section>
+
+	<div class="page-break"></div>
+
+	<div class="margined-750"><a href="/projects/sdl-part2/lesson.html"><p>Click here to move onto the next lesson ></p></a></div>
+
+    <custom-footer></custom-footer>
+    <script src="/script.js"></script>
+	<script> hljs.highlightAll(); </script>
+	<script>
+		document.addEventListener('DOMContentLoaded', (event) => {
+			document.querySelectorAll('pre code').forEach((block) => {
+				hljs.highlightElement(block);
+			});
+		});
+	</script>
+</body>
+</html>

@@ -17,6 +17,8 @@
 <body>
     <custom-navbar></custom-navbar>
 
+    <img src="/resources/logo-full.png" class="title" style="width: 150px; padding: 20px;">
+
 	<!-- title -->
     <header class="margined-750">
 		<h1 class="neon">Setting Up Your First SDL Project</h1>
@@ -123,7 +125,7 @@ while (running) {
 		<p>Now try running the code!</p>
 		<video src="movie2.webm" autoplay loop muted loading="lazy"></video>
 
-		<p>If you need help or are stuck, you can refer to the source code <a href="/code-viewer.html?file=/projects/sdl template/code1.c&lang=c" target="_blank">here</a></p>
+		<p>If you need help or are stuck, you can <a href="/code-viewer.html?file=/projects/sdl-part1/code1.c&lang=c" target="_blank">View Source Code</a>.</p>
 
 	</section>
 	<div class="page-break"></div>
@@ -173,27 +175,40 @@ for (float i = 0; i &gt; 600; i+=0.1) {
 		</code></pre></div>
 		<img src="draw4.webp" loading="lazy">
 
-		<p> If you need help or are stuck, you can refer to the source code <a href="/code-viewer.html?file=/projects/sdl template/code2.c&lang=c" target="_blank">here</a></p>
+		<p>If you need help or are stuck, you can <a href="/code-viewer.html?file=/projects/sdl-part2/code1.c&lang=c" target="_blank">View Source Code</a>.</p>
 		<p class="caution">Don't forget that your code will draw in the order of functions you put them in, so be careful you aren't overwriting any of the objects you draw because they are in the wrong order!</p>
 
 		<h3 class="neon">Excercies:</h3>
 		<ol>
-			<li>EASY: Try to make a triangle with 3x<code class="inline-code-box">SDL_RenderLine()</code>. <a href="/code-viewer.html?file=/projects/sdl template/question1-1.c&lang=c" target="_blank">View Solution</a>.</li>
-			<li>ADVANCED: Try to create an empty circle using <code class="inline-code-box">SDL_RenderPoint()</code> and the <code class="inline-code-box">math.h</code> header file. <a href="/code-viewer.html?file=/projects/sdl template/question1-2.c&lang=c" target="_blank">View Solution</a>.</li>
+			<li>EASY: Try to make a triangle with 3x<code class="inline-code-box">SDL_RenderLine()</code>. <a href="/code-viewer.html?file=/projects/sdl-part1/question1-1.c&lang=c" target="_blank">View Solution</a>.</li>
+			<li>ADVANCED: Try to create an empty circle using <code class="inline-code-box">SDL_RenderPoint()</code> and the <code class="inline-code-box">math.h</code> header file. <a href="/code-viewer.html?file=/projects/sdl-part1/question1-2.c&lang=c" target="_blank">View Solution</a>.</li>
 		</ol>
+
+		<p>You have completed this lesson. If you would like the full repository we made in this lesson, click <a class="neon" href="https://github.com/marcushcarter/sdl-template.git" target="_blank">click here</a>.</p>
+		<p><a href="/projects/sdl-part2/lesson.html">Click here to move onto the next lesson ></a></p>
 	</section>
 
-	<p class="margined-750">Great Job! You have completed this lesson. If you want the full repository we made in this lesson, click <a class="neon" href="https://github.com/marcushcarter/sdl-template.git" target="_blank">here</a>.</p>
+	<div class="page-break"></div>
+
+	<div class="margined-750">
+		<h2 class="neone">Sources</h2>
+		<a href="" target="_blank"><p></p></a>
+		<a href="" target="_blank"><p></p></a>
+		<a href="" target="_blank"><p></p></a>
+		<a href="" target="_blank"><p></p></a>
+		<a href="" target="_blank"><p></p></a>
+		<a href="" target="_blank"><p></p></a>
+	</div>
 
     <custom-footer></custom-footer>
     <script src="/script.js"></script>
 	<script> hljs.highlightAll(); </script>
 	<script>
-		  document.addEventListener('DOMContentLoaded', (event) => {
-    document.querySelectorAll('pre code').forEach((block) => {
-      hljs.highlightElement(block);
-    });
-  });
+		document.addEventListener('DOMContentLoaded', (event) => {
+			document.querySelectorAll('pre code').forEach((block) => {
+				hljs.highlightElement(block);
+			});
+		});
 	</script>
 </body>
 </html>
