@@ -1068,12 +1068,24 @@ footer .copyright {
     margin: 3px;
 }
 
-/* CUATION */
+/* LESSON CUATION */
 
 .caution {
     border-radius: 5px;
     border: solid 2px #ff9696;
     background-color: #ffc8c8;
+    color: #171717;
+    padding: 20px;
+    margin: 20px;
+    font-size: 13px;
+}
+
+/* LESSON NOTE */
+
+.note {
+    border-radius: 5px;
+    border: solid 2px rgb(150, 255, 150);
+    background-color: rgb(200, 255, 200);
     color: #171717;
     padding: 20px;
     margin: 20px;
