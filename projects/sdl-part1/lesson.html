@@ -30,9 +30,9 @@
 
 			<img src="/resources/logo-full.png" class="title" style="width: 150px; padding: 20px;">
 
-			<h1 class="neon">Setting Up Your First SDL Project</h1>
+			<h1 class="neon">Setting Up Your First SDL Project - Part 1</h1>
 			<p>In this lesson, we will take you through how to set up an SDL repository, how to create a window, and how to draw to the window. Let's get started!</p>
-			<p>If you havent already gone through the lesson on how to setup Visual Studio code, It is <a class="neon">required</a> for this project. <a href="#">You can find the tutorial here ></a></p>
+			<p>If you havent already gone through the lesson on how to setup Visual Studio code, It is <a class="neon">required</a> for this project. <a href="/projects/vscode-mingw/lesson.html">You can find the tutorial here ></a></p>
 
 			<h2 class="neon">What is SDL?</h2>
 			<p><strong>Simple DirectMedia Layer</strong> is a free library that gives you access to your computer's graphics, audio, input (like keyboard or a controller), and more in a way that's great for building games or media applications. Think of SDL like a toolbelt and you're the builder. It gives you the hammers, measuring tapes and cement for you to build with.</p>
@@ -44,7 +44,7 @@
 			<p>The first and most important step to getting started with game developement is setting up your repository. A repository is basically just the main folder where all of your assets, files and code goes into. To do this, open your file explorer on your computer, and where you want your project to be located, create a new folder called 'sdl-template.' But we cant start coding just yet. Inside your repository folder, create 4 new folders called 'resources', 'include', 'lib', and 'src'. These will be where we will put our game assets (pictures, videos, textures etc.), source code, header files, and libraries. Now, it's time to add SDL to our project.</p>
 			<p>In this tutorial, we will be using SDL v3.2.10, but any version of SDL will work as long as it is newer than v3.0.0. Visit <a href="https://github.com/libsdl-org/SDL/releases" target="_blank">this link</a> to go to SDL's download page. Click on and download the file called <code class="inline-code-box">SDL3-devel-3.2.10-mingw.tar.gz</code> (or whatever version you are using), save it to your repository and extract that file.</p>
 			<p>Now before we continue, we must check what type of system our device is using because if you add the wrong files, your project will not work. To do this, open settings and go to <code class="inline-code-box">System > About > Device Specifications > System Type</code> and check yours.</p>
-			<img src="bit-test.webp" loading="lazy" alt="Check system type in Windows for SDL setup">
+			<a href="bit-test.webp"><img src="bit-test.webp" loading="lazy" alt="Check system type in Windows for SDL setup"></a>
 			<p>Depending on what system type you have, you will have to use the corresponding bit of SDL. Open the folder corresponding to your system type: <code class="inline-code-box">i686-w64-mingw32</code> for 32-bit, <code class="inline-code-box">x84_64-w64-mingw32</code> for 64-bit.</p>
 			<p>Here we are only interested in three folders. The first and second, called <code class="inline-code-box">include</code> and <code class="inline-code-box">lib</code>, we will just copy directly to the main directory of the project. And the third, inside the <code class="inline-code-box">bin</code> folder, we will take the file called <code class="inline-code-box">SDL3.dll</code> and place it into the main directory. Once you have this done, you can delete the tar.gz file and the folder extracted from it.</p>
 			<p>Now it's time to get programing! Open your project folder with VSCode. The first thing we will do is make our main.c file, or the primary file of the project. In your <code class="inline-code-box">src</code> folder, make a new file called <code class="inline-code-box">main.c</code>. Here we will write simple hello world script.</p>
