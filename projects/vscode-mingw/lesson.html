@@ -26,9 +26,24 @@
 
 			<h2 class="neon">Installing the MINGW toolchain</h2>
 
-			<h2 class="neon">Our first lines of code</h2>
+			<h2 class="neon">Running Our First Lines of Code</h2>
 
-			<p>Now that we finally have our VS Code environment set up, we can start coding. The first thing you should always do before starting any code is to make a simple program that prints "Hello, World!" to the console. In this case we will use C. When you are ready, make a new <code class="inline-code-box">main.c</code> file and copy and paste the following code in it.</p>
+			<p>Now that we finally have our VS Code environment set up, we can start coding. The first thing you should always do before starting any code is to make a simple program that prints "Hello, World!" to the console. In this case we will use C. When you are ready, make a new <code class="inline-code-box">main.c</code> file and copy and paste the following code into it.</p>
+			<div class="code-box"><pre><code class="language-cpp">
+#include &lt;stdio.h&gt;
+
+int main() {
+	printf("Hello, World!\n");
+	return 0;
+}
+			</code></pre></div>
+			<p>Once you save the file, now try finding the play button in the top right corner of the screen, click the dropdown and click on the option <code class="inline-code-box">Run C/C++ File</code>. Then, when prompted, you will select <code class="inline-code-box">C/C++ gcc.exe build and debug active file</code> from the search bar at the top of the window.</p>
+			<a href="run1.webp"><img src="run1.webp" alt="Example of the first step in how to run a file"></a>
+			<a href="run2.webp"><img src="run2.webp" alt="Example of C/C++ gcc.exe build and Debug active file"></a>
+			<p>After you select that, your terminal will opn and start running some compile scripts. You dont need to worry abou tany of them it tells you if your file compiled succesfully. If it doesnt say it compiled succesfully, then you have an Error in your code. If you go back to the terminal tab, it should have printed "Hello, World!</p>
+			<a href="run3.webp"><img src="run3.webp" alt="Example of your project succesfully compiling"></a>
+			<a href="run4.webp"><img src="run4.webp" alt="Example of printing Hello, World! in the terminal"></a>
+			<p>Congratulations,  You have just run your first file with Visual Studio code!</p>
 
 		</article>
 	</main>
