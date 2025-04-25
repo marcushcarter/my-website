@@ -3,48 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
 
-    <meta name="description" content="Contribute to Ballistic Studios by sharing your feedback in our demographic survey. Your input helps us grow and improve.">
-    <meta name="keywords" content="Contribute, feedback, survey, Ballistic Studios, game development, programming education">
-    <meta name="author" content="Ballistic Studios">
-    
-    <meta property="og:title" content="Contribute - Ballistic Studios">
-    <meta property="og:description" content="We value your contribution. Take our survey and help us improve our services and grow our community.">
-    <meta property="og:image" content="resources/logo-full.png">
-    <meta property="og:image:alt" content="Ballistic Studios logo">
-    <meta property="og:url" content="https://ballisticstudios.ca/contribute">
-    <meta property="og:type" content="website">
-
-    <meta name="twitter:title" content="Contribute - Ballistic Studios">
-    <meta name="twitter:description" content="Contribute to Ballistic Studios by providing valuable feedback in our survey.">
-    <meta name="twitter:image" content="resources/logo-full.png">
-    <meta name="twitter:card" content="summary_large_image">
-
+	<meta property="og:title" content="">
+	<meta property="og:description" content="">
+	<meta property="og:image" content="/resources/logo-full.png">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://ballisticstudios.ca/contribute">
 
     <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="/style2.css">
     <link rel="stylesheet" href="/style3.css">
-
+	
     <script src="https://kit.fontawesome.com/1d0f0d81d5.js" crossorigin="anonymous"></script>
     <link rel="icon" href="/resources/favicon.png" type="image/x-icon">
-    <title>Contribute - Ballistic Studios</title>
+    <title>Contribute | Ballistic Studios</title>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
 </head>
 <body>
     <custom-navbar></custom-navbar>
-
-    <header class="margined-750">
-        <img src="/resources/logo-full.png" class="title" alt="Ballistic Studios Logo" style="width: 150px; padding: 20px;">    
-        <h1 class="neon title">Contribute</h1>
-        <a>We appreciate your contribution to the growth of Ballistic Studios! Your feedback helps us understand our audience
-           and improve our services. Please take a moment to fill out the survey and share your thoughts. This data is used to 
-           help us target specific areas of the market and help us to grow a following and our buisness.</a>
-        <br>
-    </header>
-
     <main>
 
-        <br>
+        <img src="/resources/logo-full.png" class="title" alt="Ballistic Studios Logo" style="width: 150px; padding: 20px;">    
+
+        <!-- Title -->
+        <header class="margined-750">
+            <h1 class="neon title">Contribute</h1>
+            <a>We appreciate your contribution to the growth of Ballistic Studios! Your feedback helps us understand our audience
+            and improve our services. Please take a moment to fill out the survey and share your thoughts. This data is used to 
+            help us target specific areas of the market and help us to grow a following and our buisness.</a>
+        </header>
         
+        <!-- Form -->
         <form action="https://formspree.io/f/mpwpoqnv" method="POST" class="form">
             <h2 class="title neon">Survey</h2>
 
@@ -120,10 +114,18 @@
             <textarea name="comments" id="comments" class="long-answer" placeholder="Write your thoughts here..."></textarea><br>
 
             <button type="submit">Submit</button>
-        </form><br>         
+        </form><br>     
+
     </main>
-    
     <custom-footer></custom-footer>
     <script src="/script.js"></script>
+    <script> hljs.highlightAll(); </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelectorAll('pre code').forEach((block) => {
+                hljs.highlightElement(block);
+            });
+        });
+    </script>
 </body>
 </html>

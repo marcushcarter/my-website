@@ -3,98 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
 
-    <meta name="description" content="Ballistic Studios helps you bring your website ideas to life from just a picture. Start building custom websites and stay updated with our latest games and offers.">
-    <meta name="keywords" content="Ballistic Studios, custom websites, game development, web design, indie games">
-    <meta name="author" content="Ballistic Studios">
-
-    <meta property="og:title" content="Ballistic Studios - Custom Websites & Indie Games">
-    <meta property="og:description" content="Get a custom website built from a simple picture and discover our latest indie games.">
-    <meta property="og:image" content="resources/logo-full.png">
-    <meta property="og:url" content="https://ballisticstudios.ca">
-    <meta name="twitter:card" content="summary_large_image">
-
-    <link rel="preload" as="image" href="resources/logo-full.png">
+	<meta property="og:title" content="">
+	<meta property="og:description" content="">
+	<meta property="og:image" content="/resources/logo-full.png">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://ballisticstudios.ca/home">
 
     <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="/style2.css">
     <link rel="stylesheet" href="/style3.css">
-
+	
     <script src="https://kit.fontawesome.com/1d0f0d81d5.js" crossorigin="anonymous"></script>
-
     <link rel="icon" href="/resources/favicon.png" type="image/x-icon">
-
     <title>Ballistic Studios | Custom Websites & Indie Games</title>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
 </head>
 <body>
     <custom-navbar></custom-navbar>
 
-    <main>
-        <section class="featured">
-            <img src="/resources/websites-featured.jpeg" style="max-height: 500px;" alt="Custom built website promo banner">
-            <p>Bring Your Website Vision to Life - From Just a Simple Picture!</p>
-            <a href="#" onclick="scrolltopage('/websites.html', 'websites-pricing'); return false;" class="featured-btn">Start Building</a>
-        </section>
-
+    <!-- Featured Banner -->
+    <section class="featured">
+        <img src="/resources/websites-featured.jpeg" style="max-height: 500px;" alt="Custom built website promo banner">
+        <p>Bring Your Website Vision to Life - From Just a Simple Picture!</p>
+        <a href="#" onclick="scrolltopage('/websites', 'websites-pricing'); return false;" class="featured-btn">Start Building</a>
         <br><div class="page-break"></div><br>
+    </section>
 
-        <img src="/resources/logo-full.png" class="title" style="width: 150px; padding: 20px;" alt="Ballistic Studios Full Logo">
+    <main class="margined-750">
 
+        <img src="/resources/logo-full.png" class="title" alt="Ballistic Studios Logo" style="width: 150px; padding: 20px;" alt="Ballistic Studios Full Logo">
+
+        <!-- First Panel -->
         <div class="two-panel" style="background-color: #222;">
             <div class="panel-item">
-                <p>Welcome to Ballistic Studios! I specialize in creating fast, modern, and SEO-friendly websites that match your vision. Simply send me a picture or description of your ideal website, and I'll build it for you! Once it's ready, you'll receive a downloadable folder via github with everything you need to launch it on your domain. <a class="neon" href="websites.html">Click here to start buidling!</a></p>
+                <p>Want to start learning how to code and make your very own games you can send to your friends? Visit our "Projects and Lessons" page to start learning through step by step instructions and make the projects of your dreams! <a class="neon" href="/projects">Click here to start learning ></a></p>
             </div>
             <div class="panel-item">
                 <img src="/resources/websites-featured.jpeg" alt="Image">
             </div>
         </div>
 
-        <section>
-            <br>
-            <form action="https://formspree.io/f/xzzekpgl" method="POST" class="form">
-                <h2 class="title neon">Get The Latest News From Ballistic Studios</h2>
-                <p class="title">Enter your email address, select your country or region, and submit. You can opt out at any time. We promise not to spam you.</p>
-            
-                <label for="email">Email Address</label>
-                <input type="email" name="email" id="email" placeholder="Enter your email" required><br>
-            
-                <label for="country">Country/Region</label>
-                <select name="country" id="country" required>
-                    <option value="">Select</option>
+        <br>
+        <!-- Email List Form -->
+        <form action="https://formspree.io/f/xzzekpgl" method="POST" class="form">
+            <h2 class="title neon">Get The Latest News From Ballistic Studios</h2>
+            <p class="title">Enter your email address, select your country or region, and submit. You can opt out at any time. We promise not to spam you.</p>
+        
+            <label for="email">Email Address</label>
+            <input type="email" name="email" id="email" placeholder="Enter your email" required><br>
+        
+            <label for="country">Country/Region</label>
+            <select name="country" id="country" required>
+                <option value="">Select</option>
 
-                    <option value="ca">Canada</option>
-                    <option value="us">United States</option>
-                  
-                    <option value="ar">Argentina</option>
-                    <option value="au">Australia</option>
-                    <option value="bd">Bangladesh</option>
-                    <option value="br">Brazil</option>
-                    <option value="cl">Chile</option>
-                    <option value="cn">China</option>
-                    <option value="de">Germany</option>
-                    <option value="es">Spain</option>
-                    <option value="fr">France</option>
-                    <option value="ie">Ireland</option>
-                    <option value="in">India</option>
-                    <option value="it">Italy</option>
-                    <option value="jp">Japan</option>
-                    <option value="kr">South Korea</option>
-                    <option value="mx">Mexico</option>
-                    <option value="nz">New Zealand</option>
-                    <option value="pk">Pakistan</option>
-                    <option value="sg">Singapore</option>
-                    <option value="uk">United Kingdom</option>
-                </select><br>
-            
-                <p>By opting in, you agree to receive communications from Ballistic Studios. You can also unsubscribe.</p>
-                <p>I will receive information, tips, and offers from Ballistic Studios. <a href="/privacy-policy.html" class="neon">Privacy Statement</a>.</p>
-            
-                <button type="submit">Submit</button>
-            </form>
-        </section>
+                <option value="ca">Canada</option>
+                <option value="us">United States</option>
+                
+                <option value="ar">Argentina</option>
+                <option value="au">Australia</option>
+                <option value="bd">Bangladesh</option>
+                <option value="br">Brazil</option>
+                <option value="cl">Chile</option>
+                <option value="cn">China</option>
+                <option value="de">Germany</option>
+                <option value="es">Spain</option>
+                <option value="fr">France</option>
+                <option value="ie">Ireland</option>
+                <option value="in">India</option>
+                <option value="it">Italy</option>
+                <option value="jp">Japan</option>
+                <option value="kr">South Korea</option>
+                <option value="mx">Mexico</option>
+                <option value="nz">New Zealand</option>
+                <option value="pk">Pakistan</option>
+                <option value="sg">Singapore</option>
+                <option value="uk">United Kingdom</option>
+            </select><br>
+        
+            <p>By opting in, you agree to receive communications from Ballistic Studios. You can also unsubscribe.</p>
+            <p>I will receive information, tips, and offers from Ballistic Studios. <a href="/privacy-policy.html" class="neon">Privacy Statement</a>.</p>
+        
+            <button type="submit">Submit</button>
+        </form>
+
     </main>
-
     <custom-footer></custom-footer>
     <script src="/script.js"></script>
+    <script> hljs.highlightAll(); </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelectorAll('pre code').forEach((block) => {
+                hljs.highlightElement(block);
+            });
+        });
+    </script>
 </body>
 </html>

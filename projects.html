@@ -3,106 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
 
-    <!-- <meta name="description" content="Use our smart search to find pages like About Us, our Demographic Survey, Web Design Services, and more at Ballistic Studios.">
-    <meta name="keywords" content="Ballistic Studios, web development, programming, learn to code, demographic survey, game development, contact, portfolio, SEO websites">
-    <meta name="author" content="Ballistic Studios">
-    
-    <meta property="og:title" content="Search - Ballistic Studios">
-    <meta property="og:description" content="Reach out to Ballistic Studios for support, inquiries, or to learn more about our services.">
-    <meta property="og:image" content="resources/logo-full.png">
-    <meta property="og:image:alt" content="Ballistic Studios logo">
-    <meta property="og:url" content="https://ballisticstudios.ca/search">
-    <meta property="og:type" content="website">
-
-    <meta name="twitter:title" content="SearchS - Ballistic Studios">
-    <meta name="twitter:description" content="Contact Ballistic Studios for support or inquiries. We're here to help you!">
-    <meta name="twitter:image" content="resources/logo-full.png">
-    <meta name="twitter:card" content="summary_large_image"> -->
+	<meta property="og:title" content="">
+	<meta property="og:description" content="">
+	<meta property="og:image" content="/resources/logo-full.png">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://ballisticstudios.ca/projects">
 
     <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="/style2.css">
     <link rel="stylesheet" href="/style3.css">
-
+	
     <script src="https://kit.fontawesome.com/1d0f0d81d5.js" crossorigin="anonymous"></script>
     <link rel="icon" href="/resources/favicon.png" type="image/x-icon">
-    <title>Projects - Ballistic Studios</title>
+    <title>Projects | Ballistic Studios</title>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
 </head>
 <body>
     <custom-navbar></custom-navbar>
     <custom-searchbar></custom-searchbar>
+	<main>
 
-    <img src="/resources/logo-full.png" class="title" style="width: 150px; padding: 20px;">
-        
-	<ul class="articles"> <!-- Important -->
-		<!-- <li>
-			<img src="/resources/null.jpeg">
-			<div class="text">
-				<h4>Template Project</h4>
-				<a>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum, consequuntur soluta. Unde sapiente labore dolores aspernatur tempore iure inventore perspiciatis! Eaque reprehenderit praesentium sint, corporis quasi deserunt ipsam accusantium quam.</a>
-				<a href="/projects/test1/template.html">Start Learning ></a>
-				<a style="font-size: 13px; color: #999;">by Unknown</a>
-			</div>
-		</li> -->
+		<img src="/resources/logo-full.png" class="title" alt="Ballistic Studios Logo" style="width: 150px; padding: 20px;">
+			
+		<ul class="articles"> <!-- Important -->
+			<!-- <li>
+				<img src="/resources/null.jpeg">
+				<div class="text">
+					<h4>Template Project</h4>
+					<a>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum, consequuntur soluta. Unde sapiente labore dolores aspernatur tempore iure inventore perspiciatis! Eaque reprehenderit praesentium sint, corporis quasi deserunt ipsam accusantium quam.</a>
+					<a href="/projects/test1/template.html">Start Learning ></a>
+					<a style="font-size: 13px; color: #999;">by Unknown</a>
+				</div>
+			</li> -->
 
-		<!-- <li data-name="SDL SDL3 ">
-			<img src="/projects/vscode-mingw/thumbnail.webp">
-			<div class="text">
-				<h4>Visual Studio Code Setup</h4>
-				<a>Set up our Visual Studio environment code with MINGW while learning about code editors and how to compile projects.</a>
-				<a href="/projects/vscode-mingw/lesson.html">Start Learning ></a>
-				<a style="font-size: 13px; color: #999;">by Marcus Carter</a>
-			</div>
-		</li> -->
+			<!-- <li data-name="SDL SDL3 ">
+				<img src="/projects/vscode-mingw/thumbnail.webp">
+				<div class="text">
+					<h4>Visual Studio Code Setup</h4>
+					<a>Set up our Visual Studio environment code with MINGW while learning about code editors and how to compile projects.</a>
+					<a href="/projects/vscode-mingw/lesson.html">Start Learning ></a>
+					<a style="font-size: 13px; color: #999;">by Marcus Carter</a>
+				</div>
+			</li> -->
 
-		<!-- <li>
-			<img src="/resources/null.jpeg">
-			<div class="text">
-				<h4>Game Development with SDL - Part 1</h4>
-				<a>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias dicta distinctio quaerat animi, maiores deserunt, amet asperiores ipsum sequi rerum est eius quasi cum quisquam eum, et at ad iusto!</a>
-				<a href="/projects/sdl-part2/lesson.html">Start Learning ></a>
-				<a style="font-size: 13px; color: #999;">by Marcus Carter</a>
-			</div>
-		</li> -->
-	</ul>
-    
-	<ul class="articles" id="search-objects"> <!-- Regular Lessons -->
+			<!-- <li>
+				<img src="/resources/null.jpeg">
+				<div class="text">
+					<h4>Game Development with SDL - Part 1</h4>
+					<a>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias dicta distinctio quaerat animi, maiores deserunt, amet asperiores ipsum sequi rerum est eius quasi cum quisquam eum, et at ad iusto!</a>
+					<a href="/projects/sdl-part2/lesson.html">Start Learning ></a>
+					<a style="font-size: 13px; color: #999;">by Marcus Carter</a>
+				</div>
+			</li> -->
+		</ul>
+		
+		<ul class="articles" id="search-objects"> <!-- Regular Lessons -->
 
-		<li data-name="SDL3 template repository drawing rendering window C C++ compiling makefiles game development lesson 1">
-			<img src="/projects/sdl-part1/thumbnail.webp">
-			<div class="text">
-				<h4>Setting Up Your First SDL Project | SDL Lesson 1</h4>
-				<a>Set up the base template for a typical SDL Project while learning what SDL is, how to create a repository, a window, and how to draw to it.</a>
-				<a href="/projects/sdl-part1/lesson.html">Start Learning ></a>
-				<a style="font-size: 13px; color: #999;">by Marcus Carter</a>
-			</div>
-		</li>
+			<li data-name="SDL3 template repository drawing rendering window C C++ compiling makefiles game development lesson 1">
+				<img src="/projects/sdl-part1/thumbnail.webp" alt="Setting up you first SDL project thumbnail">
+				<div class="text">
+					<h4>Setting Up Your First SDL Project | SDL Lesson 1</h4>
+					<a>Set up the base template for a typical SDL Project while learning what SDL is, how to create a repository, a window, and how to draw to it.</a>
+					<a href="/projects/sdl-part1/lesson.html">Start Learning ></a>
+					<a style="font-size: 13px; color: #999;">by Marcus Carter</a>
+				</div>
+			</li>
 
-		<!-- <li data-name="">
-			<img src="/resources/null.jpeg">
-			<div class="text">
-				<h4>Template Project</h4>
-				<a>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum, consequuntur soluta. Unde sapiente labore dolores aspernatur tempore iure inventore perspiciatis! Eaque reprehenderit praesentium sint, corporis quasi deserunt ipsam accusantium quam.</a>
-				<a href="/projects/template.html">Start Learning ></a>
-				<a style="font-size: 13px; color: #999;">by Unknown</a>
-			</div>
-		</li> -->
+			<!-- <li data-name="">
+				<img src="/resources/null.jpeg">
+				<div class="text">
+					<h4>Template Project</h4>
+					<a>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum, consequuntur soluta. Unde sapiente labore dolores aspernatur tempore iure inventore perspiciatis! Eaque reprehenderit praesentium sint, corporis quasi deserunt ipsam accusantium quam.</a>
+					<a href="/projects/template.html">Start Learning ></a>
+					<a style="font-size: 13px; color: #999;">by Unknown</a>
+				</div>
+			</li> -->
 
-        <!-- <li>
-			<img src="/resources/null.jpeg">
-			<div class="text">
-				<h4>Game Development with SDL - Part 1</h4>
-				<a>Learn how to setup your first SDL repository and some of the basic functions and concepts to get started with game development. Go through the documentation an build your very own SDL Template that you can use for anything else you want to make.</a>
-				<a href="/projects/sdl template/lesson.html">Start Learning ></a>
-				<a style="font-size: 13px; color: #999;">by Marcus Carter</a>
-			</div>
-		</li> -->
+			<!-- <li>
+				<img src="/resources/null.jpeg">
+				<div class="text">
+					<h4>Game Development with SDL - Part 1</h4>
+					<a>Learn how to setup your first SDL repository and some of the basic functions and concepts to get started with game development. Go through the documentation an build your very own SDL Template that you can use for anything else you want to make.</a>
+					<a href="/projects/sdl template/lesson.html">Start Learning ></a>
+					<a style="font-size: 13px; color: #999;">by Marcus Carter</a>
+				</div>
+			</li> -->
 
-	</ul>
+		</ul>
 
-
-
-    <custom-footer></custom-footer>
-    <script src="/script.js"></script>
+	</main>
+	<custom-footer></custom-footer>
+	<script src="/script.js"></script>
+	<script> hljs.highlightAll(); </script>
+	<script>
+		document.addEventListener('DOMContentLoaded', (event) => {
+			document.querySelectorAll('pre code').forEach((block) => {
+				hljs.highlightElement(block);
+			});
+		});
+	</script>
 </body>
 </html>

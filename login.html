@@ -3,35 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
 
-    <!-- <meta name="description" content="Use our smart search to find pages like About Us, our Demographic Survey, Web Design Services, and more at Ballistic Studios.">
-    <meta name="keywords" content="Ballistic Studios, web development, programming, learn to code, demographic survey, game development, contact, portfolio, SEO websites">
-    <meta name="author" content="Ballistic Studios">
-    
-    <meta property="og:title" content="Search - Ballistic Studios">
-    <meta property="og:description" content="Reach out to Ballistic Studios for support, inquiries, or to learn more about our services.">
-    <meta property="og:image" content="resources/logo-full.png">
-    <meta property="og:image:alt" content="Ballistic Studios logo">
-    <meta property="og:url" content="https://ballisticstudios.ca/search">
-    <meta property="og:type" content="website">
-
-    <meta name="twitter:title" content="SearchS - Ballistic Studios">
-    <meta name="twitter:description" content="Contact Ballistic Studios for support or inquiries. We're here to help you!">
-    <meta name="twitter:image" content="resources/logo-full.png">
-    <meta name="twitter:card" content="summary_large_image"> -->
+	<meta property="og:title" content="">
+	<meta property="og:description" content="">
+	<meta property="og:image" content="/resources/logo-full.png">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://ballisticstudios.ca/login">
 
     <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="/style2.css">
     <link rel="stylesheet" href="/style3.css">
-
+	
     <script src="https://kit.fontawesome.com/1d0f0d81d5.js" crossorigin="anonymous"></script>
     <link rel="icon" href="/resources/favicon.png" type="image/x-icon">
-    <title>Login - Ballistic Studios</title>
+    <title>Login | Ballistic Studios</title>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
 </head>
 <body>
     <custom-navbar></custom-navbar>
 
-    <div class="login-screen">
+    <section class="login-screen">
         <h1 class="neon">Login</h1>
         <div class="login-input">
             <input type="text" placeholder="Username" oninput="filterItems()">
@@ -43,8 +39,16 @@
         <div><a href="" class="login-continue">Login</a></div>
         <a class="login-link" href="">Forgot Password</a>
         <a class="login-link" href="">Signup</a>
-    </div>
+    </section>
 
-    <script src="/script.js"></script>
+	<script src="/script.js"></script>
+	<script> hljs.highlightAll(); </script>
+	<script>
+		document.addEventListener('DOMContentLoaded', (event) => {
+			document.querySelectorAll('pre code').forEach((block) => {
+				hljs.highlightElement(block);
+			});
+		});
+	</script>
 </body>
 </html>

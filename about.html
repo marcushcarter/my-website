@@ -3,71 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
 
-    <meta name="description" content="Meet Marcus Carter, the founder of Ballistic Studios. Learn about the team and the mission behind our game development and educational efforts.">
-    <meta name="keywords" content="Marcus Carter, Ballistic Studios, team, game development, education, programming">
-    <meta name="author" content="Ballistic Studios">
-
-    <meta property="og:title" content="About Us - Ballistic Studios">
-    <meta property="og:description" content="Meet Marcus Carter, the founder of Ballistic Studios, and discover the mission behind our educational and gaming efforts.">
-    <meta property="og:image" content="resources/logo-full.png">
-    <meta property="og:image:alt" content="Ballistic Studios logo">
-    <meta property="og:url" content="https://ballisticstudios.ca/about-us">
-    <meta property="og:type" content="website">
-
-    <meta name="twitter:title" content="About Us - Ballistic Studios">
-    <meta name="twitter:description" content="Meet Marcus Carter, the founder of Ballistic Studios, and learn more about our journey in education and game development.">
-    <meta name="twitter:image" content="resources/logo-full.png">
-    <meta name="twitter:card" content="summary_large_image">
+	<meta property="og:title" content="">
+	<meta property="og:description" content="">
+	<meta property="og:image" content="/resources/logo-full.png">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://ballisticstudios.ca/about">
 
     <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="/style2.css">
     <link rel="stylesheet" href="/style3.css">
-
+	
     <script src="https://kit.fontawesome.com/1d0f0d81d5.js" crossorigin="anonymous"></script>
     <link rel="icon" href="/resources/favicon.png" type="image/x-icon">
-    <title>About Us - Ballistic Studios</title>
+    <title>About Us | Ballistic Studios</title>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
 </head>
 <body>
     <custom-navbar></custom-navbar>
+    <main class="margined-750">
 
-    <img src="/resources/logo-full.png" class="title" alt="Ballistic Studios logo" style="width: 150px; padding: 20px;">
+        <img src="/resources/logo-full.png" class="title" alt="Ballistic Studios logo" style="width: 150px; padding: 20px;">
+        
+        <!-- Our Team -->
+        <section>
+            <h1 class="neon title">Our Team</h1>
 
-    <h1 class="neon title">Our Team</h1>
+            <div class="image-container neon">
+                <figure>
+                    <a href="https://www.eliteprospects.com/player/897751/marcus-carter">
+                        <img src="/resources/Marcus Carter.JPG" alt="Marcus Carter profile photo">
+                    </a>
+                    <figcaption>Marcus Carter</figcaption>
+                </figure>
+            </div>
 
-    <div class="image-container neon">
-        <figure>
-            <a href="https://www.eliteprospects.com/player/897751/marcus-carter">
-                <img src="/resources/Marcus Carter.JPG" alt="Marcus Carter, founder of Ballistic Studios">
-            </a>
-            <figcaption>Marcus Carter</figcaption>
-        </figure>
-    </div>
+            <p>Hi and welcome! I'm Marcus, the founder of Ballistic Studios! I am a sophomore in high school and have started this buisness to teach young kids how to proggram. I play high level hockey and track and also enjoy making and playing games, the guitar and music.</p>
+            <a class="neon title" href="/contact-us.html" target=_self>I am here to help! If you have any questions you can contact me here ></a>
 
-    <div class="margined-750">
-        <p>Hi and welcome! I'm Marcus, the founder of Ballistic Studios! I am a sophomore in high school and have started this buisness to teach young kids how to proggram. I play high level hockey and track and also enjoy making and playing games, the guitar and music.</p>
-        <a class="neon title" href="/contact-us.html" target=_self>I am here to help! If you have any questions you can contact me here ></a>
-    </div>
+            <div class="page-break"></div>
 
-    <div class="page-break"></div>
+        </section>
 
-    
-    <section class="contact-form-section" id="contact-us">
-
-        <form action="https://formspree.io/f/mjkypgje" method="POST" class="form">
+        <!-- Form -->
+        <form action="https://formspree.io/f/mjkypgje" method="POST" class="form" class="contact-form-section" id="contact-us">
             <h2 class="title neon">Contact Us</h2>
-          
+        
             <label for="email">Email Address</label>
             <input type="email" name="email" id="email" placeholder="Enter your email" required><br>
     
             <label for="description">Describe your issue</label>
             <textarea class="long-answer" name="description" id="description" placeholder="Describe your issue" required></textarea><br>
-          
+        
             <button type="submit">Submit</button>
         </form>
-    </section>
 
+    </main>
     <custom-footer></custom-footer>
     <script src="/script.js"></script>
+    <script> hljs.highlightAll(); </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelectorAll('pre code').forEach((block) => {
+                hljs.highlightElement(block);
+            });
+        });
+    </script>
 </body>
 </html>
