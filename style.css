@@ -13,6 +13,11 @@ body, html {
     --btn-color: rgb(100, 61, 136);
 }
 
+.remove {
+    color: black;
+
+}
+
 /* TEXT AND IMAGE UTILITY */
 .title {
     text-align: center;
@@ -1062,9 +1067,15 @@ footer .copyright {
     border-radius: 5px;
     border: solid 2px #ff9696;
     background-color: #ffc8c8;
+    background: #ffc8c8;
     color: #171717;
     padding: 20px;
     margin: 20px;
+    font-size: 13px;
+}
+
+.caution a {
+    color: #171717;
     font-size: 13px;
 }
 
@@ -1077,6 +1088,11 @@ footer .copyright {
     color: #171717;
     padding: 20px;
     margin: 20px;
+    font-size: 13px;
+}
+
+.note a {
+    color: #171717;
     font-size: 13px;
 }
 
