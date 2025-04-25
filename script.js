@@ -8,15 +8,15 @@ class Navbar extends HTMLElement {
                 <div class="menu-container">
                     <div class="menu"><i class="fa-solid fa-bars icon"></i></div>
                     <div class="dropdown">
-                        <a href="/search.html"><i class="fa-solid fa-magnifying-glass" style="font-size: 18px;"></i></a>
-                        <a href="/index.html">Home</a>
-                        <a href="/websites.html">Websites</a>
-                        <a href="/projects.html">Lessons and Projects</a>
-                        <a href="/about.html">About Us</a>
+                        <a href="/search"><i class="fa-solid fa-magnifying-glass" style="font-size: 18px;"></i></a>
+                        <a href="/index">Home</a>
+                        <a href="/websites">Websites</a>
+                        <a href="/projects">Lessons and Projects</a>
+                        <a href="/about">About Us</a>
                     </div>
                 </div>
-                <a href="/index.html"><img class="navbar-logo" src="/resources/logo-full.png"></a>
-                <a href="/login.html" class="login-btn">Log In</a>
+                <a href="/index"><img class="navbar-logo" src="/resources/logo-full.png"></a>
+                <a href="/login" class="login-btn">Log In</a>
             </nav>
         `;
     }
@@ -36,9 +36,9 @@ class Footer extends HTMLElement {
                     <a href="https://github.com/marcushcarter" target="_blank"><i class="fa-brands fa-github"></i></a> 
                 </div>
                 <div class="extra-links">
-                    <a href="/about.html">About</a>
-                    <a href="#" onclick="scrolltopage('/about.html', 'contact-us'); return false;">Contact us</a>
-                    <a href="/contribute.html">Contribute</a>
+                    <a href="/about">About</a>
+                    <a href="#" onclick="scrolltopage('/about', 'contact-us'); return false;">Contact us</a>
+                    <a href="/contribute">Contribute</a>
                     <a>Privacy Policy</a>
                 </div>
                 <a class="copyright">© Ballistic Studios 2024</a>
