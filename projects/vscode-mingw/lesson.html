@@ -36,13 +36,20 @@
 				<p>In this lesson, you will learn what Visual Studio Code does, what a code editor is, how to setup Visual Studio Code and how to run your first lines of code.</p>
 			</section>
 
+			<!-- What is VS Code / Code Editors / Compilers -->
+			<section>
+
+			</section>
+
 			<!-- Downloading Visual Studio Code -->
 			 <section>
 				<h2 class="neon">Downloading Visual Studio Code</h2>
 				<p>The first step is to <a href="https://code.visualstudio.com/download" target="_blank">download the Visual Studio Code installer</a> for the operating system you are working with. I will be using Windows 11, so I will download the Windows version, but this procedure works for all operating systems. Once the installer is finished downloading, save and open it.</p>
-				<p>accept the licensing agreement, click next. Make sure ADD TO PATH is selected. CLick instal. Wait for it to finish installing. launch visual studio code.</p>
+				<p>When the installer opens, accept the licensing agreement and continue. On the next page it will give you a list of options to select. All are recommended, but you can pick and choose which ones you would like to select except for <code class="inline-code-box">Add to PATH</code> which is REQUIRED. You will then click next, install and wait for VS Code to finish installing. When it is done installing, launch VS Code.</p>
 				<img src="download1.webp" alt="Example on the options to check off when downloading Visual Studio Code">
-				<p>Extensions: <code class="inline-code-box">C/C++ by Microsoft</code>, <code class="inline-code-box">C/C++ Extension Pack by Microsoft</code>, <code class="inline-code-box">C/C++ Themes by Microsoft</code>, <code class="inline-code-box">Makefile Tools by Microsoft</code>.</p>
+				<p>We now have VS Code Installed but we are going to install some extensions to help you write your code. On the left hand side of the window, find the extensions tab and look up C/C++. Here we are looking for these four extensions all by Microsoft: <code class="inline-code-box">C/C++</code>, <code class="inline-code-box">C/C++ Extension Pack</code>, <code class="inline-code-box">C/C++ Themes</code> and <code class="inline-code-box">Makefile Tools</code>. Click on each option and when the page that pops up, click 'install'.</p>
+				<img src="extensions.webp" alt="Example for installing C/C++ extensions in Visual Studio Code">
+				<p>We are done installing VS Code, But in the current state it is just a code editor and can't actually run code. To run code with VS Code, we need to set up GCC and MinGW.</p>
 
 				<div class="page-break"></div>
 			</section>
@@ -50,15 +57,16 @@
 			<!-- Using GCC with MinGW -->
 			<section>
 				<h2 class="neon">Using GCC with MinGW</h2>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati excepturi eius ipsa nulla, ex laborum quisquam laboriosam aut facilis sint. Quaerat excepturi nihil assumenda numquam cumque minima maiores laborum quia!</p>
-
+				<p>The first step to setting up gcc and MinGW is to install the MinGW-w64 compiler toolchain that compiles C/C++ code for us. We will do this by <a class="neon">MSYS2</a> which is a software on Windows that will update MinGW whenever it is available. </p>
+				<p>You can download the <a href="https://www.msys2.org/" target="_blank">newest version of the MSYS2 installer</a> or you can use this <a href="https://github.com/msys2/msys2-installer/releases/download/2024-12-08/msys2-x86_64-20241208.exe" target="_blank">direct link to the installer</a>.</p>
+	
 				<div class="page-break"></div>
 			</section>
 
 			<!-- Running your first project -->
 			<section>
 				<h2 class="neon">Running Our First Lines of Code</h2>
-				<p>Now that we finally have our Visual Studio Code environment set up, we can start coding. The first thing you should always do before starting any code is to make a simple program that prints "Hello, World!" to the console. In this case we will use C. When you are ready, make a new <code class="inline-code-box">main.c</code> file and copy and paste the following code into it.</p>
+				<p>Now that we finally have our VS Code environment set up, we can start coding. The first thing you should always do before starting any code is to make a simple program that prints "Hello, World!" to the console. In this case we will use C. When you are ready, make a new <code class="inline-code-box">main.c</code> file and copy and paste the following code into it.</p>
 				<div class="code-box"><pre><code class="language-cpp">
 #include &lt;stdio.h&gt;
 
@@ -73,7 +81,7 @@ int main() {
 				<p>After you select that, your terminal will open and start running some compile scripts. You dont need to worry about any of them until it tells you if your build compiled succesfully. If it did, return to the TERMINAL tab and there you should see it printed the text "Hello, World!"</p>
 				<a href="run3.webp"><img src="run3.webp" alt="Example of your project succesfully compiling"></a>
 				<a href="run4.webp"><img src="run4.webp" alt="Example of printing Hello, World! in the terminal"></a>
-				<p>Congratulations, you have just run your first program with Visual Studio code! The future possibilities are endless!</p>
+				<p>Congratulations, you have just run your first program with VS Code! The future possibilities are endless!</p>
 			</section>
 
 		</article>
@@ -84,8 +92,8 @@ int main() {
 			<h2 class="neon">Sources</h2>
 			<a href="https://code.visualstudio.com/docs/cpp/config-mingw" target="_blank"><p>https://code.visualstudio.com/docs/cpp/config-mingw</p></a>
 			<a href="https://youtu.be/oC69vlWofJQ" target="_blank"><p>https://youtu.be/oC69vlWofJQ</p></a>
-			<a href="" target="_blank"><p></p></a>
-			<a href="" target="_blank"><p></p></a>
+			<a href="https://www.msys2.org/" target="_blank"><p>https://www.msys2.org/</p></a>
+			<a href="https://github.com/msys2/msys2-installer/releases/download/2024-12-08/msys2-x86_64-20241208.exe" target="_blank"><p>https://github.com/msys2/msys2-installer/releases/download/2024-12-08/msys2-x86_64-20241208.exe</p></a>
 			<a href="" target="_blank"><p></p></a>
 			<a href="" target="_blank"><p></p></a>
 			<a href="" target="_blank"><p></p></a>
