@@ -3,12 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Learn how to set up your first SDL project step-by-step. Includes setting up the repository, adding SDL, writing your first code, and drawing to the screen.">
+
+	<meta property="og:title" content="">
+	<meta property="og:description" content="">
+	<meta property="og:image" content="/resources/logo-full.png">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://ballisticstudios.ca/projects/vscode-mingw/lesson">
+
     <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="/style2.css">
     <link rel="stylesheet" href="/style3.css">
+	
     <script src="https://kit.fontawesome.com/1d0f0d81d5.js" crossorigin="anonymous"></script>
     <link rel="icon" href="/resources/favicon.png" type="image/x-icon">
-    <title></title>
+    <title>Setting Up Visual Studio Code With GCC and MINGW</title>
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
@@ -16,38 +25,73 @@
 </head>
 <body>
     <custom-navbar></custom-navbar>
-	<main>
-		<article class="margined-750">
+	<main class="margined-750">
+		<article>
 
-			<h1 class="neon">Visual Studio Code with GCC and MINGW</h1>
+			<img src="/resources/logo-full.png" class="title" style="width: 150px; padding: 20px;">
 
-			<h2 class="neon">Setting up VS Code</h2>
-			<p></p>
+			<!-- Title / Learning Goals -->
+			<section>
+				<h1 class="neon">Setting Up Visual Studio Code With GCC and MINGW</h1>
+				<p>In this lesson, you will learn what Visual Studio Code does, what a code editor is, how to setup Visual Studio Code and how to run your first lines of code.</p>
+			</section>
 
-			<h2 class="neon">Installing the MINGW toolchain</h2>
+			<!-- Downloading Visual Studio Code -->
+			 <section>
+				<h2 class="neon">Downloading Visual Studio Code</h2>
+				<p>The first step is to <a href="https://code.visualstudio.com/download" target="_blank">download the Visual Studio Code installer</a> for the operating system you are working with. I will be using Windows 11, so I will download the Windows version, but this procedure works for all operating systems. Once the installer is finished downloading, save and open it.</p>
+				<p>accept the licensing agreement, click next. Make sure ADD TO PATH is selected. CLick instal. Wait for it to finish installing. launch visual studio code.</p>
+				<img src="download1.webp" alt="Example on the options to check off when downloading Visual Studio Code">
+				<p>Extensions: <code class="inline-code-box">C/C++ by Microsoft</code>, <code class="inline-code-box">C/C++ Extension Pack by Microsoft</code>, <code class="inline-code-box">C/C++ Themes by Microsoft</code>, <code class="inline-code-box">Makefile Tools by Microsoft</code>.</p>
 
-			<h2 class="neon">Running Our First Lines of Code</h2>
+				<div class="page-break"></div>
+			</section>
 
-			<p>Now that we finally have our Visual Studio Code environment set up, we can start coding. The first thing you should always do before starting any code is to make a simple program that prints "Hello, World!" to the console. In this case we will use C. When you are ready, make a new <code class="inline-code-box">main.c</code> file and copy and paste the following code into it.</p>
-			<div class="code-box"><pre><code class="language-cpp">
+			<!-- Using GCC with MinGW -->
+			<section>
+				<h2 class="neon">Using GCC with MinGW</h2>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati excepturi eius ipsa nulla, ex laborum quisquam laboriosam aut facilis sint. Quaerat excepturi nihil assumenda numquam cumque minima maiores laborum quia!</p>
+
+				<div class="page-break"></div>
+			</section>
+
+			<!-- Running your first project -->
+			<section>
+				<h2 class="neon">Running Our First Lines of Code</h2>
+				<p>Now that we finally have our Visual Studio Code environment set up, we can start coding. The first thing you should always do before starting any code is to make a simple program that prints "Hello, World!" to the console. In this case we will use C. When you are ready, make a new <code class="inline-code-box">main.c</code> file and copy and paste the following code into it.</p>
+				<div class="code-box"><pre><code class="language-cpp">
 #include &lt;stdio.h&gt;
 
 int main() {
 	printf("Hello, World!\n");
 	return 0;
 }
-			</code></pre></div>
-			<p>Once you save the file, now try finding the play button in the top right corner of the screen, click the dropdown and click on the option <code class="inline-code-box">Run C/C++ File</code>. Then, when prompted, you will select <code class="inline-code-box">C/C++ gcc.exe build and debug active file</code> from the search bar at the top of the window.</p>
-			<a href="run1.webp"><img src="run1.webp" alt="Example of the first step in how to run a file"></a>
-			<a href="run2.webp"><img src="run2.webp" alt="Example of C/C++ gcc.exe build and Debug active file"></a>
-			<p>After you select that, your terminal will opn and start running some compile scripts. You dont need to worry abou tany of them it tells you if your file compiled succesfully. If it doesnt say it compiled succesfully, then you have an Error in your code. If you go back to the terminal tab, it should have printed "Hello, World!</p>
-			<a href="run3.webp"><img src="run3.webp" alt="Example of your project succesfully compiling"></a>
-			<a href="run4.webp"><img src="run4.webp" alt="Example of printing Hello, World! in the terminal"></a>
-			<p>Congratulations, you have just run your first program with Visual Studio code!</p>
+				</code></pre></div>
+				<p>Once you save the file, find the play button in the top right corner of the screen, click the dropdown arrow and click on the option <code class="inline-code-box">Run C/C++ File</code>. When prompted, you will select <code class="inline-code-box">C/C++ gcc.exe build and debug active file</code> from the search bar dropdown at the top of the window and your code will begin to compile.</p>
+				<a href="run1.webp"><img src="run1.webp" alt="Example of the first step in how to run a file"></a>
+				<a href="run2.webp"><img src="run2.webp" alt="Example of C/C++ gcc.exe build and Debug active file"></a>
+				<p>After you select that, your terminal will open and start running some compile scripts. You dont need to worry about any of them until it tells you if your build compiled succesfully. If it did, return to the TERMINAL tab and there you should see it printed the text "Hello, World!"</p>
+				<a href="run3.webp"><img src="run3.webp" alt="Example of your project succesfully compiling"></a>
+				<a href="run4.webp"><img src="run4.webp" alt="Example of printing Hello, World! in the terminal"></a>
+				<p>Congratulations, you have just run your first program with Visual Studio code! The future possibilities are endless!</p>
+			</section>
 
 		</article>
-	</main>
+		
+		<div class="page-break"></div>
 
+		<div>
+			<h2 class="neon">Sources</h2>
+			<a href="https://code.visualstudio.com/docs/cpp/config-mingw" target="_blank"><p>https://code.visualstudio.com/docs/cpp/config-mingw</p></a>
+			<a href="https://youtu.be/oC69vlWofJQ" target="_blank"><p>https://youtu.be/oC69vlWofJQ</p></a>
+			<a href="" target="_blank"><p></p></a>
+			<a href="" target="_blank"><p></p></a>
+			<a href="" target="_blank"><p></p></a>
+			<a href="" target="_blank"><p></p></a>
+			<a href="" target="_blank"><p></p></a>
+		</div>
+
+	</main>
     <custom-footer></custom-footer>
     <script src="/script.js"></script>
 	<script> hljs.highlightAll(); </script>
