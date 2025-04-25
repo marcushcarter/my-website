@@ -3,148 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
 
-    <meta name="description" content="Use our smart search to find pages like About Us, our Demographic Survey, Web Design Services, and more at Ballistic Studios.">
-    <meta name="keywords" content="Ballistic Studios, web development, programming, learn to code, demographic survey, game development, contact, portfolio, SEO websites">
-    <meta name="author" content="Ballistic Studios">
-    
-    <meta property="og:title" content="Search - Ballistic Studios">
-    <meta property="og:description" content="Reach out to Ballistic Studios for support, inquiries, or to learn more about our services.">
-    <meta property="og:image" content="resources/logo-full.png">
-    <meta property="og:image:alt" content="Ballistic Studios logo">
-    <meta property="og:url" content="https://ballisticstudios.ca/search">
-    <meta property="og:type" content="website">
-
-    <meta name="twitter:title" content="SearchS - Ballistic Studios">
-    <meta name="twitter:description" content="Contact Ballistic Studios for support or inquiries. We're here to help you!">
-    <meta name="twitter:image" content="resources/logo-full.png">
-    <meta name="twitter:card" content="summary_large_image">
+	<meta property="og:title" content="">
+	<meta property="og:description" content="">
+	<meta property="og:image" content="/resources/logo-full.png">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://ballisticstudios.ca/">
 
     <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="/style2.css">
     <link rel="stylesheet" href="/style3.css">
-    
+	
     <script src="https://kit.fontawesome.com/1d0f0d81d5.js" crossorigin="anonymous"></script>
     <link rel="icon" href="/resources/favicon.png" type="image/x-icon">
-    <title>Websites - Ballistic Studios</title>
+    <title>Websites | Ballistic Studios</title>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
 </head>
 <body>
     <custom-navbar></custom-navbar>
+    <main class="margined-750">
 
-    <img src="/resources/logo-full.png" class="title" style="width: 150px; padding: 20px;">
+        <img src="/resources/logo-full.png" class="title" style="width: 150px; padding: 20px;">
 
-    <h1 class="title neon">My Portfolio - See My Past Work</h1>
-
-    <div class="carousel-container">
-        <div class="carousel-images" id="carouselImages">
-            <img src="/resources/websites-featured.jpeg" alt="placeholder">
-            <!-- <img src="resources/Marcus Carter.JPG" alt="Project 4">
-            <img src="resources/Marcus Carter.JPG" alt="Project 5"> -->
+        <!-- "Past Work" Carousel / Header -->
+        <h1 class="title neon">My Portfolio - See My Past Work</h1>
+        <div class="carousel-container">
+            <div class="carousel-images" id="carouselImages">
+                <img src="/resources/websites-featured.jpeg" alt="placeholder">
+                <!-- <img src="resources/Marcus Carter.JPG" alt="Project 4">
+                <img src="resources/Marcus Carter.JPG" alt="Project 5"> -->
+            </div>
         </div>
-    </div>
-    
-    <div class="margined-750">
-        <h1 class="neon title">Bring Your Website Vision to Life - From a Simple Picture!</h1>
-        <p>I specialize in creating fast, modern, and SEO-friendly websites that match your vision. Simply send me a picture or description of your ideal website, and I'll build it for you! Once it's ready, you'll receive a downloadable folder via github with everything you need to launch it on your domain.</p>
-        <p>Ready to build your dream website? Let's bring your project to life! <a href="#" onclick="scrollto('websites-pricing'); return false;" class="neon">Click here to get started.</a></p>
-        <img src="/resources/websites-featured.jpeg" style="max-height: 500px;">
-    </div>
-
-    <div class="page-break"></div>
-
-    <h2 class="neon title" id="websites-pricing">Pricing</h2>
-    <div class="table">
-        <table>
-            <tr class="neon">
-                <th style="padding: 10px;">PLAN</th>
-                <th style="padding: 10px;">DESCRIPTION</th>
-                <th style="padding: 10px;">PRICE</th>
-                <th style="padding: 10px;">TIME</th>
-            </tr>
-            <tr>
-                <td>Basic</td>
-                <td>1-page website with SEO and animations</td>
-                <td>$250 → $500</td>
-                <td>2-4 weeks</td>
-            </tr>
-            <tr>
-                <td>Standard</td>
-                <td>Up to 5 pages, custom design, mobile-responsive, basic SEO</td>
-                <td>$750 → $1,500</td>
-                <td>3-5 weeks</td>
-            </tr>
-            <tr>
-                <td>Advanced</td>
-                <td>Up to 10 pages, animations, advanced SEO optimization</td>
-                <td>$1,500 → $2,500</td>
-                <td>4-6 weeks</td>
-            </tr>
-            <tr>
-                <td>Premium</td>
-                <td>Up to 25 pages, blog setup, interactive elements, full SEO suite</td>
-                <td>$3,000 → $5,000</td>
-                <td>6-8 weeks</td>
-            </tr>
-            <tr>
-                <td>Custom</td>
-                <td>E-commerce, web apps, advanced integrations (custom solutions)</td>
-                <td>Starts at $5,000+</td>
-                <td>Depends on project</td>
-            </tr>
-        </table>
-    </div>
-    <p class="neon margined-750">*Price and Time can fluctuate based on website complexity.</p>
-
-    <div class="page-break"></div>
-
-    <br>
-    <form action="https://formspree.io/f/manelyqb" method="POST" class="form">
-        <h2 class="title neon">Get A Quote</h2>
-        <a class="title">Thanks for considering us to build you your dream website! Leave us your email, an estimated number of pages you want your website to have, a couple photos and a detailed description and we will get back to you with a price and timeline we think fits best.</a>
-      
-        <label for="email">Email Address</label>
-        <input type="email" name="email" id="email" placeholder="Enter your email" required><br>
-
-        <label for="pages">Estimated Number of Pages</label>
-        <input type="number" name="pages" id="pages" placeholder="Estimated number of pages" required><br>
-
-        <label for="files">Photos</label>
-        <input type="file" multiple><br>
-
-        <label for="description">Description</label>
-        <a class="title">Here try to describe as much as you can about your dream website that we may not have gotten from the images (colors, animations, etc.)</a><br>
-        <textarea class="long-answer" name="description" id="description" placeholder="Describe your website here" required></textarea><br>
-
-      
-        <button type="submit">Submit</button>
-    </form><br>
-
-    <div class="page-break"></div>
-
-    <section id="faq" class="margined-750">
-        <h2 class="neon title">FAQ - Frequently Asked Questions</h2>
         
-        <h3>How long does it take to build a website?</h3>
-        <p>Most websites take between 2-4 weeks, depending on complexity and my current workload.</p>
-        
-        <h3>What types of websites can you build?</h3>
-        <p>I can create business websites, portfolios, blogs, and custom web applications.</p>
-        
-        <h3>What happens after I receive my website files?</h3>
-        <p>You can upload the files to your domain or use github pages, and your website will be live! If you need help with this step, I can guide you through the process.</p>
-        
-        <h3>Do you offer hosting or domain services?</h3>
-        <p>No, but I can recommend reliable hosting providers and help you set up your domain.</p>
-        
-        <h3>Do you offer revisions or maintenance?</h3>
-        <p>Yes! If you need minor changes, I offer a limited number of revisions. For ongoing maintenance, we can discuss a separate plan.</p>
-    </section>
+        <!-- Description / Info -->
+        <section>
+            <h1 class="neon title">Bring Your Website Vision to Life - From a Simple Picture!</h1>
+            <p>I specialize in creating fast, modern, and SEO-friendly websites that match your vision. Simply send me a picture or description of your ideal website, and I'll build it for you! Once it's ready, you'll receive a downloadable folder via github with everything you need to launch it on your domain.</p>
+            <p>Ready to build your dream website? Let's bring your project to life! <a href="#" onclick="scrollto('websites-pricing'); return false;" class="neon">Click here to get started.</a></p>
+            <img src="/resources/websites-featured.jpeg" style="max-height: 500px;">
+            
+            <div class="page-break"></div>
+        </section>
 
-    <div class="page-break"></div>
+        <!-- Pricing -->
+        <section>
 
-    <p class="margined-750"><a class="neon">Please be patient and respectful.</a> I am a doing this by myself and I put my best effort into each project. If at any point I feel disrespected, I reserve the right to discontinue the project and issue a refund.</p>
+            <h2 class="neon title" id="websites-pricing">Pricing</h2>
+            <div class="table">
+                <table>
+                    <tr class="neon">
+                        <th style="padding: 10px;">PLAN</th>
+                        <th style="padding: 10px;">DESCRIPTION</th>
+                        <th style="padding: 10px;">PRICE</th>
+                        <th style="padding: 10px;">TIME</th>
+                    </tr>
+                    <tr>
+                        <td>Basic</td>
+                        <td>1-page website with SEO and animations</td>
+                        <td>$250 → $500</td>
+                        <td>2-4 weeks</td>
+                    </tr>
+                    <tr>
+                        <td>Standard</td>
+                        <td>Up to 5 pages, custom design, mobile-responsive, basic SEO</td>
+                        <td>$750 → $1,500</td>
+                        <td>3-5 weeks</td>
+                    </tr>
+                    <tr>
+                        <td>Advanced</td>
+                        <td>Up to 10 pages, animations, advanced SEO optimization</td>
+                        <td>$1,500 → $2,500</td>
+                        <td>4-6 weeks</td>
+                    </tr>
+                    <tr>
+                        <td>Premium</td>
+                        <td>Up to 25 pages, blog setup, interactive elements, full SEO suite</td>
+                        <td>$3,000 → $5,000</td>
+                        <td>6-8 weeks</td>
+                    </tr>
+                    <tr>
+                        <td>Custom</td>
+                        <td>E-commerce, web apps, advanced integrations (custom solutions)</td>
+                        <td>Starts at $5,000+</td>
+                        <td>Depends on project</td>
+                    </tr>
+                </table>
+            </div>
+            <p class="neon">*Price and Time can fluctuate based on website complexity.</p>
 
+            <div class="page-break"></div><br>
+
+        </section>
+
+        <!-- Form -->
+        <form action="https://formspree.io/f/manelyqb" method="POST" class="form">
+            <h2 class="title neon">Get A Quote</h2>
+            <a class="title">Thanks for considering us to build you your dream website! Leave us your email, an estimated number of pages you want your website to have, a couple photos and a detailed description and we will get back to you with a price and timeline we think fits best.</a>
+        
+            <label for="email">Email Address</label>
+            <input type="email" name="email" id="email" placeholder="Enter your email" required><br>
+
+            <label for="pages">Estimated Number of Pages</label>
+            <input type="number" name="pages" id="pages" placeholder="Estimated number of pages" required><br>
+
+            <label for="files">Photos</label>
+            <input type="file" multiple><br>
+
+            <label for="description">Description</label>
+            <a class="title">Here try to describe as much as you can about your dream website that we may not have gotten from the images (colors, animations, etc.)</a><br>
+            <textarea class="long-answer" name="description" id="description" placeholder="Describe your website here" required></textarea><br>
+
+            <button type="submit">Submit</button>
+        </form><div class="page-break"></div>
+
+        <!-- FAQ / Frequently Asked Questions -->
+        <section id="faq">
+            <h2 class="neon title">FAQ - Frequently Asked Questions</h2>
+            
+            <h3>How long does it take to build a website?</h3>
+            <p>Most websites take between 2-4 weeks, depending on complexity and my current workload.</p>
+            
+            <h3>What types of websites can you build?</h3>
+            <p>I can create business websites, portfolios, blogs, and custom web applications.</p>
+            
+            <h3>What happens after I receive my website files?</h3>
+            <p>You can upload the files to your domain or use github pages, and your website will be live! If you need help with this step, I can guide you through the process.</p>
+            
+            <h3>Do you offer hosting or domain services?</h3>
+            <p>No, but I can recommend reliable hosting providers and help you set up your domain.</p>
+            
+            <h3>Do you offer revisions or maintenance?</h3>
+            <p>Yes! If you need minor changes, I offer a limited number of revisions. For ongoing maintenance, we can discuss a separate plan.</p>
+            
+            <div class="page-break"></div>
+        </section>
+
+        <p><a class="neon">PLEASE BE PATIENT AND RESPECTFUL.</a> I am a doing this by myself and I put my best effort into each project. If at any point I feel disrespected, I reserve the right to discontinue the project and issue a refund.</p>
+
+    </main>
     <custom-footer></custom-footer>
     <script src="/script.js"></script>
+	<script> hljs.highlightAll(); </script>
+	<script>
+		document.addEventListener('DOMContentLoaded', (event) => {
+			document.querySelectorAll('pre code').forEach((block) => {
+				hljs.highlightElement(block);
+			});
+		});
+	</script>
 </body>
 </html>
