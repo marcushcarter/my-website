@@ -59,7 +59,18 @@
 				<h2 class="neon">Using GCC with MinGW</h2>
 				<p>The first step to setting up gcc and MinGW is to install the MinGW-w64 compiler toolchain that compiles C/C++ code for us. We will do this by <a class="neon">MSYS2</a> which is a software on Windows that will update MinGW whenever it is available. </p>
 				<p>You can download the <a href="https://www.msys2.org/" target="_blank">newest version of the MSYS2 installer</a> or you can use this <a href="https://github.com/msys2/msys2-installer/releases/download/2024-12-08/msys2-x86_64-20241208.exe" target="_blank">direct link to the installer</a>.</p>
-	
+				<p>Once the installer launches, click next until MSYS2 Begins installing. Open MSYS2 Terminal. In this Terminal, install the MinGW-w64 toolchain by running this command: <code class="inline-code-box">pacman -S --needed base-devel mingw-w64-ucrt-x86_64-toolchain</code> for g4 bit computers and _ for 32 bit. Accept the default number of packages in the toolchain and press enter. Enter <code class="inline-code-box">Y</code> when prompted to <code class="inline-code-box">Proceed with instalation [Y/n]</code> and wait for the toolchain to install. This should take around 5 minutes.</p>
+				<img src="/resources/null.jpeg" alt="">
+				<p>Now that we have the toolchain installed, we have to tell VS Code how to find it on our computer. To do this we use environment variables. Go to settings and search for <code class="inline-code-box">Edit Environment Variables</code>. You then need to go to <code class="inline-code-box">Environment Variables > User variables for user > Path > Edit</code> then make make a new path to <code class="inline-code-box">C:/msys64\ucrt64\bin</code>. YOu can now close this page.</p>
+				<video src="environment-var.webm" autoplay loop muted loading="lazy"></video>
+				<p>Now all thats left to do is to check if we have all the compilers installed. TO do this, open your command prompt and enter these three commands:</p>
+				<div class="code-box"><pre><code class="language-cpp">
+gcc --version
+g++ --version
+gdb --version
+				</code></pre></div>
+				<p>When entered, if it tells you what version of MinGW you are using, you are all set!</p>
+
 				<div class="page-break"></div>
 			</section>
 
