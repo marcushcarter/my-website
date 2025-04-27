@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+
+	<meta property="og:title" content="">
+	<meta property="og:description" content="">
+	<meta property="og:image" content="/resources/logo-full.png">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://ballisticstudios.ca/projects/introduction-to-sdl-sdl1/lesson">
+
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/style2.css">
+    <link rel="stylesheet" href="/style3.css">
+	
+    <script src="https://kit.fontawesome.com/1d0f0d81d5.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="/resources/favicon.png" type="image/x-icon">
+    <title>Making our First Game | Ballistic Studios Lessons</title>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+	
+</head>
+<body>
+    <custom-navbar></custom-navbar>
+	<main class="margined-750">
+		<article>
+
+			<img src="/resources/logo-full.png" class="title" style="width: 150px; padding: 20px;">
+
+			<!-- Title / Learning Goals / Introduction-->
+			<header>
+				<h1 class="neon">Making our First Game | SDL Lesson 2</h1>
+				<!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est corporis odio doloremque sapiente optio maiores commodi quasi consectetur perferendis, veritatis alias ex expedita perspiciatis debitis, temporibus rem assumenda praesentium at.</p> -->
+			</header>
+
+
+
+			<!-- What is delta time and SDL_Image -->
+
+			<!-- How to add SDL_Image to our project -->
+			<section>
+				<h2 class="neon">How to Add SL_Image to your project</h2>
+				<p>The first step to rendering textures in SDL is to add SDL_image to our repository. <a href="https://github.com/libsdl-org/SDL_image/releases" target="_blank">Visit the SDL_image GitHub page</a> and download the file called <code class="inline-code-box">SDL3_image-devel-3.2.4-mingw.tar.gz</code>. Save it into the root of your repository and extract the file there.</p>
+				<p>Do you remember how to check what type of system your computer uses (either 32 or 64-bit)? If you are not sure <a href="#" onclick="scrolltopage('/projects/sdl1-introduction-to-sdl/lesson', 'check-bitrate'); return false;">go back and learn how to check your system type</a>. We will again have to use the matching SDL_image folder for it to work:</p>
+				<ul>
+					<li><code class="inline-code-box">i686-w64-mingw32</code> for 32-bit systems</li>
+					<li><code class="inline-code-box">x86_64-w64-mingw32</code> for 64-bit systems</li>
+				</ul>
+				<p>We are only interested in three folders.</p>
+				<ul>
+					<li>Copy the <code class="inline-code-box">include</code> folder into your project root.</li>
+					<li>Copy the <code class="inline-code-box">lib</code> folder into your project root.</li>
+					<li>Inside the <code class="inline-code-box">bin</code> folder, copy the <code class="inline-code-box">SDL3_image.dll</code> file into your project root.</li>
+				</ul>
+				<p>Now we have to link the SDL_image DLL to our Makefile so it builds with it. At the end of the <code class="inline-code-box">build</code> command on our Makefile, add a new link to <code class="inline-code-box">-lSDL3_image</code>, and finally in the <code class="inline-code-box">main.c</code> file add the include <code class="inline-code-box">#include &lt;SDL3_image/SDL_image.h&gt;</code> under the SDL.h include. Notice how linking SDL_image was excactly the same process as linking SDL in the last lesson. This is how you link external header from any other place you want.</p>
+				<p>You can now delete all the other draw functions we used in the last lesson that are in the game loop (the while loop in the main function) and we'll start fresh. After you have done this, you can delete the original <code class="inline-code-box">tar.gz</code> file and the extracted folder.</p>
+				<p>Your current <code class="inline-code-box">main.c</code> file should look like this:</p>
+
+				<div class="code-box"><pre><code class="language-cpp">
+#include <SDL3/SDL.h>
+#include <SDL3_image/SDL_image.h>
+#include <stdio.h>
+
+SDL_Window* window;
+SDL_Renderer* renderer;
+
+int main(int argc, char* argv[]) {
+
+	SDL_Init(SDL_INIT_VIDEO);
+	window = SDL_CreateWindow("main", 800, 600, SDL_WINDOW_OPENGL);
+	renderer = SDL_CreateRenderer(window, NULL);
+	SDL_SetRenderScale(renderer, 1, 1);
+	SDL_SetRenderDrawBlendMode(renderer, SDL_BLENDMODE_BLEND);
+
+	bool running = true;
+	SDL_Event event;
+	while (running) {
+		while (SDL_PollEvent(&event) != 0) {
+			if (event.type == SDL_EVENT_QUIT) running = false;
+		}
+
+		SDL_RenderPresent(renderer);
+	}
+	
+	return 0;
+}
+					</code></pre></div>
+
+				<div class="page-break"></div>
+			</section>
+
+			<!-- How to render a texture -->
+			<section>
+				<h2 class="neon">How to Render a Texture</h2>
+				<p>The first thing we need to do when rendering a texture is to actually load it in. To do this we will make our own function. Above your main function make a new bool function called <code class=inline-code-box">loadTextures()</code> with an argument for a pointer to a SDL_Renderer object.</p>
+				<p>In this function, we will load individual textures to thier own texture objects. FOr eacah texture you want to load, you will add a new <code class="inline-code-box">SDL_Texture*</code> object. Mine will be called <code class="inline-code-box">my_texture</code>. Then, in our new Load Textures function we will attach our image to that object. We will do this with <code class="inline-code-box">my_texture = IMG_LoadTexture(renderer, "./your/path/to/image.png");</code></p>
+				<p>Your load textures function should now look something like this:</p>
+				<div class="code-box"><pre><code class="language-cpp">
+// Under the header files with the other objects
+SDL_Texture* my_texture;
+
+// Somewhere above the main function
+bool load_textures(SDL_Renderer* renderer) {
+
+	my_texture = IMG_LoadTexture(renderer, "./your/path/to/image.png");
+	// SDL_SetTextureScaleMode(texture, SDL_SCALEMODE_NEAREST);
+
+	return true;
+}
+				</code></pre></div>
+
+
+				<div class="page-break"></div>
+				<ol>
+					<li>add SDL_Texture* texture-name and SDL_Surface *textureSurface objects</li>
+					<li>make a new load_textures function with renderer argument</li>
+					<li>add (texture = IMG_LoadTexture(renderer, "./resources/shrek.png");) and (SDL_SetTextureScaleMode(texture, SDL_SCALEMODE_NEAREST);) inside this, finish it off with a return 0;</li>
+					<li>make the texture postion object in the main unction (SDL_FRect rposition = {0, 0, 800, 600};)</li>
+					<li>Render the texture (SDL_RenderTexture(renderer, texture, NULL, &rposition);)</li>
+				</ol>
+			</section>
+
+			<!-- Render Texture Function -->
+			<section>
+				<h2 class="neon">Making a render texture function</h2>
+				<p>make a new function called renderTexture. ()</p>
+				<li>etc.</li>
+			</section>
+
+			<!-- Delta Time -->
+			<section>
+				<h2 class="neon">Adding Delta Time</h2>
+			</section>
+
+			<!-- Making flappy bird -->
+			<section>
+				<h2 class="neon">Making our flappy bird game</h2>
+			</section>
+
+
+
+			<!-- Programing our flappy bird game logic -->
+			<!-- How to apply delta time -->
+
+			<!-- Excercises -->
+			<section>
+				<h2 class="neon">Excercies:</h3>
+				<ol>
+					<li>EASY: Try to make a triangle with 3 <code class="inline-code-box">SDL_RenderLine()</code> functions. <a href="/code-viewer.html?file=/projects/sdl1-introduction-to-sdl/question1-1.c&lang=c" target="_blank">View Solution</a>.</li>
+					<li>DIFFICULT: Try to create an empty circle using <code class="inline-code-box">SDL_RenderPoint()</code> and the <code class="inline-code-box">math.h</code> header file. <a href="/code-viewer.html?file=/projects/sdl1-introduction-to-sdl/question1-2.c&lang=c" target="_blank">View Solution</a>.</li>
+				</ol>
+			</section>
+
+		</article>
+
+		<p>If you would like the full repository we made in this lesson, you can <a href="https://github.com/marcushcarter/SDL-Lessons/releases/tag/sdl-lesson-1" target="_blank">visit the repository on github ></a></p>
+		<p><a href="/projects/sdl2-first-game-with-sdl/lesson">Click here to move onto the next lesson ></a></p>
+
+		<div class="page-break"></div>
+
+		<div>
+			<h2 class="neon">Sources</h2>
+			<a href="https://www.youtube.com/watch?v=jUZZC9UXyFs" target="_blank"><p>SDL 2 Tutorial Windows and Visual Studio Code Setup | Visual Studio Code, Game Dev - Sonar Systems</p></a>
+			<a href="" target="_blank"><p></p></a>
+			<a href="" target="_blank"><p></p></a>
+			<a href="" target="_blank"><p></p></a>
+			<a href="" target="_blank"><p></p></a>
+			<a href="" target="_blank"><p></p></a>
+		</div>
+
+	</main>
+    <custom-footer></custom-footer>
+    <script src="/script.js"></script>
+	<script> hljs.highlightAll(); </script>
+	<script>
+		document.addEventListener('DOMContentLoaded', (event) => {
+			document.querySelectorAll('pre code').forEach((block) => {
+				hljs.highlightElement(block);
+			});
+		});
+	</script>
+</body>
+</html>

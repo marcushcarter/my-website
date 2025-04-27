@@ -48,9 +48,9 @@
 				<h2 class="neon">Creating the Repository</h2>
 
 				<p>The first and most important step to getting started with SDL is setting up your repository. A repository is basically just the root (or main) folder where all of your assets, files and code will go. To do this, open your file explorer, navigate to where you would like your project to be located and create a new folder named <code class="inline-code-box">sdl-template</code>.</p>
-				<p> But we can't start coding just yet. Inside your repository folder, create 4 new folders: <code class="inline-code-box">resources</code>, <code class="inline-code-box">include</code>, <code class="inline-code-box">lib</code>, and <code class="inline-code-box">src</code>. These folders will hold your game assets (like pictures, videos, textures, etc.), header files, libraries, and source code.</p>
+				<p>But we can't start coding just yet. Inside your repository folder, create 4 new folders: <code class="inline-code-box">resources</code>, <code class="inline-code-box">include</code>, <code class="inline-code-box">lib</code>, and <code class="inline-code-box">src</code>. These folders will hold your game assets (like pictures, videos, textures, etc.), header files, libraries, and source code.</p>
 				<p>Now it's time to add SDL to our project. In this tutorial, we will be using SDL v3.2.10, but any version of SDL newer than v3.0.0 will work. <a href="https://github.com/libsdl-org/SDL/releases" target="_blank">Visit SDL's GitHub page</a> and download the file called <code class="inline-code-box">SDL3-devel-3.2.10-mingw.tar.gz</code> (or the version you are using). Save it into your repository and extract the file there.</p>
-				<p>Before we can continue, we must check what type of system our computer is using. If you add the wrong files, your project will not work. To check your system type, open Settings and go to <code class="inline-code-box">System > About > Device Specifications > System Type</code>.</p>
+				<p id="check-bitrate">Before we can continue, we must check what type of system our computer is using. If you add the wrong files, your project will not work. To check your system type, open Settings and go to <code class="inline-code-box">System > About > Device Specifications > System Type</code>.</p>
 				<img src="bit-test.webp" loading="lazy" alt="Check system type in Windows for SDL setup">
 				<p>Depending on your system type, you will need to use the matching SDL folder.</p>
 				<ul>
@@ -173,7 +173,7 @@ while (running) {
 
 				<p>Now try running the code!</p>
 				<video src="movie2.webm" autoplay loop muted loading="lazy"></video>
-				<p>If you're stuck or something isn't working, you can <a href="/code-viewer.html?file=/projects/introduction-to-sdl-sdl1/code1.c&lang=c" target="_blank">view the source code ></a></p>
+				<p>If you're stuck or something isn't working, you can <a href="/code-viewer.html?file=/projects/sdl1-introduction-to-sdl/code1.c&lang=c" target="_blank">view the source code ></a></p>
 
 				<div class="page-break"></div>
 			</section>
@@ -227,7 +227,7 @@ for (float i = 0; i &gt; 600; i+=0.1) {
 					<img src="draw4.webp" loading="lazy" alt="Drawing a curved line with SDL_RenderPoint">
 				</div>
 
-				<p>If you need help or are stuck, you can <a href="/code-viewer.html?file=/projects/introduction-to-sdl-sdl1/code1.c&lang=c" target="_blank">view the source code ></a>.</p>
+				<p>If you need help or are stuck, you can <a href="/code-viewer.html?file=/projects/sdl1-introduction-to-sdl/code1.c&lang=c" target="_blank">view the source code ></a>.</p>
 				<p class="caution">Don't forget that your code will draw in the order of functions you put them in, so be careful you aren't overwriting any of the objects you draw because they are in the wrong order!</p>
 			</section> 
 
@@ -235,15 +235,15 @@ for (float i = 0; i &gt; 600; i+=0.1) {
 			<section>
 				<h2 class="neon">Excercies:</h3>
 				<ol>
-					<li>EASY: Try to make a triangle with 3 <code class="inline-code-box">SDL_RenderLine()</code> functions. <a href="/code-viewer.html?file=/projects/introduction-to-sdl-sdl1/question1-1.c&lang=c" target="_blank">View Solution</a>.</li>
-					<li>DIFFICULT: Try to create an empty circle using <code class="inline-code-box">SDL_RenderPoint()</code> and the <code class="inline-code-box">math.h</code> header file. <a href="/code-viewer.html?file=/projects/introduction-to-sdl-sdl1/question1-2.c&lang=c" target="_blank">View Solution</a>.</li>
+					<li>EASY: Try to make a triangle with 3 <code class="inline-code-box">SDL_RenderLine()</code> functions. <a href="/code-viewer.html?file=/projects/sdl1-introduction-to-sdl/question1-1.c&lang=c" target="_blank">View Solution</a>.</li>
+					<li>DIFFICULT: Try to create an empty circle using <code class="inline-code-box">SDL_RenderPoint()</code> and the <code class="inline-code-box">math.h</code> header file. <a href="/code-viewer.html?file=/projects/sdl1-introduction-to-sdl/question1-2.c&lang=c" target="_blank">View Solution</a>.</li>
 				</ol>
 			</section>
 
 		</article>
 
-		<p>If you would like the full repository we made in this lesson, you can <a href="https://github.com/marcushcarter/sdl-template.git" target="_blank">visit the repository on github ></a></p>
-		<!-- <p><a href="/projects/sdl-part2/lesson">Click here to move onto the next lesson ></a></p> -->
+		<p>If you would like the full repository we made in this lesson, you can <a href="https://github.com/marcushcarter/SDL-Lessons/releases/tag/sdl-lesson-1" target="_blank">visit the repository on github ></a></p>
+		<p><a href="/projects/sdl2-first-game-with-sdl/lesson">Click here to move onto the next lesson ></a></p>
 
 		<div class="page-break"></div>
 
