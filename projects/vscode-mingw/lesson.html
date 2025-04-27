@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="Learn how to set up your first SDL project step-by-step. Includes setting up the repository, adding SDL, writing your first code, and drawing to the screen.">
+	<meta name="description" content="">
 
 	<meta property="og:title" content="">
 	<meta property="og:description" content="">
@@ -30,26 +30,34 @@
 
 			<img src="/resources/logo-full.png" class="title" style="width: 150px; padding: 20px;">
 
-			<!-- Title / Learning Goals -->
-			<section>
+			<!-- Title / Learning Goals / Introduction -->
+			<header>
 				<h1 class="neon">Setting Up Visual Studio Code With GCC and MINGW</h1>
-				<p>In this lesson, you will learn what Visual Studio Code does, what a code editor is, how to setup Visual Studio Code and how to run your first lines of code.</p>
-			</section>
+				<p>In this lesson, you will learn what Visual Studio Code and code editors are, how to setup Visual Studio Code, how to setup MinGW and how to run your first lines of code. Let's get started!</p>
+				<h2 class="neon">What is a Code Editor</h2>
+				<p>Code editors are tools that help you write code faster and better. They make your code easier to read by adding colors, indentation, and other helpful formatting. Some of the most common code editors are Visual Studio, Notepad++ and Visual Studio Code (VSCode) which is the one we will be using. It is super customizable, takes the least amount of storage space, has countless extensions, a built in terminal and works on any system.</p>
+				<h2 class="neon">What is MinGW</h2>
+				<p><strong>Minimalist GNU for Windows</strong> (MinGW) is a tool that lets you use C and C++ compilers on Windows. These compilers take the programs you write in C or C++ and turn them into real <code class="inline-code-box">.exe</code> files that can run on your computer. Bascially, a compiler translates your code into machine code (or binary) that your computer can understand and excecute. Without one, you wouldn't be able to turn your code into a working program.</p>
 
-			<!-- What is VS Code / Code Editors / Compilers -->
-			<section>
-
-			</section>
+				<div class="page-break"></div>
+			</header>
 
 			<!-- Downloading Visual Studio Code -->
 			 <section>
 				<h2 class="neon">Downloading Visual Studio Code</h2>
-				<p>The first step is to <a href="https://code.visualstudio.com/download" target="_blank">download the Visual Studio Code installer</a> for the operating system you are working with. I will be using Windows 11, so I will download the Windows version, but this procedure works for all operating systems. Once the installer is finished downloading, save and open it.</p>
-				<p>When the installer opens, accept the licensing agreement and continue. On the next page it will give you a list of options to select. All are recommended, but you can pick and choose which ones you would like to select except for <code class="inline-code-box">Add to PATH</code> which is REQUIRED. You will then click next, install and wait for VS Code to finish installing. When it is done installing, launch VS Code.</p>
-				<img src="download1.webp" alt="Example on the options to check off when downloading Visual Studio Code">
-				<p>We now have VS Code Installed but we are going to install some extensions to help you write your code. On the left hand side of the window, find the extensions tab and look up C/C++. Here we are looking for these four extensions all by Microsoft: <code class="inline-code-box">C/C++</code>, <code class="inline-code-box">C/C++ Extension Pack</code>, <code class="inline-code-box">C/C++ Themes</code> and <code class="inline-code-box">Makefile Tools</code>. Click on each option and when the page that pops up, click 'install'.</p>
+				<p>The first step is to <a href="https://code.visualstudio.com/download" target="_blank">download the Visual Studio Code installer</a>. MinGW is a tool that only works one Windows, so if you are on a different operating system, you may have to find another compiler. Once the installer is finished downloading, save it and launch it.</p>
+				<p>When the installer opens, accept the licensing agreement and continue. On the next page, you will see a list of installation options. It is recomended to select them all, but you can pcik and choose which ones you want, except for <code class="inline-code-box">Add to PATH</code> which is <span class="neon">REQUIRED</span>. Then click "Next", click "Install", and wait for VSCode to finish installing. When it has finished, launch VSCode.</p>
+				<img src="download1.webp" alt="Example of the options to check when downloading Visual Studio Code">
+				<p>Now, we are going to install some extensions that will help you write and run your code. On the left-hand side of the VSCode window, find the extensions tab (four small squares). Search for "C/C++"". You are looking for these four extensions, all published by Microsoft:</p>
+				<ul>
+					<li><code class="inline-code-box">C/C++</code></li>
+					<li><code class="inline-code-box">C/C++ Extension Pack</code></li>
+					<li><code class="inline-code-box">C/C++ Themes</code></li>
+					<li><code class="inline-code-box">Makefile Tools</code></li>
+				</ul>
+				<p>Click on each extension, and when the page opens, click "Install."</p>
 				<img src="extensions.webp" alt="Example for installing C/C++ extensions in Visual Studio Code">
-				<p>We are done installing VS Code, But in the current state it is just a code editor and can't actually run code. To run code with VS Code, we need to set up GCC and MinGW.</p>
+				<p>We are now finished installing VSCode! However, right now it is just a code editor and it can't actually compile and run programs yet. To do that, we need to install the MinGW toolchain, which gives us the <code class="inline-code-box">gcc</code>, <code class="inline-code-box">g++</code>, and <code class="inline-code-box">gdb</code> compilers.</p>
 
 				<div class="page-break"></div>
 			</section>
@@ -57,27 +65,42 @@
 			<!-- Using GCC with MinGW -->
 			<section>
 				<h2 class="neon">Using GCC with MinGW</h2>
-				<p>The first step to setting up gcc and MinGW is to install the MinGW-w64 compiler toolchain that compiles C/C++ code for us. We will do this by <a class="neon">MSYS2</a> which is a software on Windows that will update MinGW whenever it is available. You can download the <a href="https://www.msys2.org/" target="_blank">newest version of the MSYS2 installer</a> or you can use this <a href="https://github.com/msys2/msys2-installer/releases/download/2024-12-08/msys2-x86_64-20241208.exe" target="_blank">direct link to the installer</a>. Once the installer launches, click continue until MSYS2 beigns downloading and once it finishes, launch the MSYS2 UCRT64 Terminal (there should be an option to open it in the installer).</p>
-
-				<p>Now before we continue, we must check what type of system our device is using because if you install the wrong type of MinGW, your compiler will not work. To do this, open settings and go to <code class="inline-code-box">System > About > Device Specifications > System Type</code> and check yours.</p>
+				<p>The first step to setting up MinGW is to install the MinGW-w64 compiler toolchain, which compiles C/C++ code for us. We will do this using <span class="neon">MSYS2</span>, a Windows tool that not only installs MinGW for you, but also keeps it updated. You can download the <a href="https://www.msys2.org/" target="_blank">latest version of the MSYS2 installer here</a> or you can use this <a href="https://github.com/msys2/msys2-installer/releases/download/2024-12-08/msys2-x86_64-20241208.exe" target="_blank">direct link to the installer</a>.</p>
+				<p>Now before we continue, we need to check what type of system (32-bit or 64-bit) your device is using. This is important because installing the wrong type of MinGW will cause your compiler not to work. To check, open settings and go to <code class="inline-code-box">System > About > Device Specifications > System Type</code>.</p>
 				<a href="bit-test.webp"><img src="bit-test.webp" loading="lazy" alt="Check system type in Windows for MinGW setup"></a>
-				<p>Depending on what system type you have, you will have to use the corresponding command to download the toolchain:</p>
+				<p>Once the MSYS2 installer launches, click "Continue" to start the installation. When it finishes, launch the MSYS2 Terminal. Depending on your system type, use the corresponding terminal and command to install the toolchain:</p>
+				
 				<div class="code-box"><pre><code class="language-cpp">
-// 64-bit systems ->
+// 64-bit systems -> use MSYS2 UCRT64 shell
 pacman -S --needed base-devel mingw-w64-ucrt-x86_64-toolchain
 
-// 32-bit systems ->
-pacman -S --needed base-devel mingw-w64-ucrt-x86_64-toolchain
+// 32-bit systems -> use MSYS2 MinGW32 shell
+pacman -S --needed base-devel mingw-w64-i686-toolchain
 				</code></pre></div>
 				
-				
-				
 				<p>Press <code class="inline-code-box">Enter</code> to accept the default number of packages for the toolchain and then enter <code class="inline-code-box">Y</code> when you are asked to <code class="inline-code-box">Proceed with instalation [Y/n]</code>. The toolchain should begin to install and this whole process should take around take around 5 minutes.</p>
-
 				<img src="mingw2.webp" alt="">
-				<p>Perfect! Now that we have the toolchain installed, we have to tell VS Code how to locate it on our computer. To do this we use environment variables. Go to your settings and search for <code class="inline-code-box">Edit Environment Variables</code>. We then go to the User Variables section, click edit and add a new variable named <code class="inline-code-box">C:\msys64\ucrt64\bin</code>.</p>
-				<video src="environment-var.webm" autoplay loop muted loading="lazy"></video>
-				<p>Now all we have left to do is check if the compiler is installed correctly. Open you command propmpt / powershell and enter the commands <code class="inline-code-box">gcc --version</code> and <code class="inline-code-box">g++ --version</code>. When you enter it, if it tells you the version of gcc/g++ built with MSYS2 id installed (mine is 14.2.0) then you have set it up correctly and are ready to go!!</p>
+				<p>Now that the toolchain is installed, we need to tell Visual Studio Code where to find it. We do this by adding its path to the system environment variables. Follow these steps:</p>
+				<ol>
+					<li>Open Settings and search for <code class="inline-code-box">Edit the system environment variables</code>.</li>
+					<li>In the System Properties window, click "Environment Variables...".</li>
+					<li>Under "User Variables", find and select Path, then click Edit.</li>
+					<li>Click New and add the path: <code class="inline-code-box">C:\msys64\ucrt64\bin</code>.</li>
+					<li>Click OK on all windows to save the changes.</li>
+				</ol>
+			
+				
+				<img src="environment-var1.webp" alt="Editing user environment variables">
+				<img src="environment-var2.webp" alt="Adding MinGW path to user environment variables">
+				<p>Now, all we have left to do is test if the compiler is installed correctly. Open a Command Prompt or Powershell window and run the following commands:</p>
+
+				<div class="code-box"><pre><code class="language-cpp">
+gcc --version
+g++ --version
+				</code></pre></div>
+					
+				<p>If everything is set up correctly, you will see an output showing the version of gcc and g++ that were installed through MSYS2. For example:</p>
+					
 
 				<div class="code-box"><pre><code class="language-cpp">
 gcc.exe (Rev2, Built by MSYS2 project) 14.2.0
@@ -92,7 +115,9 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 			<!-- Running your first project -->
 			<section>
 				<h2 class="neon">Running Our First Lines of Code</h2>
-				<p>Now that we finally have our VS Code environment set up, we can start coding. The first thing you should always do before starting any code is to make a simple program that prints "Hello, World!" to the console. In this case we will use C. When you are ready, make a new <code class="inline-code-box">main.c</code> file and copy and paste the following code into it.</p>
+				<p>Now that we finally have our VSCode environment set up, we can start coding! The first thing you should always do before starting any coding project is to make a simple program that prints "Hello, World!" to the console. This helps confirm that everything is working correctly. In this case we will use C.</p>
+				<p>When you are ready, make a new <code class="inline-code-box">main.c</code> file and copy and paste the following code into it.</p>
+				
 				<div class="code-box"><pre><code class="language-cpp">
 #include &lt;stdio.h&gt;
 
@@ -101,13 +126,18 @@ int main() {
 	return 0;
 }
 				</code></pre></div>
-				<p>Once you save the file, find the play button in the top right corner of the screen, click the dropdown arrow and click on the option <code class="inline-code-box">Run C/C++ File</code>. When prompted, you will select <code class="inline-code-box">C/C++ gcc.exe build and debug active file</code> from the search bar dropdown at the top of the window and your code will begin to compile.</p>
-				<a href="run1.webp"><img src="run1.webp" alt="Example of the first step in how to run a file"></a>
-				<a href="run2.webp"><img src="run2.webp" alt="Example of C/C++ gcc.exe build and Debug active file"></a>
-				<p>After you select that, your terminal will open and start running some compile scripts. You dont need to worry about any of them until it tells you if your build compiled succesfully. If it did, return to the TERMINAL tab and there you should see it printed the text "Hello, World!"</p>
-				<a href="run3.webp"><img src="run3.webp" alt="Example of your project succesfully compiling"></a>
-				<a href="run4.webp"><img src="run4.webp" alt="Example of printing Hello, World! in the terminal"></a>
-				<p>Congratulations, you have just run your first program with VS Code! The future possibilities are endless!</p>
+				
+				<p>Once you save the file, find the play button in the top right corner of VSCode. Click the dropdown arrow next to it and select <code class="inline-code-box">Run C/C++ File</code>.</p>
+				<img src="run1.webp" alt="Example of the first step in how to run a file">
+				<p>When prompted, select <code class="inline-code-box">C/C++ gcc.exe build and debug active file</code> from the search bar dropdown at the top of the window. This will start the compile process.</p>
+				<img src="run2.webp" alt="Example of C/C++ gcc.exe build and Debug active file">
+				<p>After selecting is, your terminal will open and VSCode will run some compile scripts for you. You dont need to worry about any of them, just look for a message that says your build was successful.</p>
+				<img src="run3.webp" alt="Example of your project succesfully compiling">
+				<p> If it compiled correctly with no errors, return to the TERMINAL tab and you should see it printed the text: <code class="inline-code-box">Hello, World!</code></p>
+				<img src="run4.webp" alt="Example of printing Hello, World! in the terminal">
+				<p>Congratulations, you have just run your first program with VSCode!</p>
+			
+				<p class="caution">If the console gives you multiple errors in code that should normally work, you might have made a mistake with the environment variables or installed the wrong version of MinGW for your system</p>
 			</section>
 
 		</article>
@@ -116,10 +146,9 @@ int main() {
 
 		<div>
 			<h2 class="neon">Sources</h2>
-			<a href="https://code.visualstudio.com/docs/cpp/config-mingw" target="_blank"><p>https://code.visualstudio.com/docs/cpp/config-mingw</p></a>
-			<a href="https://youtu.be/oC69vlWofJQ" target="_blank"><p>https://youtu.be/oC69vlWofJQ</p></a>
-			<a href="https://www.msys2.org/" target="_blank"><p>https://www.msys2.org/</p></a>
-			<a href="https://github.com/msys2/msys2-installer/releases/download/2024-12-08/msys2-x86_64-20241208.exe" target="_blank"><p>https://github.com/msys2/msys2-installer/releases/download/2024-12-08/msys2-x86_64-20241208.exe</p></a>
+			<a href="https://code.visualstudio.com/docs/cpp/config-mingw" target="_blank"><p>Visual Studio Code - Using GCC with MinGW</p></a>
+			<a href="https://youtu.be/oC69vlWofJQ" target="_blank"><p>Installing MinGW to build C++ Code on Windows - Visual Studio Code</p></a>
+			<a href="https://www.msys2.org/" target="_blank"><p>MSYS2 Official Website + Installation</p></a>
 			<a href="" target="_blank"><p></p></a>
 			<a href="" target="_blank"><p></p></a>
 			<a href="" target="_blank"><p></p></a>

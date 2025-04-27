@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="Learn how to set up your first SDL project step-by-step. Includes setting up the repository, adding SDL, writing your first code, and drawing to the screen.">
+	<meta name="description" content="">
 
-	<meta property="og:title" content="SDL Setup Tutorial for Beginners">
-	<meta property="og:description" content="Step-by-step tutorial on setting up and using SDL in your C/C++ game project.">
+	<meta property="og:title" content="">
+	<meta property="og:description" content="">
 	<meta property="og:image" content="/resources/logo-full.png">
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="https://ballisticstudios.ca/projects/sdl-part1/lesson">
@@ -30,31 +30,42 @@
 
 			<img src="/resources/logo-full.png" class="title" style="width: 150px; padding: 20px;">
 
-			<!-- Title / Learning Goals -->
-			<section>
+			<!-- Title / Learning Goals / Introduction-->
+			<header>
 				<h1 class="neon">Setting Up Your First SDL Project (SDL Lesson 1)</h1>
-				<p>In this lesson, you will learn what SDL is, how to setup and SDL repository, how to create a window, and how to draw to that window. Let's get started!</p>
-				<p class="caution">If you haven't already gone through the lesson on how to setup Visual Studio code, It is REQUIRED for this project. <a href="/projects/vscode-mingw/lesson" class="remove">You can find the tutorial here ></a></p>
-			</section>
 
-			<!-- Introduction -->
-			<section>	
+				<p>In this lesson, you will learn what SDL is, how to setup an SDL repository, how to create a window, and how to draw to that window. Let's get started!</p>
+				<p class="caution">If you haven't gone through the lesson on how to setup Visual Studio code, It is <strong>REQUIRED</strong> for this lesson. <a href="/projects/vscode-mingw/lesson" class="remove">You can find the tutorial here ></a></p>
 				<h2 class="neon">What is SDL?</h2>
-				<p><strong>Simple DirectMedia Layer</strong> is a free library that gives you access to your computer's graphics, audio, input (like keyboard or a controller), and more in a way that's great for building games or apps. Think of SDL being like a toolbelt and you're the builder. It gives you the hammers, measuring tapes and cement for you to build with, and you put the shed together yourself. This is much different that tools like OpenGL, which doesn't give you the tools and makes you build the ladder yourself.</p>
-			</section>
+				<p><strong>Simple DirectMedia Layer</strong> is a free, open source library that gives you access to your computer's graphics, audio, input (like keyboards, mice and controllers), and more in a way that's great for building games or apps. Think of SDL like a toolbelt for a builder. It gives you the hammers, measuring tapes and cement for you to build things like houses (your games and apps). You still have to put everything together yourself, but you have all the basic tools ready to go. This is different from using something like OpenGL, where it's like being told to build a house but you also have to make your own hammer and saw before you can even start. SDL saves you tons of time by providing ready-to-use building blocks.</p>
+
+				<div class="page-break"></div>
+			</header>
 
 			<!-- Creating the Repository -->
 			<section>
 
 				<h2 class="neon">Creating the Repository</h2>
 
-				<p>The first and most important step to getting started with SDL is setting up your repository. A repository is basically just the root (or main) folder where all of your assets, files and code goes into. To do this, open your file explorer on your computer, and where you would like your project to be located, create a new folder named <code class="inline-code-box">sdl-template</code>. But we can't start coding just yet. Inside your repository folder, create 4 new folders called <code class="inline-code-box">resources</code>, <code class="inline-code-box">include</code>, <code class="inline-code-box">lib</code>, and <code class="inline-code-box">src</code>. These will be where we will put our game assets (pictures, videos, textures etc.), header files, libraries, and source code. Now, it's time to add SDL to our project.</p>
-				<p>In this tutorial, we will be using SDL v3.2.10, but any version of SDL will work as long as it is newer than v3.0.0. <a href="https://github.com/libsdl-org/SDL/releases" target="_blank">Visit SDL's website on github</a> and download the file called <code class="inline-code-box">SDL3-devel-3.2.10-mingw.tar.gz</code> (or whatever version you are using). Save it to your repository and extract that file.</p>
-				<p>Now before we continue, we must check what type of system our device is using because if you add the wrong files, your project will not work. To do this, open settings and go to <code class="inline-code-box">System > About > Device Specifications > System Type</code> and check yours.</p>
-				<a href="bit-test.webp"><img src="bit-test.webp" loading="lazy" alt="Check system type in Windows for SDL setup"></a>
-				<p>Depending on what system type you have, you will have to use the corresponding bit of SDL. Open the folder corresponding to your system type: <code class="inline-code-box">i686-w64-mingw32</code> for 32-bit, <code class="inline-code-box">x86_64-w64-mingw32</code> for 64-bit. (if you cannot find what system type your device is just choose 32-bit as it works for both)</p>
-				<p>Here we are only interested in three folders. The first and second, called <code class="inline-code-box">include</code> and <code class="inline-code-box">lib</code>, we will just copy directly to the main directory of the project. And the third, inside the <code class="inline-code-box">bin</code> folder, we will take the file named <code class="inline-code-box">SDL3.dll</code> and place it into the main directory. Once you have this done, you can delete the tar.gz file and the folder extracted from it.</p>
-				<p>Now it's time to get programming! Open your project folder with Visual Studio Code. The first thing we will do is make our main file, or the primary file of the project. In your <code class="inline-code-box">src</code> folder, make a new file called <code class="inline-code-box">main.c</code>. Here we will write simple hello world script (copy/paste).</p>
+				<p>The first and most important step to getting started with SDL is setting up your repository. A repository is basically just the root (or main) folder where all of your assets, files and code will go. To do this, open your file explorer, navigate to where you would like your project to be located and create a new folder named <code class="inline-code-box">sdl-template</code>.</p>
+				<p> But we can't start coding just yet. Inside your repository folder, create 4 new folders: <code class="inline-code-box">resources</code>, <code class="inline-code-box">include</code>, <code class="inline-code-box">lib</code>, and <code class="inline-code-box">src</code>. These folders will hold your game assets (like pictures, videos, textures, etc.), header files, libraries, and source code.</p>
+				<p>Now it's time to add SDL to our project. In this tutorial, we will be using SDL v3.2.10, but any version of SDL newer than v3.0.0 will work. <a href="https://github.com/libsdl-org/SDL/releases" target="_blank">Visit SDL's GitHub page</a> and download the file called <code class="inline-code-box">SDL3-devel-3.2.10-mingw.tar.gz</code> (or the version you are using). Save it into your repository and extract the file there.</p>
+				<p>Before we can continue, we must check what type of system our computer is using. If you add the wrong files, your project will not work. To check your system type, open Settings and go to <code class="inline-code-box">System > About > Device Specifications > System Type</code>.</p>
+				<img src="bit-test.webp" loading="lazy" alt="Check system type in Windows for SDL setup">
+				<p>Depending on your system type, you will need to use the matching SDL folder.</p>
+				<ul>
+					<li><code class="inline-code-box">i686-w64-mingw32</code> for 32-bit systems</li>
+					<li><code class="inline-code-box">x86_64-w64-mingw32</code> for 64-bit systems</li>
+				</ul>
+				<p class="note">If you are unsure about your system type, choose 32-bit. It usually works for both.</p>
+				<p>We are only interested in three folders.</p>
+				<ul>
+					<li>Copy the <code class="inline-code-box">include</code> folder into your project root.</li>
+					<li>Copy the <code class="inline-code-box">lib</code> folder into your project root.</li>
+					<li>Inside the <code class="inline-code-box">bin</code> folder, copy the <code class="inline-code-box">SDL3.dll</code> file into your project root.</li>
+				</ul>
+				<p>After you have done this, you can delete the original <code class="inline-code-box">tar.gz</code> file and the extracted folder.</p>
+				<p>Now it's time to get programming! Open your project folder with Visual Studio Code. Inside the <code class="inline-code-box">src</code> folder, create a new file called <code class="inline-code-box">main.c</code>. Let's start by writing a simple "Hello, World!" program:</p>
 
 				<div class="code-box"><pre><code class="language-cpp">
 #include &lt;stdio.h&gt;
@@ -64,7 +75,14 @@ int main() {
 }
 				</code></pre></div>
 
-				<p>You could always choose to run this script by clicking the play button in the top right corner, but then the files we just added will not be linked, so we use a Makefile. This is the file that will collect all the information about the locations of the files we just added and compiles the project for us. In the root of the project, make a new file named <code class="inline-code-box">Makefile</code> and open it up. In this case, we need a function to compile the project, one to start it, and another that does both. We will use the tags <code class="inline-code-box">compile</code>, <code class="inline-code-box">run</code> and <code class="inline-code-box">all</code>. For now, we will use the code below, but you can check out a separate lesson to <a href="/projects/makefiles/lesson">learn about Makefiles and CMake ></a></p>
+				<p>You could click the play button at the top right of VSCode to run this script, but because we need to link the SDL files properly, we will use a Makefile instead. A Makefile is a file that tells the computer how to compile the project using all the files we set up earlier. </p>
+				<p>In the root of your project, create a new file called <code class="inline-code-box">Makefile</code> and open it up. We will define three commands:</p>
+				<ul>
+					<li><code class="inline-code-box">build</code> - to compile the project</li>
+					<li><code class="inline-code-box">run</code> - to run the project</li>
+					<li><code class="inline-code-box">compile</code> - to build and then run the project together</li>
+				</ul>
+				<p>Here is the basic Makefile for now:</p>
 
 				<div class="code-box"><pre><code class="language-c">
 compile: build run
@@ -74,7 +92,7 @@ run:
 	./main.exe
 				</code></pre></div>
 
-				<p>Now, open up a new terminal (Ctrl+Shift+'), and try entering the command line <code class="inline-code-box">mingw32-make</code>. Notice how it created a main.exe file and runs it for you? This project now has SDL linked to it. So now we get to the exciting part, time to start on our window!</p>
+				<p>Now, open up a new terminal (Ctrl+Shift+'), and try entering the command line <code class="inline-code-box">mingw32-make</code>. Notice how it automatically creates a <code class="inline-code-box">main.exe</code> file and runs it? Your project is now linked with SDL! So now we get to the exciting part, time to start creating our first SDL window!</p>
 
 				<div class="page-break"></div>
 
@@ -85,19 +103,41 @@ run:
 
 				<h2 class="neon">Creating the Window</h2>
 
-				<p>Delete all the code in your <code class="inline-code-box">main.c</code> file, we'll start fresh. The first thing we need to do is link the header file from SDL we just added to our code (we already linked it so it compiles, but we also need to link the header file), and we can do this by adding <code class="inline-code-box">#include &lt;SDL3/sdl.h&gt;</code> at the top of our project.</p>
-
-				<p>Now that SDL is linked to our project, we need to write our main function. With SDL, the main function must be in a very specific format for it to work properly. You must include the arguments <code class="inline-code-box">int argc</code> and <code class="inline-code-box">char* argv[]</code>. Next there are a couple things we need to do.</p>
+				<p>We can start by deleting all the code inside your <code class="inline-code-box">main.c</code> file. We're going to start fresh and set things up properly. The first thing we need to do is include the header file that we added earlier. Although we've already linked SDL during compilation, we also need to include the header in our source code so the compiler knows where to find the function definitions. To do this, add the following line at the very top of your file: <code class="inline-code-box">#include &lt;SDL3/sdl.h&gt;</code></p>
+				<p>Now that SDL is included, we need to write our <code class="inline-code-box">main</code> function. When using SDL, the main function must follow a very specific format for it to work properly. You must include the two arguments <code class="inline-code-box">int argc</code> and <code class="inline-code-box">char* argv[]</code>. After that, there are a few important setup steps we need to take:</p>
+				
 				<ol>
-					<li>First we need to activate SDL to render with video. We can do this by using <code class="inline-code-box">SDL_Init(SDL_INIT_VIDEO);</code>. This function takes an argument for what type of SDL you would like to use. In this case we will use VIDEO.</li>
-					<li>Next we need to create the window, with <code class="inline-code-box">window = SDL_CreateWindow("main", 800, 600, SDL_WINDOW_OPENGL);</code>. This function takes 4 arguments. The first is for the name of the window, wrapped with quotations (""). The second and third arguments are for the window width and height (positive integers). And the fourth argument is for the type of window we want to open (we will use SDL_WINDOW_OPENGL). For this project we will make our window 800 x 600 and call it "sdl-template".</li>
-					<li>Next we initialize the renderer using <code class="inline-code-box">renderer = SDL_CreateRenderer(window, NULL);</code>. The renderer is attached to a window, and while the window may pop up without it, you won't be able to draw anything to the screen. All we need to worry about for this one is the first argument, which should be your renderer.</li>
-					<li>Then we set the scale of each pixel (or the resolution) with <code class="inline-code-box">SDL_SetRenderScale(renderer, 1, 1);</code>. This function takes in three arguments, the first is the renderer you want to target, and the second/third is for the width and height of each pixel (in pixels)</li>
-					<li>And finally we set the blend mode with <code class="inline-code-box">SDL_SetRenderDrawBlendMode(renderer, SDL_BLENDMODE_BLEND);</code>. This makes things draw on the window look sharper and also add the ability to have transparent objects overlap each other.</li>
+					<li>First we need to initialize SDL for video rendering. We do this by calling <code class="inline-code-box">SDL_Init(SDL_INIT_VIDEO);</code>. This function takes a flag as an argument telling SDL what systems we want to initialize. In this case, we pass <code class="inline-code-box">SDL_INIT_VIDEO</code> because we want to use SDL's video (rendering) features.</li><br>
+			
+					<li>Next we create the window. We do this using <code class="inline-code-box">SDL_CreateWindow("sdl-template", 800, 600, SDL_WINDOW_OPENGL);</code>. This function takes four arguments:
+						<ul>
+							<li>The title of the window (a string inside quotes).</li>
+							<li>The window width (in pixels).</li>
+							<li>The window height (in pixels).</li>
+							<li>The window flags (we'll use <code class="inline-code-box">SDL_WINDOW_OPENGL</code> to allow OpenGL rendering).</li>
+						</ul>
+					
+					For this project, we'll name the window "sdl-template" and make it 800 pixels wide by 600 pixels tall.</li><br>
+			
+					<li>After creating the window, we need a renderer to actually draw things on the screen. We create it with <code class="inline-code-box">renderer = SDL_CreateRenderer(window, NULL);</code>. This attaches a rendering context to our window. We only need to give itthe  window for now and the second argument, driver index, can stay as <code class="inline-code-box">NULL</code> to let SDL choose the best option automatically.</li><br>
+			
+					<li>Then we et the render scale. We use <code class="inline-code-box">SDL_SetRenderScale(renderer, 1, 1);</code> to set the size of each pixel. The arguments are:
+						<ul>
+							<li>The renderer we want to affect.</li>
+							<li>The horizontal scale (set to 1 -> normal size).</li>
+							<li>The vertical scale (also 1 -> normal size).</li>
+						</ul>
+					Setting the scale to 1,1 means that each pixel we draw will map exactly to one screen pixel.</li><br>
+			
+					<li>And finally, to set the blend mode, we call <code class="inline-code-box">SDL_SetRenderDrawBlendMode(renderer, SDL_BLENDMODE_BLEND);</code>. This allows the renderer to support transparency and overlapping objects with smooth blending, instead of weird jagged overlaps.</li>
 				</ol>
 
-				<p>We also can't forget to initialize the objects for the window and renderer. These go at the top of the file under the headers and outside the main function. Don't forget to also add a <code class="inline-code-box">return 0;</code> to the bottom of the function which will to make sure it doesn't freeze. By the end of thi step, your code should look something like this:</p>
+				<p>Before all of this, we also need to declare the window and renderer objects. These go at the top of your file, under the header include, and outside of the main function. By the end of this step, your full code should look like this:</p>
+
 				<div class="code-box"><pre><code class="language-c">
+#include &lt;SDL3/SDL.h&gt;
+#include &lt;stdio.h&gt;
+
 SDL_Window* window;
 SDL_Renderer* renderer;
 SDL_Event event;
@@ -116,7 +156,9 @@ int main(int argc, char* argv[]) {
 
 				<p>Try running the project now!</p>
 				<video src="movie1.webm" autoplay loop muted loading="lazy"></video>
-				<p>Notice how the window pops up for a split-second and then goes away. That is because right after we create the window, we are ending the code with <code class="inline-code-box">return 0;</code>. To fix this, we must make something called a gameplay loop. This is a loop of functions that repeat until the window is closed or the game stops running. Right after where we make the window, in the main function, we will initialize a new variable called <code class="inline-code-box">bool running;</code> and set it to true. We will use this so that when we want to close the game, we set it to false and it breaks the loop and closes the window. We will also make a new event object called <code class="inline-code-box">SDL_Event event;</code>. We then make a while loop to run <code class="inline-code-box">while (running == true) {}</code> and this will make the window stay open. But how will we close the window? Everything in SDL we have to do manually, this includes detecting if the "X" is being pressed in the window taskbar. To do this we will use a special loop inside the game loop.</p>
+				<p>That's because after setting everything up, the program immediately reaches <code class="inline-code-box">return 0;</code> and exits. To fix this, we need to create something called a game loop. The game loop is a loop that keeps running while the game is active. It handles everything from drawing to input events and it only ends when the player closes the game. This is how we build it:</p>
+				<p>First, inside the main function, we create a new variable called <code class="inline-code-box">bool running</code> and set it to <code class="inline-code-box">true</code>. This variable will control whether the game keeps running. Then we add a <code class="inline-code-box">while</code> loop that checks if <code class="inline-code-box">running</code> is still <code class="inline-code-box">true</code>.</p>
+				<p>Inside the loop, we check for events, like if the user clicked the close button, using <code class="inline-code-box">SDL_PollEvent()</code>. If we detect an event of type <code class="inline-code-box">SDL_EVENT_QUIT</code>, we set <code class="inline-code-box">running</code> to <code class="inline-code-box">false</code> to break out of the loop and close the window.</p>
 
 				<div class="code-box"><pre><code class="language-c">
 bool running = true;
@@ -131,7 +173,7 @@ while (running) {
 
 				<p>Now try running the code!</p>
 				<video src="movie2.webm" autoplay loop muted loading="lazy"></video>
-				<p>If you need help or are stuck, you can <a href="/code-viewer.html?file=/projects/sdl-part1/code1.c&lang=c" target="_blank">view the source code ></a></p>
+				<p>If you're stuck or something isn't working, you can <a href="/code-viewer.html?file=/projects/sdl-part1/code1.c&lang=c" target="_blank">view the source code ></a></p>
 
 				<div class="page-break"></div>
 			</section>
@@ -140,12 +182,12 @@ while (running) {
 			<section>
 
 				<h2 class="neon">Drawing on the Window</h2>
-				<p>You don't just want a window with a blank screen? Remember the renderer from earlier attached to the window, this is what we will draw on and then push it to the window to render it on the screen. To draw we will need to first set the color of what we are drawing with <code class="inline-code-box">SDL_RenderSetColor();</code>, and then do one of four most common drawing functions:</p>
+				<p>You don't just want a window with a blank screen? Remember the renderer from earlier attached to the window, this is what we will draw on and then push it to the window to render it on the screen. To draw we will need to first set the color of what we are drawing with <code class="inline-code-box">SDL_RenderSetColor();</code>, and then do one of the four most common drawing functions:</p>
 
 				<div>
 					<h3><code class="inline-code-box">SDL_RenderClear();</code></h3>
 					<p>This function basically sets the entire screen to a single color. So let's change the screen to a color a little bit more colorful, let's try a navy blue. To do this, we first have to set the draw color. This function takes in five arguments: a render object, values for r, g, b and a transparency value. Now let's use <code class="inline-code-box">SDL_RenderClear()</code> and set the background to our color. Let's use <code class="inline-code-box">rgba(0, 0, 128, 255)</code>.</p>
-					<p class="caution">Dont forget to include SDL_RenderPresent(renderer) to push the contents of the renderer to the window otherwise your window will just be a black screen!</p>
+					<p class="caution">Dont forget to include SDL_RenderPresent(renderer); to push the contents of the renderer to the window otherwise your window will just be a black screen!</p>
 					<div class="code-box"><pre><code class="language-c">
 SDL_SetRenderDrawColor(renderer, 0, 0, 128, 255);
 SDL_RenderClear(renderer);
@@ -155,7 +197,7 @@ SDL_RenderPresent(renderer); // pushes renderer content to the window
 					<img src="draw1.webp" loading="lazy" alt="Changing the color of the window backround with SDL_RenderClear">
 
 					<h3><code class="inline-code-box">SDL_RenderFillRect()</code></h3>
-					<p>Now let's try drawing a rectangle in the center off the screen. To do this we use the <code class="inline-code-box">SDL_RenderFillRect()</code> function. This function takes in argument for a renderer and an SDL_FRect object. Let's make it a red square. The most important thing here is the FRect object. To initialize it, we need to give it an x, y, width and height value. SDL is weird, the top left corner of the screen is the coordinate (0, 0) but, as you go downwards, the y gets larger, so when you render something, it will seem flipped vertically. So let's make a 50x50 pixel square at (250, 250). We'll use the color  <code class="inline-code-box">rgba(255, 0, 0, 255)</code>.</p>
+					<p>Now let's try drawing a rectangle in the center off the screen. To do this we use the <code class="inline-code-box">SDL_RenderFillRect()</code> function. This function takes in arguments for a renderer and an SDL_FRect object. Let's make it a red square. The most important thing here is the FRect object. To initialize it, we need to give it an x, y, width, and height value. SDL is a little strange in that the top left corner of the screen is the coordinate (0, 0), but as you go downward, the y-coordinate gets larger. So, when you render something, it may seem flipped vertically. Let's make a 50x50 pixel square at (250, 250). We'll use the color <code class="inline-code-box">rgba(255, 0, 0, 255)</code>.</p>
 					<div class="code-box"><pre><code class="language-c">
 SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
 SDL_FRect rect = {250.0f, 250.0f, 50.0f, 50.0f};
@@ -164,7 +206,7 @@ SDL_RenderFillRect(renderer, &rect);
 					<img src="draw2.webp" loading="lazy" alt="Adding a red rectangle with SDL_RenderFillRect">
 
 					<h3><code class="inline-code-box">SDL_RenderLine();</code></h3>
-					<p>Now let's say we wanted to draw a line to trace the outline of an object, we would use <code class="inline-code-box">SDL_RenderLine()</code>. This function takes five arguments, one for the renderer, two for the x and y position of the first point, and two for the x and y position of the second point. Let's try drawing a white cross with two lines inside of the box we just made.</p>
+					<p>Now let's say we wanted to draw a line to trace the outline of an object, we would use <code class="inline-code-box">SDL_RenderLine()</code>. This function takes five arguments: one for the renderer, two for the x and y position of the first point, and two for the x and y position of the second point. Let's try drawing a white cross with two lines inside the box we just made. We'll use <code class="inline-code-box">rgba(255, 255, 255, 255)</code>.</p>
 					<div class="code-box"><pre><code class="language-c">
 SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
 SDL_RenderLine(renderer, 250.0f+50.0f, 250.0f, 250.0f, 250.0f+50.0f);
@@ -173,7 +215,7 @@ SDL_RenderLine(renderer, 250.0f+50.0f, 250.0f+50.0f, 250.0f, 250.0f);
 					<img src="draw3.webp" loading="lazy" alt="Adding a cross in the rectangle with SDL_RenderLine">
 
 					<h3><code class="inline-code-box">SDL_RenderPoint();</code></h3>
-					<p>This function is not very comonly used except for in raycasting projects and ones that have very small particles. Usually we use this to draw circles and other inorganic shapes using sin and cos. This function just takes a renderer, an x, and a y position, and draws a singular pixel at that position on the screen. Using your knowledge of for loops, try drawing a curved line with this function.</p>
+					<p>This function is not commonly used except for in raycasting projects or ones that have very small particles. Usually, we use this to draw circles and other inorganic shapes using sin and cos. This function just takes a renderer, an x, and a y position, and draws a singular pixel at that position on the screen. Using your knowledge of for loops, try drawing a curved line with this function.</p>
 					<div class="code-box"><pre><code class="language-c">
 // Here is what I came up with
 
@@ -200,14 +242,14 @@ for (float i = 0; i &gt; 600; i+=0.1) {
 
 		</article>
 
-		<p>You have completed this lesson . If you would like the full repository we made in this lesson, you can <a href="https://github.com/marcushcarter/sdl-template.git" target="_blank">visit the repository on github ></a></p>
-		<p><a href="/projects/sdl-part2/lesson">Click here to move onto the next lesson ></a></p>
+		<p>If you would like the full repository we made in this lesson, you can <a href="https://github.com/marcushcarter/sdl-template.git" target="_blank">visit the repository on github ></a></p>
+		<!-- <p><a href="/projects/sdl-part2/lesson">Click here to move onto the next lesson ></a></p> -->
 
 		<div class="page-break"></div>
 
 		<div>
 			<h2 class="neon">Sources</h2>
-			<a href="https://www.youtube.com/watch?v=jUZZC9UXyFs" target="_blank"><p>https://www.youtube.com/watch?v=jUZZC9UXyFs</p></a>
+			<a href="https://www.youtube.com/watch?v=jUZZC9UXyFs" target="_blank"><p>SDL 2 Tutorial Windows and Visual Studio Code Setup | Visual Studio Code, Game Dev - Sonar Systems</p></a>
 			<a href="" target="_blank"><p></p></a>
 			<a href="" target="_blank"><p></p></a>
 			<a href="" target="_blank"><p></p></a>
