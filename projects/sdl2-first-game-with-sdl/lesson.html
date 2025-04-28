@@ -96,7 +96,7 @@ int main(int argc, char* argv[]) {
 			<section>
 				<h2 class="neon">How to Render a Texture</h2>
 				<p>The first thing we need to do when rendering a texture is to actually load it in. To do this we will make our own function. Above your main function make a new bool function called <code class=inline-code-box">loadTextures()</code> with an argument for a pointer to a SDL_Renderer object.</p>
-				<p>In this function, we will load individual textures to thier own texture objects. FOr eacah texture you want to load, you will add a new <code class="inline-code-box">SDL_Texture*</code> object. Mine will be called <code class="inline-code-box">my_texture</code>. Then, in our new Load Textures function we will attach our image to that object. We will do this with <code class="inline-code-box">my_texture = IMG_LoadTexture(renderer, "./your/path/to/image.png");</code></p>
+				<p>In this function, we will load individual textures to thier own texture objects. FOr eacah texture you want to load, you will add a new <code class="inline-code-box">SDL_Texture*</code> object. Mine will be called <code class="inline-code-box">my_texture</code>. Then, in our new Load Textures function we will attach our image to that object. We will do this with <code class="inline-code-box">my_texture = IMG_LoadTexture(renderer, "./resources/shrek.png");</code></p>
 				<p>Your load textures function should now look something like this:</p>
 				<div class="code-box"><pre><code class="language-cpp">
 // Under the header files with the other objects
@@ -105,7 +105,7 @@ SDL_Texture* my_texture;
 // Somewhere above the main function
 bool load_textures(SDL_Renderer* renderer) {
 
-	my_texture = IMG_LoadTexture(renderer, "./your/path/to/image.png");
+	my_texture = IMG_LoadTexture(renderer, "./resources/shrek.png");
 	// SDL_SetTextureScaleMode(texture, SDL_SCALEMODE_NEAREST);
 
 	return true;
