@@ -9,7 +9,7 @@
 	<meta property="og:description" content="">
 	<meta property="og:image" content="/resources/logo-full.png">
 	<meta property="og:type" content="website">
-	<meta property="og:url" content="https://ballisticstudios.ca/projects/introduction-to-sdl-sdl1/lesson">
+	<meta property="og:url" content="https://ballisticstudios.ca/projects/sdl2-textures-and-delta-time-in-sdl/lesson">
 
     <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="/style2.css">
@@ -17,7 +17,7 @@
 	
     <script src="https://kit.fontawesome.com/1d0f0d81d5.js" crossorigin="anonymous"></script>
     <link rel="icon" href="/resources/favicon.png" type="image/x-icon">
-    <title>Making our First Game | Ballistic Studios Lessons</title>
+    <title>Textures and Delta Time | Ballistic Studios Lessons</title>
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
@@ -32,17 +32,20 @@
 
 			<!-- Title / Learning Goals / Introduction-->
 			<header>
-				<h1 class="neon">Making our First Game | SDL Lesson 2</h1>
-				<!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est corporis odio doloremque sapiente optio maiores commodi quasi consectetur perferendis, veritatis alias ex expedita perspiciatis debitis, temporibus rem assumenda praesentium at.</p> -->
+				<h1 class="neon">Textures and Delta Time | SDL Lesson 2</h1>
+
+				<p>In this lesson, you will learn about Delta Time, how to setup SDL_Image, load images onto the window and finalize your SDL Template. Let's get started!</p>
+				<p class="caution">If you don't have Visual Studio Code instaleled and setup with MinGW, it is <strong>REQUIRED</strong> for this lesson. <a href="/projects/vscode-setup-with-mingw/lesson" class="remove">You can find the tutorial here ></a></p>
+				<p class="note">You can find the source code for the repository made in the previous lesson <a href="https://github.com/marcushcarter/SDL-Lessons/releases/tag/sdl-lesson-1" target="_blank" class="remove">here ></a></p>
+				<h2 class="neon">What is SDL Image?</h2>
+				<p><strong>SDL_image</strong> is an extension library for SDL that makes it super easy to load image files like PNGs and JPGs into your game or app. While basic SDL can only handle BMP files (which are huge and outdated), SDL_image gives you the power to use modern image formats, meaning you can drop high-quality assets into your project with just a single function call. It works like an image translator: you feed it a file path, and it hands you back a texture that SDL can actually use on the screen. This saves you from writing your own custom image parser and keeps things simple, fast, and game-ready.</p>
+
+				<div class="page-break"></div>
 			</header>
-
-
-
-			<!-- What is delta time and SDL_Image -->
 
 			<!-- How to add SDL_Image to our project -->
 			<section>
-				<h2 class="neon">How to Add SDL_Image to your project</h2>
+				<h2 class="neon">How to Add SDL Image to your Repository</h2>
 				<p>The first step to rendering textures in SDL is to add SDL_image to our repository. <a href="https://github.com/libsdl-org/SDL_image/releases" target="_blank">Visit the SDL_image GitHub page</a> and download the file called <code class="inline-code-box">SDL3_image-devel-3.2.4-mingw.tar.gz</code>. Save it into the root of your repository and extract the file there. Do you remember how to check what type of system your computer uses (either 32 or 64-bit)? If you are not sure how, <a href="#" onclick="scrolltopage('/projects/sdl1-introduction-to-sdl/lesson', 'check-bitrate'); return false;">go back and learn how to check your system type</a>. We will again have to use the matching SDL_image folder for it to work:</p>
 				<ul>
 					<li><code class="inline-code-box">i686-w64-mingw32</code> for 32-bit systems</li>
@@ -154,7 +157,7 @@ x = x + 1; // also can be written as x+=1;
 				<p>When we measure the amount of time between frames, we get the delta time. This Delta Time (often written as <code class="inline-code-box">dt</code> or <code class="inline-code-box">deltaTime</code> in code) tells us how long it took to render the last frame, usually measured in seconds or milliseconds. So for example, if your game is running at 60fps, delta time would be about 0.016 seconds per frame (because 1 divided by 60 is roughly 0.016). If it's running at 30fps, delta time would be around 0.033. This number becomes super useful when we want to make things move at the same speed no matter what the frame rate is.</p>
 				<p>Instead of saying “move the player 5 units every frame,” which is tied to the frame rate, we say “move the player at 300 units per second” and multiply that speed by delta time each frame. For example, <code class="inline-code-box">position += speed * dt;</code>. If <code class="inline-code-box">speed</code> is 300 and <code class="inline-code-box">dt</code> is 0.016, then we move 4.8 units that frame. If the frame took longer and <code class="inline-code-box">dt</code> is 0.033, we move 9.9 units that frame. It may seem like more, but remember: fewer frames are being drawn per second, so we move more per frame to make up for it. In both cases, the character ends up moving at the same rate per second. This keeps movement, physics, and animation timing smooth and consistent on all devices and frame rates.</p>
 
-				<p>So how do we get the delta time? To calculate it, we need to know how much time has passed between the last frame and the current one. In C, we can do this using the <code>clock()</code> function from the <code>&lt;time.h&gt;</code> library. Let me explain what’s going on in the code below:</p>
+				<p>So how do we get the delta time? To calculate it, we need to know how much time has passed between the last frame and the current one. In C, we can do this using the <code class="inline-code-box">clock()</code> function from the <code class="inline-code-box">&lt;time.h&gt;</code> library. Let me explain what’s going on in the code below:</p>
 
 				<div class="code-box"><pre><code class="language-cpp">
 #include &lt;time.h&gt; // to get the current time
@@ -204,64 +207,35 @@ dt = get_delta_time();    // get how long the last frame took (at start of the f
 control_fps(120.0f);      // limit FPS to 120 (at end of the frame)
 				</code></pre></div>
 
-				<p>And now, if we change our character's position by 25 * dt, it will move smoothly and at the same speed across all devices.</p>
+				<p>And now, if we change our character's position by <code class="inline-code-box">25 * dt</code>, it will move smoothly and at the same speed across all devices. <code class="inline-code-box">x+=25*dt;</code></p>
 				<video src="delta-time-example.webm" autoplay loop muted loading="lazy"></video>
 				<p>If you're stuck or something isn't working, you can <a href="/code-viewer.html?file=/projects/sdl2-first-game-with-sdl/code2.c&lang=c" target="_blank">view the source code here ></a></p>
-
+				<p>For the full repository we made in this lesson, you can <a href="https://github.com/marcushcarter/SDL-Lessons/releases/tag/sdl-lesson-2" target="_blank">visit the repository on github ></a></p>
+				<p>You can also click here for a <a href="" target="_blank">blank template for a new SDL project</a>.</p>
+		
 				<div class="page-break"></div>
 			</section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-			<!-- Making flappy bird -->
-			<section>
-				<h2 class="neon">Making our flappy bird game</h2>
-				<p>Now that we know the fundamentals of Delta Time and how to render a texture, we can start making our very own Flappy Bird game.</p>
-			</section>
-
-			<!-- Programing our flappy bird game logic -->
-			<!-- How to apply delta time -->
 
 			<!-- Excercises -->
 			<section>
 				<h2 class="neon">Excercies:</h3>
 				<ol>
-					<li>EASY: Try changing the image you use for the bird. <a href="/code-viewer.html?file=/projects/sdl1-introduction-to-sdl/question1-1.c&lang=c" target="_blank">View Solution</a>.</li>
-					<li>DIFFICULT: Try to create an empty circle using <code class="inline-code-box">SDL_RenderPoint()</code> and the <code class="inline-code-box">math.h</code> header file. <a href="/code-viewer.html?file=/projects/sdl1-introduction-to-sdl/question1-2.c&lang=c" target="_blank">View Solution</a>.</li>
+					<li>EASY: Try switching out the car for a different image.</li>
+					<li>MEDIUM: Try adding different types of cars that move at different speeds. <a href="/code-viewer.html?file=/projects/sdl2-textures-and-delta-time-in-sdl/question1-2.c&lang=c" target="_blank">View Solution</a>.</li>
 				</ol>
 			</section>
 
 		</article>
 
-		<p>If you would like the full repository we made in this lesson, you can <a href="https://github.com/marcushcarter/SDL-Lessons/releases/tag/sdl-lesson-1" target="_blank">visit the repository on github ></a></p>
-		<p><a href="/projects/sdl2-first-game-with-sdl/lesson">Click here to move onto the next lesson ></a></p>
+		<p><a href="/projects/sdl2-first-game-with-sdl/lesson" class="neon">Click here to move onto the next lesson ></a></p>
 
 		<div class="page-break"></div>
 
-		<div>
+		<div class="website-sources">
 			<h2 class="neon">Sources</h2>
 			<a href="https://www.youtube.com/watch?v=jUZZC9UXyFs" target="_blank"><p>SDL 2 Tutorial Windows and Visual Studio Code Setup | Visual Studio Code, Game Dev - Sonar Systems</p></a>
-			<a href="" target="_blank"><p></p></a>
-			<a href="" target="_blank"><p></p></a>
+			<a href="https://en.wikipedia.org/wiki/Delta_timing" target="_blank"><p>Delta Timing - Wikipedia</p></a>
+			<a href="https://github.com/libsdl-org/SDL_image/releases" target="_blank"><p>SDL_Image GitHub Page</p></a>
 			<a href="" target="_blank"><p></p></a>
 			<a href="" target="_blank"><p></p></a>
 			<a href="" target="_blank"><p></p></a>

@@ -973,7 +973,7 @@ footer .copyright {
 	flex-direction: column;
 	align-items: center;
 	gap: 30px;
-	padding: 30px;
+    padding: 0 30px 15px;
 }
 
 .articles li {

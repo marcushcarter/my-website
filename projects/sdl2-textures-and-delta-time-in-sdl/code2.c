@@ -1,7 +1,6 @@
 #include <SDL3/SDL.h>
 #include <SDL3_image/SDL_image.h>
 #include <stdio.h>
-// #include <windows.h>
 #include <time.h> // to get the current time
 #include <unistd.h> // for usleep() -> control_fps function
 
