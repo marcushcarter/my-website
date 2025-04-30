@@ -5,14 +5,14 @@
 SDL_Window* window;
 SDL_Renderer* renderer;
 
-// The place our shrek texture will go
-SDL_Texture* shrek_texture;
+// The place our car texture will go
+SDL_Texture* car_texture;
 
 bool load_textures() {
 
-    // Loading our shrek texture
-	shrek_texture = IMG_LoadTexture(renderer, "./resources/shrek.png");
-	SDL_SetTextureScaleMode(shrek_texture, SDL_SCALEMODE_NEAREST);
+    // Loading our car texture
+	car_texture = IMG_LoadTexture(renderer, "./resources/car.png");
+	SDL_SetTextureScaleMode(car_texture, SDL_SCALEMODE_NEAREST);
 
 	return true;
 }
@@ -35,9 +35,9 @@ int main(int argc, char* argv[]) {
             if (event.type == SDL_EVENT_QUIT) running = false;
         }
 
-        // put the shrek texture on the renderer
+        // put the car texture on the renderer
         SDL_FRect position = {0, 0, 800, 600};
-        SDL_RenderTexture(renderer, shrek_texture, NULL, &position);
+        SDL_RenderTexture(renderer, car_texture, NULL, &position);
 
         SDL_RenderPresent(renderer);
     }

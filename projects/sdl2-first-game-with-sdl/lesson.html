@@ -42,7 +42,7 @@
 
 			<!-- How to add SDL_Image to our project -->
 			<section>
-				<h2 class="neon">How to Add SL_Image to your project</h2>
+				<h2 class="neon">How to Add SDL_Image to your project</h2>
 				<p>The first step to rendering textures in SDL is to add SDL_image to our repository. <a href="https://github.com/libsdl-org/SDL_image/releases" target="_blank">Visit the SDL_image GitHub page</a> and download the file called <code class="inline-code-box">SDL3_image-devel-3.2.4-mingw.tar.gz</code>. Save it into the root of your repository and extract the file there. Do you remember how to check what type of system your computer uses (either 32 or 64-bit)? If you are not sure how, <a href="#" onclick="scrolltopage('/projects/sdl1-introduction-to-sdl/lesson', 'check-bitrate'); return false;">go back and learn how to check your system type</a>. We will again have to use the matching SDL_image folder for it to work:</p>
 				<ul>
 					<li><code class="inline-code-box">i686-w64-mingw32</code> for 32-bit systems</li>
@@ -95,59 +95,148 @@ int main(int argc, char* argv[]) {
 			<section>
 				<h2 class="neon">How to Render a Texture</h2>
 				<p>The first step we need to do when rendering a texture is to actually load it in. To do this we will make our own function. Above your main function make a new bool function called <code class="inline-code-box">load_textures()</code>. In this function, we will load images to thier own textures.</p>
-				<p>For each texture you want to load, you will add a new <code class="inline-code-box">SDL_Texture*</code> object. Lets make a new texture containing this <a href="shrek.png" target="_blank">Shrek image</a>. Download the image and put it in your <code class="inline-code-box">resources</code> folder, then in your main file, make a new texture with <code class="inline-code-box">SDL_Texture* shrek_texture;</code>.</p>
-				<p>Next, we actually have to link the image to the texture. In our new "load_textures" function we will attach our image using its path to the texture. We will do this with <code class="inline-code-box">shrek_texture = IMG_LoadTexture(renderer, "./resources/shrek.png");</code>. This IMG_LoadTexture function takes arguments for the renderer you use it on and also the path to your image. Make sure to use your "load_textures" function after we initialize SDL in the main function as well.</p>
+				<p>For each texture you want to load, you will add a new <code class="inline-code-box">SDL_Texture*</code> object. Lets make a new texture with this <a href="car.png" target="_blank">Car image</a>. Download the image and put it in your <code class="inline-code-box">resources</code> folder, then in your main file, make a new texture with <code class="inline-code-box">SDL_Texture* car_texture;</code>.</p>
+				<p>Next, we actually have to link the image to the texture. In our new "load_textures" function we will attach our image using its path to the texture. We will do this with <code class="inline-code-box">car_texture = IMG_LoadTexture(renderer, "./resources/car.png");</code>. This IMG_LoadTexture function takes arguments for the renderer you use it on and also the path to your image. Make sure to use your "load_textures" function after we initialize SDL in the main function as well.</p>
 				<p>Your load textures function should now look something like this:</p>
 				<div class="code-box"><pre><code class="language-cpp">
-// The place our shrek texture will go
-SDL_Texture* shrek_texture;
+// The place our car texture will go
+SDL_Texture* car_texture;
 
 bool load_textures() {
 
-	// Loading our shrek texture
-	shrek_texture = IMG_LoadTexture(renderer, "./resources/shrek.png");
+	// Loading our car texture
+	car_texture = IMG_LoadTexture(renderer, "./resources/car.png");
 
 	return true;
 }
-				</code></pre></div>
-				<p>In the "load_textures" function, after you link an image to the function, you can also set the scalemode to NEAREST, which stops the individual pictures of the image from blending together, making it better for pixel art images. We do this with <code class="inline-code-box">SDL_SetTextureScaleMode(shrek_texture, SDL_SCALEMODE_NEAREST);</code></p>
 
-				<p>Our new Shrek texture is setup, but now we have to get it onto our window. Back in the main function, inside the game loop, we will have to make a special object with a position and dimensions and then render a texture on top of it. Just like when we made the red box in the last lesson, we will use an SDL_FRect object to set our textures position. We are going to make our texture take up the whole screen, so we will use the position (0, 0) with height = 600 and width = 800. Try setting up this SDL_FRect by yourself.</p>
-				<p>Now all thats left to do is to place our texture at that position, on the renderer. We do this with <code class="inline-code-box">SDL_RendererTexture(renderer, shrek_texture, NULL, &position);</code> which takes arguments for the renderer, texture, the src position (which we won't go into right now), and then a reference to the position. We use a reference for the position becasue we are actually taking the information out of the object. Our final code should look something like this:</p>
+// dont forget to include the texture loading function in the main function
+load_textures();
+				</code></pre></div>
+				<p>In the "load_textures" function, after you link an image to the function, you can also set the scalemode to NEAREST, which stops the individual pictures of the image from blending together, making it better for pixel art images. We do this with <code class="inline-code-box">SDL_SetTextureScaleMode(car_texture, SDL_SCALEMODE_NEAREST);</code></p>
+
+				<p>Our new car texture is setup, but now we have to get it onto our window. Back in the main function, inside the game loop, we will have to make a special object with a position and dimensions and then render a texture on top of it. Just like when we made the red box in the last lesson, we will use an SDL_FRect object to set our textures position. We are going to make our texture take up the whole screen, so we will use the position (0, 0) with height = 600 and width = 800. Try setting up this SDL_FRect by yourself.</p>
+				<p>Now all thats left to do is to place our texture at that position, on the renderer. We do this with <code class="inline-code-box">SDL_RendererTexture(renderer, car_texture, NULL, &position);</code> which takes arguments for the renderer, texture, the src position (which we won't go into right now), and then a reference to the position. We use a reference for the position becasue we are actually taking the information out of the object. Our final code should look something like this:</p>
 				<div class="code-box"><pre><code class="language-cpp">
 // put texture on the renderer
 SDL_FRect position = {0, 0, 800, 600};
-SDL_RendererTexture(renderer, shrek_texture, NULL, &position);
+SDL_RendererTexture(renderer, car_texture, NULL, &position);
 
 SDL_RenderPresent(renderer);
 				</code></pre></div>
 
-				<img src="shrek-texture.webp" alt="Example on how you window should look after rendering texture">
+				<img src="car-texture.webp" alt="Example on how you window should look after rendering texture">
 				<p>If you're stuck or something isn't working, you can <a href="/code-viewer.html?file=/projects/sdl2-first-game-with-sdl/code1.c&lang=c" target="_blank">view the source code here ></a></p>
 
 				<div class="page-break"></div>
 
 			</section>
 
-			<!-- Render Texture Function -->
-			<!-- <section>
-				<h2 class="neon">Making a render texture function</h2>
-				<p>make a new function called renderTexture. ()</p>
-				<li>etc.</li> -->
+			<!-- What is Delta Time -->
+			<section>
+				<p>Now lets make our image smaller and make it move from the left to the right accross the screen. We will use a variable to track the car's x position on the window and increase it every frame and then use that variable as the x value in our textures FRect <code class="inline-code-box">SDL_FRect position1 = {x, 0, 80, 60};</code>. Before every frame is rendered, we also have to clear the original cntents of the window as we are no longer just presenting a static image, and we do this with <code class="inline-code-box">SDL_RenderClear(renderer);</code>.</p>
+				<div class="code-box"><pre><code class="language-cpp">
+// initialize the car's x variable
+float x = 0;
+
+// clear the renderer
+SDL_RenderClear(renderer);
+
+// update the FRect size and add the x variable
+SDL_FRect position = {x, 0, 80, 60};
+
+// update the x position (in the game loop)
+x = x + 1; // also can be written as x+=1;
+				</code></pre></div>
+
+				<p>This works fine, but the speed of your player is completely dependent on the framerate of your program. Think of it like this: you ask Timmy and Jimmy to test your game. Timmy's computer runs the game at 60 frames per second (fps), while Jimmy's runs it at 30fps. They both play the game, but Timmy's character moves twice as fast as Jimmy's. Why? Because the character's movement is tied directly to how many frames are being drawn. The more frames, the more movement happens. So Timmy, getting 60 updates per second, moves more often than Jimmy, who only gets 30 updates per second. This makes the game feel unfair and inconsistent across devices. To fix this, we use something called delta time.</p>
+				<h2 class="neon">What is Delta Time?</h2>
+				<p>When we measure the amount of time between frames, we get the delta time. This Delta Time (often written as <code class="inline-code-box">dt</code> or <code class="inline-code-box">deltaTime</code> in code) tells us how long it took to render the last frame, usually measured in seconds or milliseconds. So for example, if your game is running at 60fps, delta time would be about 0.016 seconds per frame (because 1 divided by 60 is roughly 0.016). If it's running at 30fps, delta time would be around 0.033. This number becomes super useful when we want to make things move at the same speed no matter what the frame rate is.</p>
+				<p>Instead of saying “move the player 5 units every frame,” which is tied to the frame rate, we say “move the player at 300 units per second” and multiply that speed by delta time each frame. For example, <code class="inline-code-box">position += speed * dt;</code>. If <code class="inline-code-box">speed</code> is 300 and <code class="inline-code-box">dt</code> is 0.016, then we move 4.8 units that frame. If the frame took longer and <code class="inline-code-box">dt</code> is 0.033, we move 9.9 units that frame. It may seem like more, but remember: fewer frames are being drawn per second, so we move more per frame to make up for it. In both cases, the character ends up moving at the same rate per second. This keeps movement, physics, and animation timing smooth and consistent on all devices and frame rates.</p>
+
+				<p>So how do we get the delta time? To calculate it, we need to know how much time has passed between the last frame and the current one. In C, we can do this using the <code>clock()</code> function from the <code>&lt;time.h&gt;</code> library. Let me explain what’s going on in the code below:</p>
+
+				<div class="code-box"><pre><code class="language-cpp">
+#include &lt;time.h&gt; // to get the current time
+#include &lt;unistd.h&gt; // for usleep() -> control_fps function
+
+// These variables help us calculate delta time
+clock_t previous_time = 0; // stores the time from the last frame
+float dt; // will hold the final delta time in seconds
+
+// Function to calculate delta time
+// Returns how many seconds passed since the last frame
+// Call this once per frame before any movement updates
+float get_delta_time() {
+    clock_t current_time = clock(); // gives us the number of CPU clock ticks since the program started
+    float delta_time = (float)(current_time - previous_time) / CLOCKS_PER_SEC;
+	// CLOCKS_PER_SEC is a constant that tells us how many ticks are in one second
+	// dividing the difference in ticks by CLOCKS_PER_SEC, we get the time passed between frames (the delta time)
+    previous_time = current_time; // save the current time to previous_time so that next frame we can compare it again
+    return delta_time;
+}
+
+// Function to control the framerate manually
+// It delays the next frame until the correct frame time has passed
+// keeps your game from running too fast
+void control_fps(float target_fps) {
+	// Calculate how long each frame should take (in seconds)
+	float frame_duration = 1.0f / target_fps;
+
+	// Get the current time at the end of the frame
+	clock_t now = clock();
+
+	// Calculate how much time has passed since the frame started
+	float elapsed = (float)(now - previous_time) / CLOCKS_PER_SEC;
+
+	// Find out how much time is left to wait to match the desired frame duration
+	float remaining_time = frame_duration - elapsed;
+
+	// If the frame finished faster than the desired duration, sleep for the remaining time
+	if (remaining_time > 0) {
+		// Convert seconds to microseconds and sleep (pause) for that duration
+		usleep((useconds_t)(remaining_time * 1000000.0f));
+	}
+}
+
+// Example usage each frame:
+dt = get_delta_time();    // get how long the last frame took (at start of the frame)
+control_fps(120.0f);      // limit FPS to 120 (at end of the frame)
+				</code></pre></div>
+
+				<p>And now, if we change our character's position by 25 * dt, it will move smoothly and at the same speed across all devices.</p>
+				<video src="delta-time-example.webm" autoplay loop muted loading="lazy"></video>
+				<p>If you're stuck or something isn't working, you can <a href="/code-viewer.html?file=/projects/sdl2-first-game-with-sdl/code2.c&lang=c" target="_blank">view the source code here ></a></p>
+
+				<div class="page-break"></div>
 			</section>
 
-			<!-- Delta Time -->
-			<section>
-				<h2 class="neon">Adding Delta Time</h2>
-			</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 			<!-- Making flappy bird -->
 			<section>
 				<h2 class="neon">Making our flappy bird game</h2>
 				<p>Now that we know the fundamentals of Delta Time and how to render a texture, we can start making our very own Flappy Bird game.</p>
 			</section>
-
-
 
 			<!-- Programing our flappy bird game logic -->
 			<!-- How to apply delta time -->
