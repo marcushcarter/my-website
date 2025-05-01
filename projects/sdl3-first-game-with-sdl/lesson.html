@@ -9,7 +9,7 @@
 	<meta property="og:description" content="">
 	<meta property="og:image" content="/resources/logo-full.png">
 	<meta property="og:type" content="website">
-	<meta property="og:url" content="https://ballisticstudios.ca/projects/sdl2-textures-and-delta-time-in-sdl/lesson">
+	<meta property="og:url" content="https://ballisticstudios.ca/projects/sdl3-first-game-with-sdl/lesson">
 
     <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="/style2.css">
@@ -17,7 +17,7 @@
 	
     <script src="https://kit.fontawesome.com/1d0f0d81d5.js" crossorigin="anonymous"></script>
     <link rel="icon" href="/resources/favicon.png" type="image/x-icon">
-    <title>Textures and Delta Time | Ballistic Studios Lessons</title>
+    <title>Making our First Game with SDL | Ballistic Studios Lessons</title>
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
@@ -32,196 +32,36 @@
 
 			<!-- Title / Learning Goals / Introduction-->
 			<header>
-				<h1 class="neon">Textures and Delta Time | SDL Lesson 2</h1>
+				<h1 class="neon">Making our First Game with SDL | SDL Lesson 3</h1>
 
-				<p>In this lesson, you will learn about Delta Time, how to setup SDL_Image, load images onto the window and finalize your SDL Template. Let's get started!</p>
-				<p class="caution">If you don't have Visual Studio Code instaleled and setup with MinGW, it is <strong>REQUIRED</strong> for this lesson. <a href="/projects/vscode-setup-with-mingw/lesson" class="remove">You can find the tutorial here ></a></p>
-				<p class="note">You can find the source code for the repository made in the previous lesson <a href="https://github.com/marcushcarter/SDL-Lessons/releases/tag/sdl-lesson-1" target="_blank" class="remove">here ></a></p>
-				<h2 class="neon">What is SDL Image?</h2>
-				<p><strong>SDL_image</strong> is an extension library for SDL that makes it super easy to load image files like PNGs and JPGs into your game or app. While basic SDL can only handle BMP files (which are huge and outdated), SDL_image gives you the power to use modern image formats, meaning you can drop high-quality assets into your project with just a single function call. It works like an image translator: you feed it a file path, and it hands you back a texture that SDL can actually use on the screen. This saves you from writing your own custom image parser and keeps things simple, fast, and game-ready.</p>
+				<p>In this lesson, you will learn to make you first game (Flappy Bird) using the SDL Template you just made in the previous lessons. Let's get started!</p>
+				<p class="caution">If you don't have Visual Studio Code installed and setup with MinGW, it is <strong>REQUIRED</strong> for this lesson. <a href="/projects/vscode-setup-with-mingw/lesson" class="remove">You can find the tutorial here ></a></p>
+				<p class="note">You can find the repository for the SDL Template we have been working on in the last couple lessons <a href="https://github.com/marcushcarter/SDL-Lessons/releases/tag/sdl-template-1" target="_blank" class="remove">here ></a>. You can download this one or if you have been following along, use the one you have been making so far.</p>
 
 				<div class="page-break"></div>
 			</header>
 
-			<!-- How to add SDL_Image to our project -->
+			<!-- Key Concepts of Flappy Bird -->
 			<section>
-				<h2 class="neon">How to Add SDL Image to your Repository</h2>
-				<p>The first step to rendering textures in SDL is to add SDL_image to our repository. <a href="https://github.com/libsdl-org/SDL_image/releases" target="_blank">Visit the SDL_image GitHub page</a> and download the file called <code class="inline-code-box">SDL3_image-devel-3.2.4-mingw.tar.gz</code>. Save it into the root of your repository and extract the file there. Do you remember how to check what type of system your computer uses (either 32 or 64-bit)? If you are not sure how, <a href="#" onclick="scrolltopage('/projects/sdl1-introduction-to-sdl/lesson', 'check-bitrate'); return false;">go back and learn how to check your system type</a>. We will again have to use the matching SDL_image folder for it to work:</p>
-				<ul>
-					<li><code class="inline-code-box">i686-w64-mingw32</code> for 32-bit systems</li>
-					<li><code class="inline-code-box">x86_64-w64-mingw32</code> for 64-bit systems</li>
-				</ul>
-				<p>We are again only interested in three folders:</p>
-				<ul>
-					<li>Copy the <code class="inline-code-box">include</code> folder into your project root.</li>
-					<li>Copy the <code class="inline-code-box">lib</code> folder into your project root.</li>
-					<li>Inside the <code class="inline-code-box">bin</code> folder, copy the <code class="inline-code-box">SDL3_image.dll</code> file into your project root.</li>
-				</ul>
-				<p>Now we have to link the <code class="inline-code-box">SDL_image.dll</code> to our project, so at the end of the <code class="inline-code-box">build</code> command on our Makefile, add a new reference to <code class="inline-code-box">-lSDL3_image</code>. And finally, we need to include the SDL_image header file in the <code class="inline-code-box">main.c</code>, so we will add the include <code class="inline-code-box">#include &lt;SDL3_image/SDL_image.h&gt;</code> (make sure you put it AFTER the SDL.h include). Notice how linking SDL_image had excactly the same process as linking SDL like we did in the last lesson. This is how you link any header files you may get in the future.</p>
-				<p>You can now delete all the other drawing functions we used in the last lesson from the game loop (we will keep the Poll EVent loop and the RenderPresent function) and delete the original <code class="inline-code-box">tar.gz</code> file and its extracted folder.</p>
-				<p>Your current <code class="inline-code-box">main.c</code> file should look like this:</p>
+				<img src="flappy-bird-intro.webp" alt="Flappy Bird featured intro image">
+				<h2 class="neon">Flappy Bird Key Concepts</h2>
+				<p>This lesson we will be making flappy bird. So think right now, what are the core concepts that make the game Flappy Bird. Heres what I came up with:</p>
+				<ol>
+					<li>tap to flap</li>
+					<li>dodge the pipes</li>
+					<li>repeat until you fail</li>
+				</ol>
+				<p>Simple right?</p>
 
-				<div class="code-box"><pre><code class="language-cpp">
-#include <SDL3/SDL.h>
-#include <SDL3_image/SDL_image.h>
-#include <stdio.h>
 
-SDL_Window* window;
-SDL_Renderer* renderer;
-
-int main(int argc, char* argv[]) {
-
-	SDL_Init(SDL_INIT_VIDEO);
-	window = SDL_CreateWindow("main", 800, 600, SDL_WINDOW_OPENGL);
-	renderer = SDL_CreateRenderer(window, NULL);
-	SDL_SetRenderScale(renderer, 1, 1);
-	SDL_SetRenderDrawBlendMode(renderer, SDL_BLENDMODE_BLEND);
-
-	bool running = true;
-	SDL_Event event;
-	while (running) {
-		while (SDL_PollEvent(&event) != 0) {
-			if (event.type == SDL_EVENT_QUIT) running = false;
-		}
-
-		SDL_RenderPresent(renderer);
-	}
-	
-	return 0;
-}
-					</code></pre></div>
-
-				<div class="page-break"></div>
-			</section>
-
-			<!-- How to render a texture -->
-			<section>
-				<h2 class="neon">How to Render a Texture</h2>
-				<p>The first step we need to do when rendering a texture is to actually load it in. To do this we will make our own function. Above your main function make a new bool function called <code class="inline-code-box">load_textures()</code>. In this function, we will load images to thier own textures.</p>
-				<p>For each texture you want to load, you will add a new <code class="inline-code-box">SDL_Texture*</code> object. Lets make a new texture with this <a href="car.png" target="_blank">Car image</a>. Download the image and put it in your <code class="inline-code-box">resources</code> folder, then in your main file, make a new texture with <code class="inline-code-box">SDL_Texture* car_texture;</code>.</p>
-				<p>Next, we actually have to link the image to the texture. In our new "load_textures" function we will attach our image using its path to the texture. We will do this with <code class="inline-code-box">car_texture = IMG_LoadTexture(renderer, "./resources/car.png");</code>. This IMG_LoadTexture function takes arguments for the renderer you use it on and also the path to your image. Make sure to use your "load_textures" function after we initialize SDL in the main function as well.</p>
-				<p>Your load textures function should now look something like this:</p>
-				<div class="code-box"><pre><code class="language-cpp">
-// The place our car texture will go
-SDL_Texture* car_texture;
-
-bool load_textures() {
-
-	// Loading our car texture
-	car_texture = IMG_LoadTexture(renderer, "./resources/car.png");
-
-	return true;
-}
-
-// dont forget to include the texture loading function in the main function
-load_textures();
-				</code></pre></div>
-				<p>In the "load_textures" function, after you link an image to the function, you can also set the scalemode to NEAREST, which stops the individual pictures of the image from blending together, making it better for pixel art images. We do this with <code class="inline-code-box">SDL_SetTextureScaleMode(car_texture, SDL_SCALEMODE_NEAREST);</code></p>
-
-				<p>Our new car texture is setup, but now we have to get it onto our window. Back in the main function, inside the game loop, we will have to make a special object with a position and dimensions and then render a texture on top of it. Just like when we made the red box in the last lesson, we will use an SDL_FRect object to set our textures position. We are going to make our texture take up the whole screen, so we will use the position (0, 0) with height = 600 and width = 800. Try setting up this SDL_FRect by yourself.</p>
-				<p>Now all thats left to do is to place our texture at that position, on the renderer. We do this with <code class="inline-code-box">SDL_RendererTexture(renderer, car_texture, NULL, &position);</code> which takes arguments for the renderer, texture, the src position (which we won't go into right now), and then a reference to the position. We use a reference for the position becasue we are actually taking the information out of the object. Our final code should look something like this:</p>
-				<div class="code-box"><pre><code class="language-cpp">
-// put texture on the renderer
-SDL_FRect position = {0, 0, 800, 600};
-SDL_RendererTexture(renderer, car_texture, NULL, &position);
-
-SDL_RenderPresent(renderer);
-				</code></pre></div>
-
-				<img src="car-texture.webp" alt="Example on how you window should look after rendering texture">
-				<p>If you're stuck or something isn't working, you can <a href="/code-viewer.html?file=/projects/sdl2-first-game-with-sdl/code1.c&lang=c" target="_blank">view the source code here ></a></p>
-
-				<div class="page-break"></div>
-
-			</section>
-
-			<!-- What is Delta Time -->
-			<section>
-				<p>Now lets make our image smaller and make it move from the left to the right accross the screen. We will use a variable to track the car's x position on the window and increase it every frame and then use that variable as the x value in our textures FRect <code class="inline-code-box">SDL_FRect position1 = {x, 0, 80, 60};</code>. Before every frame is rendered, we also have to clear the original cntents of the window as we are no longer just presenting a static image, and we do this with <code class="inline-code-box">SDL_RenderClear(renderer);</code>.</p>
-				<div class="code-box"><pre><code class="language-cpp">
-// initialize the car's x variable
-float x = 0;
-
-// clear the renderer
-SDL_RenderClear(renderer);
-
-// update the FRect size and add the x variable
-SDL_FRect position = {x, 0, 80, 60};
-
-// update the x position (in the game loop)
-x = x + 1; // also can be written as x+=1;
-				</code></pre></div>
-
-				<p>This works fine, but the speed of your player is completely dependent on the framerate of your program. Think of it like this: you ask Timmy and Jimmy to test your game. Timmy's computer runs the game at 60 frames per second (fps), while Jimmy's runs it at 30fps. They both play the game, but Timmy's character moves twice as fast as Jimmy's. Why? Because the character's movement is tied directly to how many frames are being drawn. The more frames, the more movement happens. So Timmy, getting 60 updates per second, moves more often than Jimmy, who only gets 30 updates per second. This makes the game feel unfair and inconsistent across devices. To fix this, we use something called delta time.</p>
-				<h2 class="neon">What is Delta Time?</h2>
-				<p>When we measure the amount of time between frames, we get the delta time. This Delta Time (often written as <code class="inline-code-box">dt</code> or <code class="inline-code-box">deltaTime</code> in code) tells us how long it took to render the last frame, usually measured in seconds or milliseconds. So for example, if your game is running at 60fps, delta time would be about 0.016 seconds per frame (because 1 divided by 60 is roughly 0.016). If it's running at 30fps, delta time would be around 0.033. This number becomes super useful when we want to make things move at the same speed no matter what the frame rate is.</p>
-				<p>Instead of saying “move the player 5 units every frame,” which is tied to the frame rate, we say “move the player at 300 units per second” and multiply that speed by delta time each frame. For example, <code class="inline-code-box">position += speed * dt;</code>. If <code class="inline-code-box">speed</code> is 300 and <code class="inline-code-box">dt</code> is 0.016, then we move 4.8 units that frame. If the frame took longer and <code class="inline-code-box">dt</code> is 0.033, we move 9.9 units that frame. It may seem like more, but remember: fewer frames are being drawn per second, so we move more per frame to make up for it. In both cases, the character ends up moving at the same rate per second. This keeps movement, physics, and animation timing smooth and consistent on all devices and frame rates.</p>
-
-				<p>So how do we get the delta time? To calculate it, we need to know how much time has passed between the last frame and the current one. In C, we can do this using the <code class="inline-code-box">clock()</code> function from the <code class="inline-code-box">&lt;time.h&gt;</code> library. Let me explain what’s going on in the code below:</p>
-
-				<div class="code-box"><pre><code class="language-cpp">
-#include &lt;time.h&gt; // to get the current time
-#include &lt;unistd.h&gt; // for usleep() -> control_fps function
-
-// These variables help us calculate delta time
-clock_t previous_time = 0; // stores the time from the last frame
-float dt; // will hold the final delta time in seconds
-
-// Function to calculate delta time
-// Returns how many seconds passed since the last frame
-// Call this once per frame before any movement updates
-float get_delta_time() {
-    clock_t current_time = clock(); // gives us the number of CPU clock ticks since the program started
-    float delta_time = (float)(current_time - previous_time) / CLOCKS_PER_SEC;
-	// CLOCKS_PER_SEC is a constant that tells us how many ticks are in one second
-	// dividing the difference in ticks by CLOCKS_PER_SEC, we get the time passed between frames (the delta time)
-    previous_time = current_time; // save the current time to previous_time so that next frame we can compare it again
-    return delta_time;
-}
-
-// Function to control the framerate manually
-// It delays the next frame until the correct frame time has passed
-// keeps your game from running too fast
-void control_fps(float target_fps) {
-	// Calculate how long each frame should take (in seconds)
-	float frame_duration = 1.0f / target_fps;
-
-	// Get the current time at the end of the frame
-	clock_t now = clock();
-
-	// Calculate how much time has passed since the frame started
-	float elapsed = (float)(now - previous_time) / CLOCKS_PER_SEC;
-
-	// Find out how much time is left to wait to match the desired frame duration
-	float remaining_time = frame_duration - elapsed;
-
-	// If the frame finished faster than the desired duration, sleep for the remaining time
-	if (remaining_time > 0) {
-		// Convert seconds to microseconds and sleep (pause) for that duration
-		usleep((useconds_t)(remaining_time * 1000000.0f));
-	}
-}
-
-// Example usage each frame:
-dt = get_delta_time();    // get how long the last frame took (at start of the frame)
-control_fps(120.0f);      // limit FPS to 120 (at end of the frame)
-				</code></pre></div>
-
-				<p>And now, if we change our character's position by <code class="inline-code-box">25 * dt</code>, it will move smoothly and at the same speed across all devices. <code class="inline-code-box">x+=25*dt;</code></p>
-				<video src="delta-time-example.webm" autoplay loop muted loading="lazy"></video>
-				<p>If you're stuck or something isn't working, you can <a href="/code-viewer.html?file=/projects/sdl2-first-game-with-sdl/code2.c&lang=c" target="_blank">view the source code here ></a></p>
-				<p>For the full repository we made in this lesson, you can <a href="https://github.com/marcushcarter/SDL-Lessons/releases/tag/sdl-lesson-2" target="_blank">visit the repository on github ></a></p>
-				<p>You can also click here for a <a href="" target="_blank">blank template for a new SDL project</a>.</p>
-		
-				<div class="page-break"></div>
 			</section>
 
 			<!-- Excercises -->
 			<section>
 				<h2 class="neon">Excercies:</h3>
 				<ol>
-					<li>EASY: Try switching out the car for a different image.</li>
-					<li>MEDIUM: Try adding different types of cars that move at different speeds. <a href="/code-viewer.html?file=/projects/sdl2-textures-and-delta-time-in-sdl/question1-2.c&lang=c" target="_blank">View Solution</a>.</li>
+					<li>EASY: Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis error libero numquam delectus minus. Veritatis excepturi qui quasi quidem, expedita, maiores deserunt cumque eius vitae sunt facere perferendis quos autem.</li>
+					<li>MEDIUM: Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, repellat tenetur assumenda perferendis cupiditate minus doloremque aspernatur natus modi qui reprehenderit at laboriosam non placeat in totam dolorum, molestias laborum! <a href="/code-viewer.html?file=/projects/sdl2-textures-and-delta-time-in-sdl/question1-2.c&lang=c" target="_blank">View Solution</a>.</li>
 				</ol>
 			</section>
 
@@ -233,9 +73,9 @@ control_fps(120.0f);      // limit FPS to 120 (at end of the frame)
 
 		<div class="website-sources">
 			<h2 class="neon">Sources</h2>
-			<a href="https://www.youtube.com/watch?v=jUZZC9UXyFs" target="_blank"><p>SDL 2 Tutorial Windows and Visual Studio Code Setup | Visual Studio Code, Game Dev - Sonar Systems</p></a>
-			<a href="https://en.wikipedia.org/wiki/Delta_timing" target="_blank"><p>Delta Timing - Wikipedia</p></a>
-			<a href="https://github.com/libsdl-org/SDL_image/releases" target="_blank"><p>SDL_Image GitHub Page</p></a>
+			<a href="https://github.com/marcushcarter/SDL-Lessons/releases/tag/sdl-template-1" target="_blank"><p>SDL Template GitHub Page</p></a>
+			<a href="https://www.spriters-resource.com/mobile/flappybird/" target="_blank"><p>Flappy Bird Sprites - Spriters Resource</p></a>
+			<a href="https://kosresetr55.itch.io/flappy-bird-assets-by-kosresetr55" target="_blank"><p>https://kosresetr55.itch.io/flappy-bird-assets-by-kosresetr55</p></a>
 			<a href="" target="_blank"><p></p></a>
 			<a href="" target="_blank"><p></p></a>
 			<a href="" target="_blank"><p></p></a>
