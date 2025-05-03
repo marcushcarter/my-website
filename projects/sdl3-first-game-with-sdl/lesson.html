@@ -12,9 +12,6 @@
 	<meta property="og:url" content="https://ballisticstudios.ca/projects/sdl3-first-game-with-sdl/lesson">
 
     <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="/style2.css">
-    <link rel="stylesheet" href="/style3.css">
-	
     <script src="https://kit.fontawesome.com/1d0f0d81d5.js" crossorigin="anonymous"></script>
     <link rel="icon" href="/resources/favicon.png" type="image/x-icon">
     <title>Making our First Game with SDL | Ballistic Studios Lessons</title>
@@ -36,7 +33,7 @@
 
 				<p>In this lesson, you will learn to make you first game (Flappy Bird) using the SDL Template you just made in the previous lessons. Let's get started!</p>
 				<p class="caution">If you don't have Visual Studio Code installed and setup with MinGW, it is <strong>REQUIRED</strong> for this lesson. <a href="/projects/vscode-setup-with-mingw/lesson" class="remove">You can find the tutorial here ></a></p>
-				<p class="note">You can find the repository for the SDL Template we have been working on in the last couple lessons <a href="https://github.com/marcushcarter/SDL-Lessons/releases/tag/sdl-template-1" target="_blank" class="remove">here ></a>. You can download this one or if you have been following along, use the one you have been making so far.</p>
+				<p class="note">You can find the repository for the newest version of the SDL Template <a href="https://github.com/marcushcarter/SDL-Lessons/releases/tag/sdl-template-1" target="_blank" class="remove">here ></a>. You can download this one or if you have been following along, use the one you have been making so far.</p>
 
 				<div class="page-break"></div>
 			</header>
@@ -44,16 +41,112 @@
 			<!-- Key Concepts of Flappy Bird -->
 			<section>
 				<img src="flappy-bird-intro.webp" alt="Flappy Bird featured intro image">
-				<h2 class="neon">Flappy Bird Key Concepts</h2>
-				<p>This lesson we will be making flappy bird. So think right now, what are the core concepts that make the game Flappy Bird. Heres what I came up with:</p>
-				<ol>
-					<li>tap to flap</li>
-					<li>dodge the pipes</li>
-					<li>repeat until you fail</li>
-				</ol>
-				<p>Simple right?</p>
+				<p>THis lesson, we will be making our very own version of Flappy Bird. We will go over some simple concepts like grabity, collision, _ and more.</p>
+				<p>The first step is to download the assets (images and sounds) for the bird, pipes and the rest of the game. It is recomended that you download it from the <a href="flappy-bird-assets.zip">.zip file below</a>, or if you want, you can <a href="https://kosresetr55.itch.io/flappy-bird-assets-by-kosresetr55" target="_blank">download them yourself from Itch.io</a> (You can also find an <a href="https://www.spriters-resource.com/mobile/flappybird/" target="_blank">extended spritesheet here</a>). Extract the files and copy the <code class="inline-code-box">resources</code> folder into the root of your SDL Template. (You can also find the previous template for sdl in the second zip file below.)</p>
+
+				<div class="inline-images">
+					<a href="flappy-bird-assets.zip"><img src="zip.webp" alt="Assets ZIP file download"></a>
+					<a href="sdl-template.zip"><img src="zip.webp" alt="Template ZIP file download"></a>
+				</div>
+
+				<p>Now lets start makign our game. The first thing we should do is come up with a MVP (or minimum viable product) which is basically the simplest, smallest version of a product that does just enough to solve the core problem. SO what are the core concepts of flappy bird. Here's what I came up with:</p>
+				<ul>
+					<li>character falls and flaps upwards when you tap</li>
+					<li>obstacles that move to the left</li>
+					<li>your score increases when you navigate past an obstacle</li>
+					<li>game ends if you touch an obstacle</li>
+				</ul>
+				<p>So lets go one at a time through the different components. Let's start with the bird...</p>
+			</section>
+
+			<!-- The Bird -->
+			<section>
+				<h2 class="neon">The Bird</h2>
+				<p>Lets start by making a couple variables for our bird: a <code class="inline-code-box">px</code> and <code class="inline-code-box">py</code> (player x and y position), a <code class="inline-code-box">pvelx</code> and <code class="inline-code-box">pvely</code> (player x and y velocity), a <code class="inline-code-box">flap_strength</code>, and a <code class="inline-code-box">GRAVITY</code> variable (make all of these universal variables).</p>
+				<p>First lets organize our game loop into a couple functions so we can access them easier. We will move our rendering code to a render(){} function and we will move our update code to an update(){} function. We will also add in an extra function before the game loop starts called initialize(){}, just to setup any variables, lists, etc. These need to go before the main(){} function, and where these once where, replace them with their corresponding fucntions</p>
+
+				<div class="code-box"><pre><code class="language-cpp">
+void initialize() {
+    // change values of variables, lists etc on game start
+    // this only happens once
+    // example: player_y = 90.0f;
+	...
+}
+
+void inputs() {
+    // detect if a key is pressed and puts it as a variable
+    // this happens at the beggining of every frame
+    // example if (SCANCODE_LEFT_PRESSED) key.left = 1;
+	...
+}
+
+void update() {
+    // update game logic (ex player position, velocity etc.)
+    // this happens every frame
+    // player_x += 1;
+    ...
+}
+
+void render() {
+    SDL_RenderClear(renderer);
+    // renders the obects and ui you want on the window
+    // happens every frame
+    // example: SDL_RenderRectangles(...);
+	...
+    SDL_RenderPresent(renderer);
+}
 
 
+int main(int argc, char* argv[]) {
+    ...
+    load_textures();
+
+    // after we load the textures in the main function
+    initialize();
+
+    // the main loop should look like this
+    while (running) {
+        dt = get_delta_time();
+        while (SDL_PollEvent(&event) != 0) {
+            ...
+        }
+        inputs();
+        update();
+        redner();
+        control_fps(120.0f);
+    }
+    
+    return 0;
+}
+					</code></pre></div>
+					<p>Now, whenever you add any code to these functions, it will run them in the correct order ofr the program to work. Next, let's load our bird texture to the screen. SDFRect and RenderTexture</p>
+					<p>make new variables for the birds posiiton</p>
+
+
+
+
+				<p>We'll start with just a box to represent our character inputting the px and py variables into the SDL_FRect. <code class="inline-code-box">SDL_FRect pPos = {x, y, 100, 100}</code></p>
+			</section>
+
+			<!-- The Pipes -->
+			<section>
+				<h2 class="neon">The Pipes</h2>
+			</section>
+
+
+			<!--  -->
+			<section>
+				<h2 class="neon">Increasing the Score</h2>
+			</section>
+
+			<!--  -->
+			<section>
+				<h2 class="neon">Collisions</h2>
+			</section>
+
+			<!--  -->
+			<section>
+				<h2 class="neon">Miscellaneous</h2>
 			</section>
 
 			<!-- Excercises -->
